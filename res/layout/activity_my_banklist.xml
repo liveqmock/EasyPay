@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    
+    <TextView
+            android:id="@+id/bank_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="15dp"
+            android:gravity="left"
+            android:text="注：只有信用卡能设置为默认支付，默认支付只能用于便民服务消费。"
+            android:textColor="@color/text_color_gray"
+            android:textSize="@dimen/agent_little_size13" />
+    
+    <ListView
+        android:id="@+id/listview"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="fill_parent"
+	    android:layout_above="@id/bank_name"
+	    android:cacheColorHint="#00000000"
+	    android:overScrollMode="never"
+	     />
+    <TextView
+        android:id="@+id/tv_emptyview" 
+        android:layout_width="fill_parent" 
+	    android:layout_height="fill_parent"
+	    android:layout_gravity="center"
+	    android:gravity="center"
+	    android:text="亲,没有获取到银行卡"
+	    android:textColor="@color/gray_bg"
+	    android:visibility="invisible"
+        />
+</RelativeLayout>

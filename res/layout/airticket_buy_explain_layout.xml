@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#E5000000" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="#4CFFFFFF"
+            android:gravity="center_vertical"
+            android:padding="10dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="儿童票须知："
+                android:textColor="#ffffffff"
+                android:textSize="@dimen/content_size" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1、使用儿童票的乘客：登机当天应满2周岁但未满12周岁。\n
+2、购买儿童票可优先使用：户口簿、身份证、护照。\n
+3、登机时出示的证件号码，应与订票时所填证件号码一致。\n
+4、儿童票为全价票的50%，机场建设费免收，燃油税减半。\n
+退改签说明：\n
+套餐退订：起飞前2小时以外需收取票面价5%的退票费，起飞前2小时（含）以内及起飞后需收取票面价10％的退票费（婴儿、儿童免收退票费）。\n
+套餐更改：起飞前2小时以外同等舱位免费更改，起飞前2小时（含）以内及起飞后需收取票面价5％的更改费。改期费与升舱费同时发生时，需同时收取。"
+                android:textColor="#ffffffff"
+                android:textSize="@dimen/content_size" />
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="#4CFFFFFF"
+            android:gravity="center_vertical"
+            android:padding="10dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="婴儿票须知："
+                android:textColor="#ffffffff"
+                android:textSize="@dimen/content_size" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1、使用婴儿票的乘客：登机当天应满14天但未满2周岁，未满14天的婴儿不能乘机。\n
+2、购买婴儿票可优先使用：出生证明、户口簿、身份证、护照。\n
+3、登机时出示的证件号码，应与订票时所填证件号码一致。\n
+4、婴儿票为全价票的10%，机场建设费和燃油税免收。"
+                android:textColor="#ffffffff"
+                android:textSize="@dimen/content_size" />
+        </LinearLayout>
+        
+        
+        
+    </LinearLayout>
+
+</ScrollView>

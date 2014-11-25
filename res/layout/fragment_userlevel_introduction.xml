@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_blue_ll_one"
+            android:paddingBottom="16dp"
+            android:paddingTop="16dp" >
+
+            <LinearLayout
+                android:id="@+id/ll_top_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="8dp"
+                    android:background="@drawable/bg_vip"
+                    android:gravity="center"
+                    android:text="VIP用户"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="16dp"
+                    android:gravity="center"
+                    android:text="单笔限额5万,日限额100万"
+                    android:textColor="@color/userlevel_blue_pink" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_top_one"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal" >
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/tv_one"
+                        style="@style/userlevel_btn_style"
+                        android:background="@drawable/bg_blue_user"
+                        android:drawableTop="@drawable/icon_phone_user"
+                        android:text="手机验证" />
+
+                    <ImageView
+                        android:layout_alignBottom="@+id/tv_one"
+                        android:layout_toRightOf="@+id/tv_one"
+                        style="@style/userlevel_btn_click"
+                        android:background="@drawable/icon_blue_click" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:src="@drawable/icon_arrow_user" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/tv_two"
+                        style="@style/userlevel_btn_style"
+                        android:background="@drawable/bg_blue_user"
+                        android:drawableTop="@drawable/icon_idcard_user"
+                        android:text="身份验证" />
+
+                    <ImageView
+                        android:layout_alignBottom="@+id/tv_two"
+                        style="@style/userlevel_btn_click"
+                        android:layout_toRightOf="@+id/tv_two"
+                        android:background="@drawable/icon_blue_click" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="16dp"
+                    android:src="@drawable/icon_arrow_user" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_gray_user"
+                    android:drawableTop="@drawable/icon_photo_user"
+                    android:gravity="center_horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="自拍照及\n营业执照"
+                    android:textColor="@color/white"
+                    android:textSize="10sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_orange_ll_two"
+            android:paddingBottom="16dp"
+            android:paddingTop="16dp" >
+
+            <LinearLayout
+                android:id="@+id/ll_top_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="8dp"
+                    android:background="@drawable/bg_advance"
+                    android:gravity="center"
+                    android:text="高级用户"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="16dp"
+                    android:gravity="center"
+                    android:text="单笔限额2万,日限额20万"
+                    android:textColor="@color/userlevel_organge_pink" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_top_two"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal" >
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/tv_three"
+                        style="@style/userlevel_btn_style"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/bg_orange_user"
+                        android:drawableTop="@drawable/icon_phone_user"
+                        android:text="手机验证" />
+
+                    <ImageView
+                        android:layout_alignBottom="@+id/tv_three"
+                       style="@style/userlevel_btn_click"
+                        android:layout_toRightOf="@+id/tv_three"
+                        android:background="@drawable/icon_orange_click" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:src="@drawable/icon_arrow_user" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/tv_four"
+                        style="@style/userlevel_btn_style"
+                        android:background="@drawable/bg_orange_user"
+                        android:drawablePadding="4dp"
+                        android:drawableTop="@drawable/icon_idcard_user"
+                        android:text="身份验证" />
+
+                    <ImageView
+                        android:layout_alignBottom="@+id/tv_four"
+                       style="@style/userlevel_btn_click"
+                        android:layout_toRightOf="@+id/tv_four"
+                        android:background="@drawable/icon_orange_click" />
+                </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_blue_ll_one"
+            android:paddingBottom="16dp"
+            android:paddingTop="16dp" >
+
+            <LinearLayout
+                android:id="@+id/ll_top_three"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="8dp"
+                    android:background="@drawable/bg_general"
+                    android:gravity="center"
+                    android:text="普通用户"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="16dp"
+                    android:gravity="center"
+                    android:text="单笔限额500,日限额1500"
+                    android:textColor="@color/userlevel_green_pink" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_top_three"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal" >
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/tv_five"
+                        style="@style/userlevel_btn_style"
+                        android:background="@drawable/bg_green_user"
+                        android:drawableTop="@drawable/icon_phone_user"
+                        android:text="手机验证" />
+
+                    <ImageView
+                        android:layout_alignBottom="@+id/tv_five"
+                        style="@style/userlevel_btn_click"
+                        android:layout_toRightOf="@+id/tv_five"
+                        android:background="@drawable/icon_green_click" />
+                </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_blue_ll_one"
+            android:padding="8dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="注:\n各项服务的限额有所差别，如需进一步了解，请联系400-6868-956，向客服人员咨询通付宝的最新政策规定。"
+                android:textColor="@color/gray" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</ScrollView>

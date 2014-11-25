@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/sdl__title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="title" />
+
+    <View
+        android:id="@+id/sdl__titleDivider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp" 
+        android:background="@color/game_blue"/>
+
+    <TextView
+        android:id="@+id/sdl__message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:text="message"/>
+
+    <Button
+        android:id="@+id/sdl__btn"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:minHeight="48dip"
+        android:minWidth="64dip"
+        android:paddingBottom="@dimen/grid_3"
+        android:paddingLeft="4dip"
+        android:paddingRight="4dip"
+        android:paddingTop="@dimen/grid_3"
+        android:textSize="15sp"
+        android:background="@drawable/selector_btn_normal_two"
+        android:textStyle="normal" />
+
+</LinearLayout>

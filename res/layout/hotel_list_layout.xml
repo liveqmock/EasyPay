@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/index_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    >
+
+    <FrameLayout
+        android:id="@+id/fl_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+        <ListView
+	        android:id="@+id/lv_hotel_list"
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent"
+	        android:background="#FFFFFFFF"
+	        >
+    	</ListView>
+        
+    </FrameLayout>
+    
+    <include
+        layout="@layout/hotel_list_navigation_layout" />
+</LinearLayout>

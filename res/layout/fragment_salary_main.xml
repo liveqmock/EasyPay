@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C4DEEB" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        
+        
+        <ImageView 
+            android:id="@+id/iv_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/icon_salary_main"
+            />
+
+        <Button
+            android:id="@+id/btn_boss"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="36dp"
+            android:layout_marginRight="36dp"
+            android:layout_marginTop="48dp"
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/iv_icon"
+            android:background="@drawable/selector_btn_game_record"
+            android:text="我要发工资" />
+        
+        <Button
+            android:id="@+id/btn_employee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+             android:layout_marginLeft="36dp"
+            android:layout_marginRight="36dp"
+            android:layout_marginTop="24dp"
+            android:layout_below="@+id/btn_boss"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/white"
+            android:background="@drawable/selector_btn_game_goto"
+            android:text="我要收工资" />
+    </RelativeLayout>
+
+</ScrollView>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="我们已发送" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="验证码短信"
+            android:textSize="16sp"
+            android:textColor="@color/game_blue" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="到这个号码" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_phone_received"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="14sp"
+        android:layout_gravity="center_horizontal"
+        android:text="137 6789 0987"
+        android:textColor="@color/black" />
+    
+    
+    <EditText 
+          android:id="@+id/et_sms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center_horizontal"
+        android:hint="请输入验证码"
+        android:inputType="number"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:maxLength="6"
+        android:textSize="18sp"
+        />
+    
+    
+     <TextView
+        android:id="@+id/tv_getsms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center_horizontal"
+        android:text="收不到验证码?"
+        android:textSize="14sp"
+        android:textColor="@color/game_blue" />
+
+    <Button
+        android:id="@+id/submit"
+        style="@style/btn_single_style"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_left"
+        android:layout_marginRight="@dimen/margin_right"
+        android:background="@drawable/selector_btn_game_goto"
+        android:text="@string/btn_submit"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/content_size" />
+
+</LinearLayout>

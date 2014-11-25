@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="5dp"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        >
+
+        <ImageView
+            android:id="@+id/childImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/yellowdot" />
+
+        <TextView
+            android:id="@+id/childTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="left"
+            android:text="手机充值"
+            android:textColor="@color/agent_gray2"
+            android:textSize="@dimen/agent_little_size13" />
+	</LinearLayout>
+     <TextView
+         android:layout_weight="1"
+            android:id="@+id/childMoney"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="left"
+            android:text="200.00"
+            android:textColor="@color/agent_gray2"
+            android:textSize="@dimen/agent_little_size13" />
+
+</LinearLayout>

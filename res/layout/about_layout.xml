@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            style="@style/corner_margin_style"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:id="@+id/about_logo"
+                android:layout_width="135dp"
+                android:layout_height="90dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/about_logo_image" />
+
+            <TextView
+                android:id="@+id/versionTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/about_logo"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_top"
+                android:text="@string/about_default_version" />
+        </RelativeLayout>
+
+        <LinearLayout
+            style="@style/corner_margin_style"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/atte_corners"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/fuwu_protocol"
+                style="@style/item_text_padding"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone" >
+
+                <ImageView
+                    android:id="@+id/image_in"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/in" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@id/image_in"
+                    android:text="@string/about_protocol"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/content_size" />
+            </RelativeLayout>
+
+            <include
+                android:id="@+id/my_line"
+                layout="@layout/line_layout"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:id="@+id/wallet_protocol"
+                style="@style/item_text_padding"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/image_in"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/in" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@id/image_in"
+                    android:text="@string/about_wallet_protocol"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/content_size" />
+            </RelativeLayout>
+
+            <include
+                android:id="@+id/my_line"
+                layout="@layout/line_layout" />
+
+            <RelativeLayout
+                android:id="@+id/about_android_opener"
+                style="@style/item_text_padding"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/image_in"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/in" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="@string/about_android"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/content_size" />
+            </RelativeLayout>
+            
+            <include
+                android:id="@+id/my_line"
+                layout="@layout/line_layout" />
+
+            <RelativeLayout
+                android:id="@+id/about_tfb_weixin_rl"
+                style="@style/item_text_padding"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/image_in"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/in" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="@string/about_tfb_weixin"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/content_size" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_left"
+            android:text="@string/about_phone_prompt"
+            android:textSize="@dimen/content_size"
+            android:visibility="gone" />
+
+        <LinearLayout
+            style="@style/corner_margin_style"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/atte_corners"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/phone_layout"
+                style="@style/item_text_padding"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/image_in"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/in" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@id/image_in"
+                    android:text="@string/about_phone"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/content_size" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

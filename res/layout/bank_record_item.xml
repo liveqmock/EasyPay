@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal" 
+    style="@style/item_text_padding">
+	<TextView
+	    android:id="@+id/mbankcardno" 
+	    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="1"
+    android:text="@string/bank_record_card_no"
+	    />
+	<TextView 
+	    android:id="@+id/mrecordname" 
+	    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="1"
+    android:text="@string/bank_record_name"
+    android:gravity="center_horizontal"
+	    />
+	<TextView 
+	    android:id="@+id/mrecordmanname" 
+	    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="1"
+    android:text="@string/bank_record_man_name"
+    android:gravity="right"
+	    />
+</LinearLayout>

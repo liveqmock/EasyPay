@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/index_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/title" />
+
+  <RelativeLayout 
+         android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        >
+          <LinearLayout 
+            android:id="@+id/pointLayout"
+	            android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal"
+	        android:layout_alignParentBottom="true"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginBottom="@dimen/point_margin_bottom"
+            />
+<!-- <android.support.v4.view.ViewPager
+        android:id="@+id/ad_pager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:focusable="false"
+        android:layout_above="@id/pointLayout"
+        android:layout_marginTop="@dimen/point_margin_bottom" /> -->
+ <com.inter.trade.ui.MyViewPager
+        android:id="@+id/ad_pager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:focusable="false"
+        android:persistentDrawingCache="animation"
+        android:layout_above="@id/pointLayout"
+        android:layout_marginTop="@dimen/point_margin_bottom" />  
+      
+    </RelativeLayout>
+
+</LinearLayout>

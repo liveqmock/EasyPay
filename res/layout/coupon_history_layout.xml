@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+	<RelativeLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/sec_title_height"
+        android:background="@drawable/column_tab"
+        android:orientation="vertical"
+        >   
+        
+	    <RelativeLayout android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+        	android:layout_alignParentBottom="true"
+        	>
+    	<ImageView
+        	android:id="@+id/cursor"
+        	android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+        	android:src="@drawable/log_navigation" 
+        	android:scaleType="matrix"
+        	android:layout_alignParentBottom="true"
+        	/> 
+        </RelativeLayout> 
+	    
+        <LinearLayout
+        	android:id="@+id/linearLayout1"
+        	android:layout_width="fill_parent"
+        	android:layout_height="fill_parent"
+        	android:orientation="horizontal"
+			android:gravity="center_vertical"
+			android:layout_centerVertical="true"
+        	>
+
+        <TextView
+            android:id="@+id/opertion_log_tab"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:text="@string/buy_record"
+            android:textColor="@color/text_color_gray"
+            android:textSize="14sp"
+            />
+
+        <TextView
+            android:id="@+id/threat_log_tab"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:text="@string/shui_record"
+            android:textColor="@color/text_color_gray"
+            android:textSize="14sp"
+             />
+    </LinearLayout>
+
+	
+    </RelativeLayout>
+    
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vPager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1.0"
+        android:flipInterval="30"
+        android:persistentDrawingCache="animation" />
+
+</LinearLayout>

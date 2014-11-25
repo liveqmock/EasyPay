@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+		<include layout="@layout/title"/>
+	
+        <LinearLayout
+            style="@style/corner_margin_style"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/atte_corners"
+            android:orientation="vertical" >
+
+            
+
+            
+
+
+            <LinearLayout
+                style="@style/item_text_padding"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="2"
+                    android:text="@string/recharge_cridet_date"
+                    android:textSize="@dimen/content_size" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal" >
+
+                    <EditText
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/text_color_white"
+                        android:hint="@string/recharge_cridet_year"
+                        android:inputType="number" />
+
+                    <EditText
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/text_color_white"
+                        android:hint="@string/recharge_cridet_month"
+                        android:inputType="number" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/item_text_padding"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="2"
+                    android:text="@string/recharge_cridet_cvn2"
+                    android:textSize="@dimen/content_size" />
+
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/text_color_white"
+                    android:hint="@string/recharge_cridet_cvn2_prompt"
+                    android:inputType="number" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/item_text_padding"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="2"
+                    android:text="账户"
+                    android:textSize="@dimen/content_size" />
+
+                <EditText
+                    android:id="@+id/open_card_edit"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/text_color_white"
+                    android:hint="@string/card_code_input"
+                    android:inputType="number" 
+                    />
+                 <EditText
+                    android:id="@+id/open_card_edit_do"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/text_color_white"
+                    android:hint="@string/card_code_input"
+                    android:inputType="number" 
+                    android:visibility="gone"
+                    />
+            </LinearLayout>
+
+            <include layout="@layout/line_layout" />
+            
+            <RelativeLayout
+                style="@style/item_text_padding"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/image_in"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/in" />
+
+                <LinearLayout
+                    android:id="@+id/bank_layout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/image_in"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="银行"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/content_size" />
+
+                    <TextView
+                        android:id="@+id/bank_name"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:text="@string/support_bank"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/content_size" />
+                </LinearLayout>
+            </RelativeLayout>
+            
+              <include layout="@layout/line_layout" />
+
+            <LinearLayout
+                style="@style/item_text_padding"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="2"
+                    android:text="姓名"
+                    android:textSize="@dimen/content_size" />
+
+                <EditText
+                    android:id="@+id/open_phone_edit"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/text_color_white"
+                    android:hint="@string/cridet_open_name"
+                    android:inputType="text" />
+                <EditText
+                    android:id="@+id/open_phone_edit_do"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/text_color_white"
+                    android:hint="@string/cridet_open_name"
+                    android:inputType="text"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <include layout="@layout/line_layout" />
+
+            <LinearLayout
+                style="@style/item_text_padding"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="2"
+                    android:text="@string/zhuangzhang_reciever_phone"
+                    android:textSize="@dimen/content_size" />
+
+                <EditText
+                    android:id="@+id/phone_edit"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/text_color_white"
+                    android:hint="@string/rigester_phone_prompt"
+                    android:inputType="number" />
+                <EditText
+                    android:id="@+id/phone_edit_do"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/text_color_white"
+                    android:hint="@string/rigester_phone_prompt"
+                    android:inputType="number" 
+                    android:visibility="gone"/>
+            </LinearLayout>
+
+        </LinearLayout>
+        
+        <TextView
+            android:id="@+id/bank_prompt_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_left"
+            android:layout_marginTop="@dimen/margin_top"
+            android:text="@string/card_code_encrypt"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_marginBottom="20dp" />
+        <Button
+            android:id="@+id/btn_confirm_submit"
+            style="@style/btn_single_style"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_bottom"
+            android:layout_marginLeft="@dimen/margin_left"
+            android:layout_marginRight="@dimen/margin_right"
+            android:background="@drawable/selector_btn_game_record"
+            android:text="@string/btn_confirm_submit"
+            android:textColor="@color/white"
+            android:textSize="@dimen/content_size" />
+    </LinearLayout>
+
+</ScrollView>

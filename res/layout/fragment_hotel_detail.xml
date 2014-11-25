@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tv_hotel_class"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/main_topbar"
+        android:gravity="center"
+        android:text="豪华客房"
+        android:textColor="@color/white" />
+    
+    <LinearLayout 
+        android:layout_weight="1"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:orientation="vertical" >
+	    <ScrollView 
+	        
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:fillViewport="true"
+	        >
+		    <LinearLayout 
+			    android:layout_width="match_parent"
+			    android:layout_height="match_parent"
+			    android:orientation="vertical" >
+			    
+			    <include layout="@layout/hotel_view_page_layout" />  
+		    
+		    </LinearLayout>
+	    </ScrollView>
+    </LinearLayout>
+    
+    <Button
+        android:id="@+id/btn_book"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/weg_button_style"
+        android:text="预订"
+        android:textColor="@color/text_color_white"
+        android:textSize="@dimen/content_size" />
+
+</LinearLayout>

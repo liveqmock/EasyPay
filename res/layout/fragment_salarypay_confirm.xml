@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F6F7"
+    android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="发放账单信息"
+        android:textSize="@dimen/agent_little_size"
+        android:textColor="#A1A3A2" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/default_dashed_line" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/game_tablerow_margin" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="发送人员:"
+                android:textSize="@dimen/agent_little_size"
+                android:textColor="#A1A3A2" />
+
+            <TextView
+                android:id="@+id/tv_person_number"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_weight="1"
+                android:gravity="right|center_vertical"
+                android:textSize="@dimen/agent_little_size"
+                android:textColor="#A1A3A2" />
+
+        </TableRow>
+        
+        <TableRow
+            android:id="@+id/tr_area"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/game_tablerow_margin" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="工资总额:"
+                android:textSize="@dimen/agent_little_size"
+                android:textColor="#A1A3A2" />
+
+            <TextView
+                android:id="@+id/tv_total"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_weight="1"
+                android:gravity="right|center_vertical"
+                android:textSize="@dimen/agent_little_size"
+                android:textColor="#A1A3A2" />
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/game_tablerow_margin" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="本次支付:"
+                android:textSize="@dimen/agent_little_size"
+                android:textColor="#A1A3A2" />
+
+            <TextView
+                android:id="@+id/tv_max_salary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_weight="1"
+                android:gravity="right|center_vertical"
+                android:textSize="@dimen/agent_little_size"
+                android:textColor="#A1A3A2" />
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/game_tablerow_margin" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="手续费率:"
+                android:textSize="@dimen/agent_little_size"
+                android:textColor="#A1A3A2" />
+
+            <TextView
+                android:id="@+id/tv_fee_percent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:gravity="right|center_vertical"
+                android:textColor="#A1A3A2"
+                android:textSize="@dimen/agent_little_size"
+                 />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/game_tablerow_margin" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="手续费:"
+                android:textSize="@dimen/agent_little_size"
+                android:textColor="#A1A3A2" />
+
+            <TextView
+                android:id="@+id/tv_fee"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:gravity="right|center_vertical"
+                android:textSize="@dimen/agent_little_size"
+                android:textColor="#A1A3A2"
+                 />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/game_tablerow_margin" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="实际支付:"
+                android:textSize="@dimen/agent_little_size"
+                android:textColor="#A1A3A2" />
+ 	<TextView
+                android:id="@+id/tv_money"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:gravity="right|center_vertical"
+                android:textSize="@dimen/agent_little_size"
+                android:textColor="#A1A3A2"
+                 />
+        </TableRow>
+
+    </TableLayout>
+    
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/game_margin_top"
+        android:text="@string/game_recharge_bill_text8"
+        android:textSize="@dimen/agent_little_size"
+        android:textColor="#A1A3A2" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/default_dashed_line"
+        android:layout_marginTop="4dp" />
+
+    <!-- <EditText
+        android:id="@+id/et_bank_account"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/et_bg_game_detail"
+        android:hint="@string/game_recharge_bill_text9"
+        android:padding="10dp"
+        android:textSize="16sp" /> -->
+        <LinearLayout
+            	android:layout_marginTop="@dimen/game_margin_top"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:background="@drawable/et_bg_game_detail"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/swip_prompt"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1.5"
+                    android:text="@string/cridet_insert"
+                    android:textSize="@dimen/content_size" />
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1" >
+
+                    <ImageView
+                        android:id="@+id/swip_card"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/swip_card_bg"
+                        android:focusable="true" />
+
+                    <EditText
+                        android:id="@+id/card_edit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@id/swip_card"
+                        android:hint="请刷卡"
+                        android:enabled="false"
+                        android:background="@null"
+                        android:inputType="number"
+                        android:textSize="@dimen/content_size" />
+                </RelativeLayout>
+            </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_commit"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/weg_button_style"
+        android:text="确认发放"
+        android:textColor="#ffffff"
+        android:textSize="16sp" />
+
+</LinearLayout>

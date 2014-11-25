@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/index_view"
+    android:orientation="vertical" >
+    <include layout="@layout/title"/>
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/ad_pager_height"
+        >
+	<com.inter.trade.ui.MyViewPager
+	    android:focusable="false"
+        android:id="@+id/ad_pager"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/ad_pager_height"
+        android:persistentDrawingCache="animation" />
+	<LinearLayout 
+	    android:id="@+id/ad_index_container"
+	    android:layout_width="wrap_content"
+	     android:focusable="false"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal"
+	    />
+	</RelativeLayout>
+	<com.inter.trade.ui.fragment.MyGridView 
+	    android:focusable="false"
+	    	style="@style/corner_margin_style"
+	     android:id="@+id/func_grid"
+	     	android:cacheColorHint="@color/transparent"
+	     	android:listSelector="@color/transparent"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:horizontalSpacing="20dp"
+            android:numColumns="3"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="20dp" 
+	    />
+</LinearLayout>

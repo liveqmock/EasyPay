@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+     >
+<LinearLayout 
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_left"
+        android:layout_marginTop="@dimen/margin_top"
+        android:text="@string/rigester_pwd_compose"
+        android:textColor="@color/black"
+        android:textSize="@dimen/little_size" />
+
+    <LinearLayout
+        style="@style/corner_margin_style"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/atte_corners"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            style="@style/item_text_padding"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="@string/rigester_login_pwd_xing"
+                android:textSize="@dimen/content_size" />
+
+            <EditText
+                android:id="@+id/login_pwd_edit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/text_color_white"
+                android:hint="@string/rigester_login_pwd"
+                android:inputType="textPassword" />
+        </LinearLayout>
+        <include layout="@layout/line_layout" />
+        <LinearLayout
+            style="@style/item_text_padding"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="@string/rigester_login_pwd_again"
+                android:textSize="@dimen/content_size" />
+
+            <EditText
+                android:id="@+id/login_again_pwd_edit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/text_color_white"
+                android:hint="@string/rigester_login_pwd_again_no"
+                android:inputType="textPassword" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_bottom"
+        android:layout_marginLeft="@dimen/margin_left"
+        android:orientation="horizontal" >
+
+        <CheckBox
+            android:id="@+id/pwd_checkbox"
+            style="@style/custome_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_left"
+            android:text="@string/rigester_pwd_see"
+            android:textColor="@color/black"
+            android:textSize="@dimen/little_size" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_left"
+        android:text="@string/rigester_real_info"
+        android:textColor="@color/black"
+        android:textSize="@dimen/little_size" />
+
+    <LinearLayout
+        style="@style/corner_margin_style"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/atte_corners"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            style="@style/item_text_padding"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="@string/rigester_real_name_xing"
+                android:textSize="@dimen/content_size" />
+
+            <EditText
+                 android:id="@+id/true_name_edit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/text_color_white"
+                android:hint="@string/rigester_real_name"
+                android:inputType="text" />
+        </LinearLayout>
+
+        <include layout="@layout/line_layout" />
+
+        <LinearLayout
+            style="@style/item_text_padding"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="@string/rigester_identity_card_xing"
+                android:textSize="@dimen/content_size" />
+
+            <EditText
+                android:id="@+id/identity_edit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/text_color_white"
+                android:hint="@string/rigester_identity_card"
+                android:inputType="text" />
+        </LinearLayout>
+
+        <include layout="@layout/line_layout" />
+
+        <LinearLayout
+            style="@style/item_text_padding"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="@string/rigester_email"
+                android:textSize="@dimen/content_size" />
+
+            <EditText
+                android:id="@+id/email_edit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/text_color_white"
+                android:hint="@string/rigester_email_address"
+                android:inputType="textEmailAddress" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_bottom"
+        android:layout_marginLeft="@dimen/margin_left"
+        android:orientation="horizontal" >
+
+        <CheckBox
+            android:id="@+id/protocol_ck"
+            style="@style/custome_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/register_protocol"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_left"
+            android:text="@string/zhuangzhang_protocol"
+            android:textColor="@color/text_color_blue"
+            android:textSize="@dimen/little_size" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/rigster_btn"
+        style="@style/btn_single_style"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_left"
+        android:layout_marginRight="@dimen/margin_right"
+        android:layout_marginBottom="@dimen/margin_bottom"
+        android:background="@drawable/wihte_btn_action"
+        android:text="@string/btn_register"
+        android:textColor="@color/black"
+        android:textSize="@dimen/content_size" />
+
+</LinearLayout>
+</ScrollView>

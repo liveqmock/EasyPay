@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    style="@style/agent_padding_style"
+    android:gravity="center"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/agent_applying_code_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="服务代号："
+        android:textColor="@color/black"
+        android:textSize="@dimen/agent_content_size" />
+
+    <EditText
+        android:id="@+id/agent_applying_code_edit"
+        style="@style/agent_padding_style"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:background="@drawable/atte_corners"
+        android:inputType="number"
+        android:maxLength="6"
+        android:hint="020001"
+        android:textSize="@dimen/agent_content_size" />
+</LinearLayout>

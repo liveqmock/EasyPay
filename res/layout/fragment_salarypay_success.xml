@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F6F7" >
+
+    <LinearLayout
+        android:id="@+id/ll_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F2F6F7"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp" 
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/tv_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="支付信息"
+            android:textColor="#A1A3A2"
+            android:textSize="@dimen/agent_little_size" />
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/default_dashed_line" />
+		
+        <TextView 
+            
+             android:id="@+id/tv_success_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="支付成功"
+            android:textColor="@color/gray"
+            android:textSize="18sp"
+            android:layout_marginTop="50dp"
+             android:lineSpacingExtra="8dp"
+            />
+        
+        <TextView
+            android:id="@+id/tv_success"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minLines="4"
+            android:textSize="16sp"
+            android:layout_marginBottom="50dp"
+            android:lineSpacingExtra="8dp"
+            android:text="\n请通知员工使用通付宝进行签收\n工资在T+1工作日内到账."
+            android:textColor="@color/gray"
+            android:visibility="gone" />
+
+        <TableLayout
+            android:id="@+id/tl_unfinish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="发放人数:"
+                    android:textColor="#A1A3A2"
+                    android:textSize="@dimen/agent_little_size" />
+
+                <TextView
+                    android:id="@+id/tv_person_number"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_weight="1"
+                    android:gravity="right|center_vertical"
+                    android:text=""
+                    android:textColor="#A1A3A2"
+                    android:textSize="@dimen/agent_little_size" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="工资总额:"
+                    android:textColor="#A1A3A2"
+                    android:textSize="@dimen/agent_little_size" />
+
+                <TextView
+                    android:id="@+id/tv_total"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_weight="1"
+                    android:gravity="right|center_vertical"
+                    android:text=""
+                    android:textColor="#A1A3A2"
+                    android:textSize="@dimen/agent_little_size" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:visibility="gone" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="支付总额:"
+                    android:textColor="#A1A3A2"
+                    android:textSize="@dimen/agent_little_size" />
+
+                <TextView
+                    android:id="@+id/tv_total_pay"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_weight="1"
+                    android:gravity="right|center_vertical"
+                    android:text=""
+                    android:textColor="#A1A3A2"
+                    android:textSize="@dimen/agent_little_size" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="已支付:"
+                    android:textColor="#A1A3A2"
+                    android:textSize="@dimen/agent_little_size" />
+
+                <TextView
+                    android:id="@+id/tv_money_paid"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_weight="1"
+                    android:gravity="right|center_vertical"
+                    android:text=""
+                    android:textColor="#A1A3A2"
+                    android:textSize="@dimen/agent_little_size" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="仍需支付:"
+                    android:textColor="#A1A3A2"
+                    android:textSize="@dimen/agent_little_size" />
+
+                <TextView
+                    android:id="@+id/tv_money_left"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_weight="1"
+                    android:gravity="right|center_vertical"
+                    android:text=""
+                    android:textColor="#A1A3A2"
+                    android:textSize="@dimen/agent_little_size" />
+            </TableRow>
+        </TableLayout>
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/default_dashed_line" />
+
+        <LinearLayout
+            android:id="@+id/ll_not_finish"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btn_goon"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:layout_weight="1"
+                 android:layout_marginRight="24dp"
+                  android:layout_gravity="center_horizontal"
+                android:background="@drawable/selector_btn_game_goto"
+                android:text="继续支付"
+                android:textColor="#ffffff"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btn_history"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/selector_btn_game_record"
+                android:text="返回清单"
+                android:textColor="#ffffff"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/iv_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="#949FAF"
+        android:gravity="center_horizontal"
+        android:text="处理中..."
+        android:drawablePadding="40dp"
+        android:drawableTop="@drawable/icon_loading_success"
+         />
+
+</FrameLayout>

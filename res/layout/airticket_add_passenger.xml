@@ -1,0 +1,68 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tfbbar="http://schemas.android.com/apk/res/com.inter.trade"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFFFF"
+    android:orientation="vertical" >
+     <RadioGroup
+        android:id="@+id/rg_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/rb_adult"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:background="@drawable/selector_airticket_navigation"
+            android:text="成人"
+            android:textColor="@color/white"
+            android:textSize="18sp"/>
+        
+        <View 
+            android:layout_width="0.5dp"
+            android:layout_height="45dp"
+            android:background="@color/white"
+            />
+
+        <RadioButton
+            android:id="@+id/rb_child"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:background="@drawable/selector_airticket_navigation"
+            android:text="儿童"
+            android:textColor="@color/white"
+            android:textSize="18sp"/>
+        
+         <View 
+            android:layout_width="0.5dp"
+            android:layout_height="45dp"
+            android:background="@color/white"
+            />
+        
+        <RadioButton
+            android:id="@+id/rb_baby"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="45dp"
+            android:background="@drawable/selector_airticket_navigation"
+            android:button="@null"
+            android:gravity="center"
+            android:text="婴儿"
+            android:textColor="@color/white"
+            android:textSize="18sp"/>
+    </RadioGroup>
+    
+	<FrameLayout
+	    android:id="@+id/fl_content"
+	    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	    />
+
+</LinearLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/air_bg"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/container"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <Button
+                android:id="@+id/see_history"
+                style="@style/btn_single_style"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_top"
+                android:background="@drawable/wihte_btn_action"
+                android:text="@string/finish"
+                android:textSize="@dimen/content_size" />
+<!--  
+            <ListView
+                android:id="@+id/result_listview"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/see_history"
+                android:cacheColorHint="@android:color/transparent"
+                android:divider="@color/gray"
+                android:dividerHeight="1px"
+                android:listSelector="@android:color/transparent" />
+                -->
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

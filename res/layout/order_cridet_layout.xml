@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView 
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+    >
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" 
+    style="@style/item_text_padding">
+	 <TextView
+	     android:layout_marginLeft="@dimen/margin_left"
+	     android:layout_marginTop="@dimen/margin_top"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/order_card_cridet"
+                android:textColor="@color/black"
+                android:textSize="@dimen/title_name_size" />
+	 
+	 <RelativeLayout 
+	     android:layout_width="fill_parent"
+                android:layout_height="100dp"
+	     >
+	     <TextView 
+	         android:id="@+id/cridet_tv"
+	         android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_color_yellow"
+                android:textSize="@dimen/content_size"
+                android:layout_centerInParent="true"
+	         />
+	 </RelativeLayout>
+    <include layout="@layout/line_layout"
+        android:paddingLeft="@dimen/margin_left"
+	     android:paddingRight="@dimen/margin_top"/>
+    
+
+    <Button
+        android:id="@+id/swip_confirm_btn"
+        style="@style/btn_single_style"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top"
+        android:background="@drawable/wihte_btn_action"
+        android:text="@string/order_confirm"
+        android:textColor="@color/black"
+        android:textSize="@dimen/content_size" />
+
+</LinearLayout>
+</ScrollView>

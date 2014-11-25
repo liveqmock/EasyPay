@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/rg_navigation"
+         >
+
+        <Button
+            android:id="@+id/rb_area"
+            android:text="区域" 
+            android:layout_height="48dp"
+            style="@style/hotel_list_navigation"
+            />
+
+        <Button
+            android:id="@+id/rb_price"
+            android:text="价格"
+            android:layout_height="48dp"
+            style="@style/hotel_list_navigation"
+             />
+        <Button
+            android:id="@+id/rb_star"
+            android:text="星级"
+            android:layout_height="48dp"
+            style="@style/hotel_list_navigation"/>
+    </LinearLayout>

@@ -1,0 +1,25 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+    
+    <com.inter.trade.ui.SlidingMenuView
+        android:id="@+id/sliding_menu_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        
+       <LinearLayout 
+        	android:id="@+id/left_sliding_tab"
+        	android:orientation="vertical"
+            android:layout_width="fill_parent"
+        	android:layout_height="fill_parent">
+        	<include layout="@layout/left_menu_new"/>
+    	</LinearLayout>
+        <com.inter.trade.ui.fragment.MyFramlayout 
+        	android:id="@+id/sliding_body"
+            android:layout_width="fill_parent"
+        	android:layout_height="fill_parent">
+    	</com.inter.trade.ui.fragment.MyFramlayout>
+    </com.inter.trade.ui.SlidingMenuView>
+
+</RelativeLayout>

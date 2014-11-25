@@ -1,0 +1,45 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tfbbar="http://schemas.android.com/apk/res/com.inter.trade"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffffff"
+    android:orientation="vertical" >
+
+    <RadioGroup
+        android:id="@+id/rg_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/rb_game_list"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:background="@color/selector_game_navigation"
+            android:button="@null"
+            android:gravity="center"
+            android:text="出发"
+            android:textSize="18sp"
+            android:textColor="@color/selector_navigation_text" />
+
+        <RadioButton
+            android:id="@+id/rb_company_list"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:background="@color/selector_game_navigation"
+            android:button="@null"
+            android:gravity="center"
+            android:text="到达"
+            android:textSize="18sp"
+            android:textColor="@color/selector_navigation_text" />
+    </RadioGroup>
+    
+    <FrameLayout 
+        android:id="@+id/fl_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+        
+</LinearLayout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.inter.trade.view.slideplayview.AbSlidingPlayView
+        android:id="@+id/slidingplay"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/main_blue"
+        android:visibility="gone" />
+    
+    <ImageView
+        android:id="@+id/iv_default"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/image" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:background="#F0E3C6" >
+
+        <Button
+            android:id="@+id/btn_buyswipe"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_btn_main_myfavour"
+            android:drawableTop="@drawable/btn_buyswipe_bg"
+            android:paddingTop="@dimen/main_btn_padding_top"
+            android:text="购买刷卡器"
+            android:textColor="@color/white" >
+        </Button>
+
+        <View
+            android:layout_width="0.002dp"
+            android:layout_height="fill_parent"
+             />
+
+        <Button
+            android:id="@+id/btn_wallet"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_btn_main_myfavour"
+            android:drawableTop="@drawable/btn_wallet_bg"
+            android:paddingTop="@dimen/main_btn_padding_top"
+            android:text="我的银行卡"
+            android:textColor="@color/white" >
+        </Button>
+    </LinearLayout>
+
+    <GridView
+        android:id="@+id/func_grid"
+        style="@style/corner_margin_style"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:cacheColorHint="@color/transparent"
+        android:focusable="false"
+        android:gravity="center"
+        android:listSelector="@color/transparent"
+        android:numColumns="3"
+        android:scrollbars="none"
+        android:stretchMode="columnWidth"
+         />
+
+</LinearLayout>

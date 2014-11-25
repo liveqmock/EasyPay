@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView 
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+    >
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        style="@style/corner_margin_style"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/atte_corners"
+        android:orientation="vertical" >
+
+
+
+        <LinearLayout
+            style="@style/item_text_padding"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:text="@string/recharge_count"
+                android:textColor="@color/black"
+                android:textSize="@dimen/title_name_size" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="10000.0元"
+                android:gravity="left"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/title_name_size" />
+        </LinearLayout>
+
+        <include
+            android:id="@+id/my_line"
+            layout="@layout/line_layout" />
+
+        <LinearLayout
+            style="@style/item_text_padding"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:text="@string/zhuangzhang_reciever_phone"
+                android:textColor="@color/black"
+                android:textSize="@dimen/title_name_size" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="18664676691"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/title_name_size" />
+        </LinearLayout>
+
+        <include
+            android:id="@+id/my_line"
+            layout="@layout/line_layout" />
+
+        <LinearLayout
+            style="@style/item_text_padding"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:text="@string/cridet_code"
+                android:textColor="@color/black"
+                android:textSize="@dimen/title_name_size" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="5187107582113327"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/title_name_size" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/corner_margin_style"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/atte_corners"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            style="@style/item_text_padding"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1.5"
+                android:text="@string/cridet_pwd"
+                android:textSize="@dimen/content_size" />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/text_color_white"
+                android:hint="@string/cridet_pwd_prompt"
+                android:inputType="textPassword" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/cridet_confirm_btn"
+        style="@style/btn_single_style"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_left"
+        android:layout_marginRight="@dimen/margin_right"
+        android:background="@drawable/wihte_btn_action"
+        android:text="@string/recharge_cridet_confirm"
+        android:textColor="@color/black"
+        android:textSize="@dimen/content_size" />
+
+</LinearLayout>
+</ScrollView>

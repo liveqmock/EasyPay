@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+	<item android:state_focused="true" android:drawable="@drawable/default_blue_next_press" />
+	<item android:state_enabled="false" android:drawable="@drawable/bg_gray_salary_get"
+	     />
+	<item android:state_enabled="true" android:drawable="@drawable/default_blue_next_press"
+	     />
+	<item android:state_pressed="true" android:drawable="@drawable/default_blue_next_press" />
+	<item android:drawable="@drawable/default_blue_next_normal" />
+</selector>

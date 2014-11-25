@@ -1,0 +1,48 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tfbbar="http://schemas.android.com/apk/res/com.inter.trade"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e3e1e1"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="6dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/default_regist_edit_bg2"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:src="@drawable/air_magnifier" />
+
+        <EditText
+            android:id="@+id/search_city"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#00000000"
+            android:gravity="center_vertical"
+            android:hint="请输入入住城市名称"
+            android:paddingLeft="2dp"
+            android:singleLine="true"
+            android:textColor="#ffababab"
+            android:textColorHint="#ffababab" />
+    </LinearLayout>
+    
+    <ExpandableListView
+        android:id="@+id/expandablelist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFFFF"
+        android:groupIndicator="@null" >
+    </ExpandableListView>
+
+</LinearLayout>

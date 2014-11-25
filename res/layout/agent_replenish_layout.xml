@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/agent_gray_bg3"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                style="@style/agent_padding_style"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+                <LinearLayout
+                    android:layout_weight="1"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_marginRight="10dp"
+		            android:orientation="horizontal">
+                    <EditText
+                        android:id="@+id/agent_replenish_edit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        style="@style/edit_text_padding"
+                        android:background="@drawable/atte_corners"
+                        android:hint="请输入补货台数"
+                        android:inputType="number"
+                        android:maxLength="8"
+                        android:textSize="@dimen/agent_main_content_size" />
+                </LinearLayout>
+                
+                <LinearLayout
+                    android:layout_weight="1.6"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:gravity="center"
+		            android:orientation="horizontal"
+		            >
+                    <Button
+					    android:id="@+id/agent_replenish_pay_btn" 
+					    android:layout_width="fill_parent"
+					    android:layout_height="wrap_content"
+					    style="@style/edit_text_padding"
+					    android:textColor="@color/text_color_white"
+					    android:text="通付宝支付"
+					    android:textSize="@dimen/agent_main_content_size"
+					    android:background="@drawable/agent_btn_buy_style"
+					    android:layout_alignParentRight="true"
+					    android:gravity="center"
+					    android:layout_centerVertical="true"
+					    />
+		        </LinearLayout>
+            </LinearLayout>
+            
+            <RelativeLayout
+	            android:layout_width="fill_parent"
+	            android:layout_height="fill_parent"
+		        >
+	            <TextView
+	                android:id="@+id/agent_replenish_order_list_tv"
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_alignParentTop="true"
+	                style="@style/agent_padding_top_bottom_style"
+	                android:gravity="center"
+	                android:text="订单列表"
+	                android:background="@color/agent_gray_bg2"
+	                android:textColor="@color/text_color_blue"
+				    android:textSize="@dimen/agent_content_size"
+	                />
+	            <com.inter.trade.ui.MyListView 
+			        android:id="@+id/mm_listview"
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			        android:divider="@color/transparent"
+			        android:listSelector="@android:color/transparent"
+			        android:cacheColorHint="@android:color/transparent"
+	                android:layout_below="@id/agent_replenish_order_list_tv"
+	                />
+            </RelativeLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:layout_weight="3.2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            style="@style/agent_padding_style"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+	        <TextView 
+	            android:layout_weight="1"
+	            android:id="@+id/agent_replenish_total_received_tv"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:textColor="@color/text_color_yellow"
+	            android:textSize="@dimen/agent_little_size"
+	            android:gravity="left"
+	            android:text="已收总金额：1000元"/>    
+            
+            <TextView
+                android:layout_weight="1" 
+	            android:id="@+id/agent_replenish_total_tv"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:textColor="@color/text_color_blue"
+	            android:textSize="@dimen/agent_little_size"
+	            android:gravity="right"
+	            android:text="总金额：1000元"/>
+       	</LinearLayout>
+
+</LinearLayout>

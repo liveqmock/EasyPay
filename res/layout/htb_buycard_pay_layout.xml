@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFF3F6F6" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#FFF3F6F6"
+        android:orientation="vertical"
+        android:padding="10dp" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="账单信息"
+                android:textColor="#a5b5d4"
+                android:textSize="@dimen/content_size" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:background="@drawable/dashed_line" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="产品名称"
+                android:textColor="#a5b5d4"
+                android:textSize="@dimen/content_size" />
+
+            <TextView
+                android:id="@+id/produreName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="通付宝"
+                android:textColor="#a5b5d4"
+                android:textSize="@dimen/content_size" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="数量(张)"
+                android:textColor="#a5b5d4"
+                android:textSize="@dimen/content_size" />
+
+            <TextView
+                android:id="@+id/produreNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="100"
+                android:textColor="#a5b5d4"
+                android:textSize="@dimen/content_size" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="单价(元)"
+                android:textColor="#a5b5d4"
+                android:textSize="@dimen/content_size" />
+
+            <TextView
+                android:id="@+id/produrePrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="￥1250.00"
+                android:textColor="#a5b5d4"
+                android:textSize="@dimen/content_size" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp" >
+
+            <TextView
+                android:id="@+id/total_mark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="支付总额(元)"
+                android:textColor="#a5b5d4"
+                android:textSize="@dimen/content_size" />
+
+            <TextView
+                android:id="@+id/produreTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/total_mark"
+                android:text="￥5000.00"
+                android:textColor="@color/text_color_yellow"
+                android:textSize="40sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@drawable/dashed_line" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_left"
+            android:layout_marginTop="@dimen/margin_top"
+            android:text="@string/return_pay_prompt_again"
+            android:textSize="@dimen/content_size" />
+
+        <include
+            android:layout_marginTop="10dp"
+            layout="@layout/layout_pay_ways" />
+
+        <Button
+            android:id="@+id/submit_btn"
+            style="@style/btn_single_style"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_bottom"
+            android:layout_marginTop="@dimen/margin_top"
+            android:background="@drawable/default_yellow_btn_action"
+            android:text="确认支付"
+            android:textColor="@color/text_color_white"
+            android:textSize="@dimen/content_size" />
+        <include layout="@layout/textview_warning_text"/>
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+	
+    <LinearLayout
+        style="@style/corner_margin_style"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/atte_corners"
+        android:orientation="vertical" >
+
+		
+         <RelativeLayout
+                    style="@style/item_text_padding"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:visibility="gone"
+                        android:id="@+id/image_in"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/in" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@id/image_in"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/bank_name"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:text="收款商户"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/content_size" />
+
+                        <TextView
+                            android:id="@+id/shop_text"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:textColor="@color/gray"
+                            android:textSize="@dimen/content_size" />
+                    </LinearLayout>
+                </RelativeLayout>
+                <include layout="@layout/line_layout"/>
+                  <RelativeLayout
+                      android:id="@+id/select_coupon"
+                    style="@style/item_text_padding"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" 
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/image_in"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/in" 
+                        android:visibility="invisible"/>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@id/image_in"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/bank_name"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:text="@string/coupon_limit"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/content_size" />
+
+                        <TextView
+                            android:id="@+id/money_tv"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:textColor="@color/gray"
+                            android:text="1元"
+                            android:textSize="@dimen/content_size" />
+                    </LinearLayout>
+                </RelativeLayout>
+                <include layout="@layout/line_layout" android:visibility="gone"/>
+                   <LinearLayout
+            style="@style/item_text_padding"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1.5"
+                android:text="收款金额"
+                android:textSize="@dimen/content_size" />
+			<LinearLayout 
+			    android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+			    >
+             <ImageView 
+                 android:id="@+id/reduce"
+                 android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:background="@drawable/jianhao"
+            android:visibility="gone"
+                 />
+            <EditText
+                android:id="@+id/coupon_count"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:background="@color/text_color_white"
+                android:inputType="number"
+                android:hint="请输入收款金额"
+                android:layout_gravity="center_vertical" />
+            <ImageView
+                android:id="@+id/plus"
+                android:background="@drawable/jiahao" 
+                 android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+                 />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    
+ <RadioGroup
+        android:id="@+id/rg_pay"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp" 
+        android:visibility="visible">
+
+        <RadioButton
+            android:id="@+id/rb_default"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:background="@color/selector_game_navigation"
+            android:button="@null"
+            android:gravity="center"
+            android:text="刷卡支付"
+            android:textSize="18sp"
+            android:textColor="@color/selector_navigation_text" />
+
+        <RadioButton
+            android:id="@+id/rb_huitongbao"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:background="@color/selector_game_navigation"
+            android:button="@null"
+            android:gravity="center"
+            android:text="使用汇通宝"
+            android:textSize="18sp"
+            android:textColor="@color/selector_navigation_text" />
+    </RadioGroup>    
+    
+	
+    <Button
+        android:layout_marginLeft="@dimen/margin_left"
+        android:layout_marginRight="@dimen/margin_right"
+        android:id="@+id/cridet_back_btn"
+        style="@style/btn_single_style"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/default_yellow_btn_action"
+        android:textColor="@color/text_color_white"
+        android:text="下一步"
+        android:layout_marginTop="10dp"
+        android:textSize="@dimen/content_size" />
+    
+	<TextView 
+        android:layout_marginTop="@dimen/margin_top"
+        android:layout_marginLeft="@dimen/margin_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/content_size"
+        android:textColor="@color/gray"
+        android:text="@string/coupon_prompt"
+        android:visibility="gone"
+        />
+</LinearLayout>
+</ScrollView>

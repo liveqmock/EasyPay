@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <ScrollView
+        style="@style/corner_margin_style"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/container"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/atte_corners"
+                android:orientation="vertical" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_top"
+                android:orientation="horizontal" 
+                android:visibility="gone">
+
+                <Button
+                    android:id="@+id/see_history"
+                    style="@style/btn_single_style"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_btn_game_goto"
+                    android:text="@string/finish"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/content_size" />
+
+                <Button
+                    android:id="@+id/btn_again"
+                    style="@style/btn_single_style"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_btn_game_record"
+                    android:text="再来一次"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/content_size" />
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/result_listview"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/see_history"
+                android:cacheColorHint="@android:color/transparent"
+                android:divider="@color/gray"
+                android:dividerHeight="1px"
+                android:listSelector="@android:color/transparent" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

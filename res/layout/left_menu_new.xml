@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_left_menu" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/left_main_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/left_item_action"
+            android:paddingBottom="@dimen/menu_padding_top"
+            android:paddingTop="@dimen/menu_padding_top" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/menu_left_magin"
+                android:text="@string/left_main_string"
+                android:textSize="@dimen/title_name_size"
+                android:drawableLeft="@drawable/icon_home"
+                android:drawablePadding="@dimen/menu_text_margin"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@drawable/line_menu" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/more_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/menu_padding_top"
+            android:paddingTop="@dimen/menu_padding_top" 
+            android:background="@drawable/left_item_action">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/menu_left_magin"
+                android:text="@string/account_manage"
+                android:textSize="@dimen/title_name_size"
+                android:textColor="@color/white"
+                android:drawableLeft="@drawable/icon_account"
+                android:drawablePadding="@dimen/menu_text_margin" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@drawable/line_menu" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/left_bind_agent_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" 
+        android:visibility="visible"
+        >
+
+        <RelativeLayout
+            android:id="@+id/left_bind_agent"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/menu_padding_top"
+            android:paddingTop="@dimen/menu_padding_top" 
+            android:background="@drawable/left_item_action">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/menu_left_magin"
+                android:text="@string/left_bind_agent"
+                android:textSize="@dimen/title_name_size"
+                android:drawableLeft="@drawable/icon_agent"
+                android:drawablePadding="@dimen/menu_text_margin"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@drawable/line_menu" />
+    </LinearLayout>
+    
+    
+    
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" 
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:id="@+id/left_feedback_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/menu_padding_top"
+            android:paddingTop="@dimen/menu_padding_top" 
+            android:background="@drawable/left_item_action">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/menu_left_magin"
+                android:text="@string/left_feedback"
+                android:textSize="@dimen/title_name_size"
+                android:drawablePadding="@dimen/menu_text_margin"
+                android:drawableLeft="@drawable/icon_receive"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@drawable/line_menu" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" 
+        android:visibility="visible"
+        android:background="@drawable/left_item_action">
+
+        <RelativeLayout
+            android:id="@+id/left_update_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/menu_padding_top"
+            android:paddingTop="@dimen/menu_padding_top" 
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/menu_left_magin"
+                android:text="@string/left_update"
+                android:textSize="@dimen/title_name_size"
+                android:drawableLeft="@drawable/icon_upgrade"
+                android:drawablePadding="16dp"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@drawable/line_menu" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible" >
+        
+        <RelativeLayout
+            android:id="@+id/left_help_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/left_item_action"
+            android:paddingBottom="@dimen/menu_padding_top"
+            android:paddingTop="@dimen/menu_padding_top" >
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/menu_left_magin"
+                android:text="@string/left_help"
+                android:textSize="@dimen/title_name_size"
+                android:drawableLeft="@drawable/icon_help"
+                android:drawablePadding="@dimen/menu_text_margin"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+        
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@drawable/line_menu" />
+         <RelativeLayout
+            android:id="@+id/rl_download"
+            android:background="@drawable/left_item_action"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/menu_padding_top"
+            android:paddingTop="@dimen/menu_padding_top" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/menu_left_magin"
+                android:text="下载通付宝"
+                android:textSize="@dimen/title_name_size"
+                android:drawableLeft="@drawable/icon_about"
+                android:drawablePadding="@dimen/menu_text_margin"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+
+         <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@drawable/line_menu" />
+
+        <RelativeLayout
+            android:id="@+id/left_about_layout"
+            android:background="@drawable/left_item_action"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/menu_padding_top"
+            android:paddingTop="@dimen/menu_padding_top" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/menu_left_magin"
+                android:text="@string/left_about"
+                android:textSize="@dimen/title_name_size"
+                android:drawableLeft="@drawable/icon_about"
+                android:drawablePadding="@dimen/menu_text_margin"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+
+         <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@drawable/line_menu" />
+    </LinearLayout>
+
+</LinearLayout>

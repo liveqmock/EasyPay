@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_marginTop="@dimen/margin_top"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/success" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/return_pay_prompt"
+                        android:textColor="@color/text_color_blue"
+                        android:textSize="@dimen/success_size" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                style="@style/corner_margin_style"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/atte_corners"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        style="@style/item_text_padding"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:text="@string/zhuanzhang_serial_number"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/title_name_size" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:text="20130828170000"
+                            android:textColor="@color/gray"
+                            android:textSize="@dimen/title_name_size" />
+                    </LinearLayout>
+
+                    <include layout="@layout/line_layout" />
+                    
+                    <LinearLayout
+                        style="@style/item_text_padding"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:text="@string/return_bank_name"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/title_name_size" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:text="工商银行"
+                            android:textColor="@color/gray"
+                            android:textSize="@dimen/title_name_size" />
+                    </LinearLayout>
+
+                    <include layout="@layout/line_layout" />
+                    
+                     <LinearLayout
+                        style="@style/item_text_padding"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:text="@string/return_daibank_no"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/title_name_size" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:text="62220*****2065"
+                            android:textColor="@color/gray"
+                            android:textSize="@dimen/title_name_size" />
+                    </LinearLayout>
+
+                    <include layout="@layout/line_layout" />
+                    <LinearLayout
+                        style="@style/item_text_padding"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:text="@string/zhuanzhang_pay_card"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/title_name_size" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:text="62220*****2065"
+                            android:textColor="@color/gray"
+                            android:textSize="@dimen/title_name_size" />
+                    </LinearLayout>
+
+                    <include layout="@layout/line_layout" />
+                    
+                    <LinearLayout
+                        style="@style/item_text_padding"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:text="@string/zhuanzhang_money"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/title_name_size" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:textColor="@color/gray"
+                            android:text="10000元"
+                            android:textSize="@dimen/title_name_size" />
+                    </LinearLayout>
+
+                    <include layout="@layout/line_layout" />
+                    
+                    <LinearLayout
+                        style="@style/item_text_padding"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:text="@string/zhuanzhang_cost"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/title_name_size" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:textColor="@color/gray"
+                            android:text="2元"
+                            android:textSize="@dimen/title_name_size" />
+                    </LinearLayout>
+
+                    <include layout="@layout/line_layout" />
+                    <LinearLayout
+                        style="@style/item_text_padding"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:text="@string/zhuanzhang_swiping_count"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/title_name_size" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:textColor="@color/gray"
+                            android:text="10002元"
+                            android:textSize="@dimen/title_name_size" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+            
+            <Button 
+                android:id="@+id/submit"
+                style="@style/btn_single_style"
+                android:background="@drawable/wihte_btn_action"
+                android:layout_marginLeft="@dimen/margin_left"
+                android:layout_marginRight="@dimen/margin_right"
+                android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:text="@string/btn_confirm"
+               android:textSize="@dimen/content_size"
+                />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

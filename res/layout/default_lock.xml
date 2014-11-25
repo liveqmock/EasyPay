@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1D78BD" >
+
+    <LinearLayout
+        android:id="@+id/ll_text_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tv_forget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="忘记手势密码"
+            android:textColor="#ECA723"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_other"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="登录其他账户"
+            android:textColor="#ECA723"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <com.inter.trade.ui.fragment.checking.LockPatternView
+        android:id="@+id/lock_pattern"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/ll_text_bottom"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/lock_pattern"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_width="@dimen/main_lock_image_size"
+            android:layout_height="@dimen/main_lock_image_size"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/default_headpic" />
+
+        <TextView
+            android:id="@+id/tv_account"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="账户"
+            android:textColor="#FFFFFFFF"
+            android:textSize="20sp"
+            android:visibility="visible" />
+    </LinearLayout>
+
+</RelativeLayout>

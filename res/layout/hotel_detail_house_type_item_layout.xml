@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mybank_layout_id"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
+    android:gravity="center_vertical"
+    android:orientation="vertical" >
+	
+    <LinearLayout 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="10dp"
+	    android:layout_marginBottom="10dp"
+	    android:gravity="center_vertical"
+	    android:orientation="horizontal" >
+    	<ImageView
+            android:id="@+id/img_hotel"
+            android:layout_width="108dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:gravity="center"
+            android:background="@null"
+           />
+    
+	<LinearLayout
+	    android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" 
+        android:gravity="center_vertical">
+	    
+	    <LinearLayout
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal" 
+	        android:gravity="center_vertical">
+	        <TextView
+	            android:layout_weight="1"
+	            android:id="@+id/room_name"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="10dp"
+	            android:gravity="left"
+	            android:singleLine="true"
+				android:ellipsize="end"
+	            android:text="高级房（限时抢购）"
+	            android:textColor="@color/text_color_gray"
+	            android:textSize="@dimen/agent_little_size" />
+	        <TextView
+	            android:layout_weight="2"
+	            android:id="@+id/room_price"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="10dp"
+	            android:gravity="left"
+	            android:text="￥480"
+	            android:textColor="@color/text_color_blue"
+	            android:textSize="@dimen/agent_little_size" />
+    	</LinearLayout>
+    	
+        <LinearLayout
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal" 
+	        android:layout_marginTop="10dp"
+	        android:gravity="center_vertical">
+	        <LinearLayout
+		        android:layout_weight="1"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="vertical" 
+		        android:gravity="center_vertical">
+		        
+	            <LinearLayout
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			        android:orientation="horizontal" 
+			        android:gravity="center_vertical">
+			        <TextView
+			            android:id="@+id/room_time"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_marginLeft="10dp"
+			            android:gravity="left"
+			            android:text="不含早"
+			            android:textColor="@color/text_color_gray"
+			            android:textSize="@dimen/agent_little_size12" />
+			        
+			        <TextView
+			            android:id="@+id/room_bedSize"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_marginLeft="20dp"
+			            android:gravity="left"
+			            android:singleLine="true"
+						android:ellipsize="end"
+			            android:text="大床或双床"
+			            android:textColor="@color/text_color_gray"
+			            android:textSize="@dimen/agent_little_size12" />
+	        	</LinearLayout>
+	        	<TextView
+			            android:id="@+id/room_reply"
+			            android:layout_width="fill_parent"
+			            android:layout_height="wrap_content"
+			            android:layout_marginLeft="10dp"
+	        	    	android:layout_marginTop="10dp"
+			            android:gravity="left"
+			            android:singleLine="true"
+						android:ellipsize="end"
+			            android:text="3小时回复预订结果"
+			            android:textColor="@color/text_color_gray"
+			            android:textSize="@dimen/agent_little_size12" />
+	        </LinearLayout>
+	        
+	        <LinearLayout
+	            android:layout_weight="2"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" 
+		        android:layout_marginLeft="6dp"
+		        android:gravity="left|center_horizontal">
+				<Button
+		            android:id="@+id/room_book"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_gravity="center_vertical"
+		            android:paddingLeft="8dp"
+		            android:paddingRight="8dp"
+		            android:paddingTop="4dp"
+		            android:paddingBottom="4dp"
+		            android:gravity="left"
+		            android:focusable="false"
+		            android:text="预订"
+		            android:textColor="@color/text_color_white"
+		            android:background="@color/text_color_yellow"
+		           />
+			</LinearLayout>
+    	</LinearLayout>
+    </LinearLayout>
+	
+	</LinearLayout>
+	<View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:background="@color/hotel_gray_line" />
+</LinearLayout>

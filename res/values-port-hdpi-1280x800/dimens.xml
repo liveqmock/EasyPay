@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <dimen name="kill_area_height">180dip</dimen>
+    <dimen name="kill_real_margin_bottom">10dp</dimen>
+    <dimen name="kill_btn_margin_left">20dp</dimen>
+     <dimen name="soft_info_padding">5dp</dimen>
+     <dimen name="input_left">20dp</dimen>
+     <dimen name="checkingscoresize">40sp</dimen>
+    
+    
+    <dimen name="dialog_left_margin">10dp</dimen>
+	<dimen name="dialog_top_margin">30dp</dimen>
+	<dimen name="dialog_right_margin">10dp</dimen>
+	<dimen name="dialog_bottom_margin">10dp</dimen>	
+	
+	<dimen name="dialog_btn_close_right_margin">10dp</dimen>
+	<dimen name="dialog_btn_close_top_margin">10dp</dimen>
+	<dimen name="shop_item_height">500dp</dimen>
+	
+	<dimen name="main_fun_more_grid_height">106dp</dimen>
+	<dimen name="main_fun_navigation_textsize">16sp</dimen>
+	<dimen name="main_fun_grid_textsize">14sp</dimen>
+</resources>

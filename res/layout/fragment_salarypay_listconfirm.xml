@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="16dp" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+         >
+
+        <RelativeLayout
+            android:id="@+id/top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="发放清单"
+                android:textSize="16sp"
+                android:textColor="#80808080" />
+
+            <Button
+                android:id="@+id/btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+               android:layout_centerInParent="true"
+                android:background="@drawable/selector_btn_employer_add"
+                android:text="指定财务"
+                android:textSize="14sp"
+                android:textColor="@color/white" />
+             <Button
+                android:id="@+id/btn_employee_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/selector_btn_employer_add"
+                android:text="登记工资"
+                android:textSize="14sp"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/titlebar"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/top"
+            android:layout_marginTop="8dp"
+            android:background="#c8c8c8" >
+
+            <Button
+                android:id="@+id/before_month"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:background="@color/selector_btn_datepick"
+                android:drawableLeft="@drawable/air_before"
+                android:drawablePadding="4dp"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:paddingLeft="10dp"
+                android:paddingRight="15dp"
+                android:text="上个月"
+                android:textColor="@color/white"
+                 />
+
+            <Button
+                android:id="@+id/after_month"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@color/selector_btn_datepick"
+                android:drawablePadding="4dp"
+                android:drawableRight="@drawable/air_nextday"
+                android:gravity="center"
+                android:paddingLeft="15dp"
+                android:paddingRight="10dp"
+                android:text="下个月"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                 />
+
+            <TextView
+                android:id="@+id/left_line"
+                android:layout_width="0.5dp"
+                android:layout_height="fill_parent"
+                android:layout_toRightOf="@id/before_month"
+                android:background="@color/white" />
+
+            <TextView
+                android:id="@+id/right_line"
+                android:layout_width="0.5dp"
+                android:layout_height="fill_parent"
+                android:layout_toLeftOf="@id/after_month"
+                android:background="@color/white" />
+
+            <TextView
+                android:id="@+id/calendar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="2014-09"
+                android:textColor="@color/white"
+                android:textSize="@dimen/content_size" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/top_line"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titlebar"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/default_dashed_line" />
+
+        <ListView
+            android:id="@+id/listview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/top_line"
+            android:cacheColorHint="#00000000"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+			android:layout_marginBottom="72dp"/>
+
+        <TextView
+            android:id="@+id/tv_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/top_line"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="本月没有待发工资的员工!"
+            android:textColor="@color/gray"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="16dp"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/bottom_line"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/default_dashed_line" />
+        
+        <TextView 
+            android:id="@+id/tv_summary"
+             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text=""
+            />
+
+        <LinearLayout
+            android:id="@+id/ll_bottom_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btn_goback"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_btn_game_goto"
+                android:text="退回财务修订"
+                android:layout_marginRight="12dp"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btn_commit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="@drawable/selector_btn_game_record"
+                android:text="确定支付"
+                android:textColor="@color/white" />
+        </LinearLayout>
+         <Button
+                android:id="@+id/btn_submittoboss"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:visibility="gone"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/selector_btn_game_goto"
+                android:text="确定提交"
+                android:textColor="@color/white" />
+    </LinearLayout>
+
+</FrameLayout>

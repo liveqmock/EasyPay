@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+     android:minWidth="280dip"
+    android:orientation="vertical" 
+    style="@style/corner_margin_style"
+    android:background="@drawable/atte_corners">
+	<TextView 
+	    android:id="@+id/prompt"
+	    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:textColor="@color/black"
+    android:textSize="@dimen/content_size"
+    android:layout_marginLeft="@dimen/margin_left"
+	    android:layout_marginRight="@dimen/margin_right"
+	    android:layout_marginTop="@dimen/margin_top"
+	    />
+	<ProgressBar 
+	    android:layout_marginLeft="@dimen/margin_left"
+	    android:layout_marginRight="@dimen/margin_right"
+	    android:layout_marginTop="@dimen/margin_top"
+	    android:id="@+id/picProgress"
+	    android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+     	style="@android:style/Widget.ProgressBar.Horizontal"
+     	android:layout_marginBottom="@dimen/margin_bottom"
+	    />
+</LinearLayout>

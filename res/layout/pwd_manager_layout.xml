@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+
+
+        <LinearLayout
+            style="@style/corner_margin_style"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/atte_corners"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/login_pwd_layout"
+                 android:background="@drawable/left_item_action"
+                style="@style/item_text_padding"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" 
+               >
+
+                <ImageView
+                    android:id="@+id/image_in"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/in" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@id/image_in"
+                    android:text="@string/pwd_login"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/content_size" />
+            </RelativeLayout>
+
+            <include
+                android:id="@+id/my_line"
+                layout="@layout/line_layout" />
+
+            <RelativeLayout
+                android:id="@+id/rl_gesture_set"
+                 android:background="@drawable/left_item_action"
+                style="@style/item_text_padding"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/image_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/in" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@id/image_one"
+                    android:text="使用手势密码修改"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/content_size" />
+            </RelativeLayout>
+            
+             <include
+                android:id="@+id/my_line"
+                layout="@layout/line_layout" />
+
+            <RelativeLayout
+                android:id="@+id/rl_mibao_set"
+                 android:background="@drawable/left_item_action"
+                style="@style/item_text_padding"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/image_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/in" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@id/image_two"
+                    android:text="使用密保问题修改"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/content_size" />
+            </RelativeLayout>
+            
+            
+             <include
+                android:id="@+id/my_line"
+                layout="@layout/line_layout" />
+
+            <RelativeLayout
+                android:id="@+id/pay_pwd_layout"
+                 android:background="@drawable/left_item_action"
+                style="@style/item_text_padding"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/image_three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/in" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@id/image_three"
+                    android:text="设置手势密码"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/content_size" />
+            </RelativeLayout>
+            
+
+        </LinearLayout>
+</ScrollView>

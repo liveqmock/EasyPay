@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    android:paddingTop="@dimen/list_item_paddingtop"
+    android:paddingBottom="@dimen/list_item_paddingbottom"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+	<LinearLayout
+                style="@style/detial_item_style"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:text="@string/no_daikuan_total"
+                    android:textSize="@dimen/title_name_size"
+                     android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/count"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:textSize="@dimen/title_name_size" 
+                     android:textColor="@color/gray"/>
+            </LinearLayout>
+</LinearLayout>

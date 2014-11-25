@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	
+	<dimen name="menu_left_magin">40dp</dimen>
+	<dimen name="menu_padding_top">15dp</dimen>
+	<dimen name="menu_text_margin">20dp</dimen>
+	
+	<dimen name="title_name_size">17sp</dimen>
+	<dimen name="content_size">17sp</dimen>
+	<dimen name="content_size16">16sp</dimen>
+	<dimen name="content_size14">14sp</dimen>
+	<dimen name="little_size">12sp</dimen>
+	<dimen name="success_size">20sp</dimen>
+	
+	<dimen name="ad_pager_height">200dp</dimen>
+	
+	<dimen name="margin_top">15dp</dimen>
+	<dimen name="margin_bottom">15dp</dimen>
+	<dimen name="margin_left">10dp</dimen>
+	<dimen name="margin_right">10dp</dimen>
+	<dimen name="picture_margin_left">30dp</dimen>
+	
+	<dimen name="mobile_margin_top">5dp</dimen>
+	<dimen name="mobile_margin_bottom">5dp</dimen>
+	<dimen name="mobile_margin_left">10dp</dimen>
+	<dimen name="mobile_margin_right">10dp</dimen>
+	
+	<dimen name="item_padding_left">10dp</dimen>
+	<dimen name="item_padding_right">10dp</dimen>
+	<dimen name="item_padding_top">20dp</dimen>
+	<dimen name="item_padding_bottom">20dp</dimen>
+	
+	<dimen name="item_padding_left_noborder">10dp</dimen>
+	<dimen name="item_padding_right_noborder">10dp</dimen>
+	<dimen name="item_padding_top_noborder">5dp</dimen>
+	<dimen name="item_padding_bottom_noborder">5dp</dimen>
+	
+	<dimen name="btn_padding_top">10dp</dimen>
+	<dimen name="btn_padding_bottom">10dp</dimen>
+	
+	<dimen name="feedback_height">100dp</dimen>
+	
+	<dimen name="grid_item_paddingtop">10dp</dimen>
+	<dimen name="grid_item_paddingbottom">10dp</dimen>
+	
+	<dimen name="list_item_paddingtop">3dp</dimen>
+	<dimen name="list_item_paddingbottom">3dp</dimen>
+	
+	<dimen name="detial_item_padding_left">10dp</dimen>
+	<dimen name="detial_item_padding_right">10dp</dimen>
+	<dimen name="detial_item_padding_top">5dp</dimen>
+	<dimen name="detial_help_margin_top">20dp</dimen>
+	<dimen name="detial_item_padding_bottom">5dp</dimen>
+	<dimen name="sec_title_height">45dp</dimen><!-- 2级标题栏 -->
+	
+	<dimen name="image_thumbnail_size">48dp</dimen>
+	<dimen name="image_big_width">150dp</dimen>
+	<dimen name="image_big_height">200dp</dimen>
+	<dimen name="image_check_width">60dp</dimen>
+	<dimen name="image_check_height">35dp</dimen>
+	
+	<dimen name="month_width">60dp</dimen>
+	<dimen name="coupon_width">20dp</dimen>
+	
+	<dimen name="point_margin_bottom">30dp</dimen>
+	
+	<dimen name="agent_padding_left">10dp</dimen>
+	<dimen name="agent_padding_right">10dp</dimen>
+	<dimen name="agent_padding_top">10dp</dimen>
+	<dimen name="agent_padding_bottom">10dp</dimen>
+	
+	<dimen name="agent_marginTop">10dp</dimen>
+	<dimen name="agent_marginBottom">10dp</dimen>
+	
+	<dimen name="agent_button_textsize">20sp</dimen>
+	<dimen name="agent_main_content_size">15sp</dimen>
+	<dimen name="agent_content_size">17sp</dimen>
+	<dimen name="agent_little_size">15sp</dimen>
+	<dimen name="agent_little_size13">13sp</dimen>
+	<dimen name="agent_little_size12">12sp</dimen>
+	<dimen name="agent_little_size10">10sp</dimen>
+	<dimen name="agent_main_money">45sp</dimen>
+	<dimen name="agent_main_sell">30sp</dimen>
+	<dimen name="agent_main_number_small">20sp</dimen>
+	<dimen name="agent_main_number">25sp</dimen>
+	
+	<dimen name="hotel_navigation_textsize">16sp</dimen>
+	<dimen name="hotel_price_textsize">25sp</dimen>
+	
+	<dimen name="credit_cb_marginTop">12dp</dimen>
+	<dimen name="credit_cb_marginLeft">8dp</dimen>
+	
+	<dimen name="gridview_vertical_padding">20dp</dimen>
+    <dimen name="gridview_horizonal_padding">20dp</dimen>
+    
+    <dimen name="game_margin_top">24dp</dimen>
+    <dimen name="game_tablerow_margin">10dp</dimen>
+    
+    <dimen name="main_lock_image_size">150dp</dimen>
+    <dimen name="main_fun_navigation_textsize">14sp</dimen>
+	
+	<dimen name="main_fun_grid_textsize">12sp</dimen>
+	<dimen name="main_btn_padding_top">10dp</dimen>
+	
+	<dimen name="main_navigation_height">72dp</dimen>
+	<dimen name="main_navigation_body_height">64dp</dimen>
+	<dimen name="main_navigation_head_height">6dp</dimen>
+	<!-- 单个键盘高度 -->
+	<dimen name="key_height">50.0dip</dimen>
+	
+</resources>

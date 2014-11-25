@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFF3F3F3" >
+
+  <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:paddingBottom="15dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp" >
+        
+        <LinearLayout
+            android:id="@+id/user_pwd_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/default_regist_edit_bg2"
+            android:orientation="horizontal"
+            android:paddingLeft="12dp"
+            android:paddingRight="8dp" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="12dp"
+                android:src="@drawable/default_mobile_icon" />
+
+            <EditText
+                android:id="@+id/mobile_number_edit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="#00000000"
+                android:hint="@string/rigester_phone_prompt"
+                android:inputType="number"
+                android:maxLength="11"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/findprompt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_bottom"
+            android:text="@string/forget_pwd"
+            android:textColor="@color/gray"
+            android:visibility="gone"
+            android:textSize="@dimen/content_size" />
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/mobile_submit"
+                style="@style/btn_single_style"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/default_blue_btn_action"
+                android:text="@string/btn_next"
+                android:textColor="@color/text_color_white"
+                android:textSize="@dimen/content_size" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

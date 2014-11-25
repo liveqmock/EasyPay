@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_blue"
+    android:orientation="vertical" >
+
+    <include layout="@layout/layout_topbar_main" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="4dp"
+        android:background="@color/main_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3"
+        android:layout_marginTop="@dimen/main_fun_grid_margin_top"
+        android:orientation="vertical" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/main_fun_more_grid_height"
+            android:orientation="horizontal"
+             >
+
+            <Button
+                android:id="@+id/btn_account"
+                style="@style/mainButton"
+                android:drawableTop="@drawable/icon_account_main"
+                android:text="账户管理" />
+
+
+            <Button
+                android:id="@+id/btn_activate"
+                style="@style/mainButton"
+                android:drawableTop="@drawable/icon_activate_main"
+                android:text="@string/left_bind_agent" />
+
+
+            <Button
+                android:id="@+id/btn_agent"
+                style="@style/mainButton"
+                android:drawableTop="@drawable/icon_agent_main"
+                android:text="代理商" />
+        </LinearLayout>
+        
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/main_fun_more_grid_height"
+             android:orientation="horizontal"
+             >
+
+            <Button
+                android:id="@+id/btn_help"
+                style="@style/mainButton"
+                android:drawableTop="@drawable/icon_help_main"
+                android:text="帮助中心" />
+
+            <Button
+                android:id="@+id/btn_feedback"
+                style="@style/mainButton"
+                android:drawableTop="@drawable/icon_feedback_main"
+                android:text="意见反馈" />
+
+            <Button
+                android:id="@+id/btn_about"
+                style="@style/mainButton"
+                android:drawableTop="@drawable/icon_about_main"
+                android:text="关于我们" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/main_fun_more_grid_height"
+             android:orientation="horizontal"
+             >
+
+            <Button
+                android:id="@+id/btn_update"
+                style="@style/mainButton"
+                android:drawableTop="@drawable/icon_update_main"
+                android:text="检查更新" />
+            
+
+            <Button
+                android:id="@+id/btn_download"
+                style="@style/mainButton"
+                android:drawableTop="@drawable/icon_download_main"
+                android:text="APP下载" />
+            
+
+            <Button
+                android:id="@+id/btn_recommend"
+                style="@style/mainButton"
+                android:drawableTop="@drawable/icon_recommend"
+                android:text="推荐应用"
+                 />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

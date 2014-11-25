@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mybank_layout_id"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="10dp"
+    android:orientation="vertical" >
+	
+    	<TextView
+            android:id="@+id/bank_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="left"
+            android:text="注：只有信用卡能设置为默认支付，默认支付只能用于便民服务消费。"
+            android:textColor="@color/text_color_gray"
+            android:textSize="@dimen/agent_little_size13" />
+    	<ListView 
+	        android:id="@+id/mm_listview"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentTop="true"
+	        android:layout_above="@id/bank_name"
+            />
+</RelativeLayout>

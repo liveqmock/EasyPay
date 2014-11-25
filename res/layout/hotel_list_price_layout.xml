@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent"
+    android:orientation="vertical"
+    android:background="@color/transparent"
+    android:weightSum="2"
+    >
+    
+    <LinearLayout 
+    android:layout_weight="1"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent"
+    android:orientation="vertical"
+    android:background="#90000000"
+    >
+    </LinearLayout>
+    
+    <LinearLayout 
+    android:layout_weight="1"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent"
+    android:orientation="vertical"
+    android:background="@color/text_color_white"
+    >
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:background="@color/agent_gray_bg"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        >
+        <TextView 
+            android:id="@+id/cancel_tv"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+        	android:layout_width="wrap_content"
+        	android:gravity="left"
+        	android:text="取消"
+        	android:textColor="@color/agent_blue"
+            />
+        <TextView 
+            android:id="@+id/ok_tv"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+        	android:layout_width="wrap_content"
+        	android:gravity="right"
+        	android:text="确定"
+        	android:textColor="@color/agent_blue"
+            />
+    </LinearLayout>
+        
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        >
+      
+        <com.inter.trade.ui.views.wheelwidget.WheelView android:id="@+id/price"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"/> 
+    </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

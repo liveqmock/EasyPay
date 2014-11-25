@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rsp rc="0" >
+
+    <a n="psc" >
+
+        <r n="product" >
+
+            <c n="b" >1</c>
+            
+
+            <c n="n" >mm</c>
+
+            <c n="t" >3</c>
+            <c n="l">http://202.104.67.6:8070/kvweb/pmsf?filename=feiliao_20130718.apk</c>
+            <c n="v" >1</c>
+
+            <c n="w" >888888</c>
+
+            <c n="f" >中国移动</c>
+
+            <c n="p" >三潭映月掉一潭引围观 因旧传西湖中有三个深潭题名(组图)童先生在坐西湖游船,大概晚上10点20分左右,他们看到一艘游览船在向他们求救。游览船的屁股...</c>
+
+            <c n="s" >https://lh6.googleusercontent.com/-55osAWw3x0Q/URquUtcFr5I/AAAAAAAAAbs/rWlj1RUKrYI/s1024/A%252520Photographer.jpg</c>
+
+            <c n="m" >https://lh5.googleusercontent.com/-Oh8mMy2ieng/URqullDwehI/AAAAAAAAAbs/TbdeEfsaIZY/s1024/Despair.jpg|https://lh6.googleusercontent.com/-55osAWw3x0Q/URquUtcFr5I/AAAAAAAAAbs/rWlj1RUKrYI/s1024/A%252520Photographer.jpg|https://lh6.googleusercontent.com/-55osAWw3x0Q/URquUtcFr5I/AAAAAAAAAbs/rWlj1RUKrYI/s1024/A%252520Photographer.jpg</c>
+        </r>
+    </a>
+
+</rsp>

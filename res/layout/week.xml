@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.inter.trade.ui.views.calendar.CalendarRowView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+  <com.inter.trade.ui.views.calendar.CalendarCellView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      style="@style/CalendarCell.CalendarDate"
+      />
+  <com.inter.trade.ui.views.calendar.CalendarCellView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      style="@style/CalendarCell.CalendarDate"
+      />
+  <com.inter.trade.ui.views.calendar.CalendarCellView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      style="@style/CalendarCell.CalendarDate"
+      />
+  <com.inter.trade.ui.views.calendar.CalendarCellView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      style="@style/CalendarCell.CalendarDate"
+      />
+  <com.inter.trade.ui.views.calendar.CalendarCellView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      style="@style/CalendarCell.CalendarDate"
+      />
+  <com.inter.trade.ui.views.calendar.CalendarCellView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      style="@style/CalendarCell.CalendarDate"
+      />
+  <com.inter.trade.ui.views.calendar.CalendarCellView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      style="@style/CalendarCell.CalendarDate"
+      />
+</com.inter.trade.ui.views.calendar.CalendarRowView>

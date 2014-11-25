@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    >
+	<LinearLayout 
+	    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    style="@style/detial_item_style"
+    android:layout_alignParentLeft="true"
+    android:orientation="vertical"
+	    >
+	    <TextView 
+	        android:id="@+id/name"
+	        android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+   android:text="优惠券 20130908010120"
+   android:textSize="@dimen/content_size"
+    />
+	    <TextView 
+	        android:layout_marginTop="@dimen/margin_top"
+	        android:id="@+id/count"
+	        android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="8000元"
+	        />
+	    
+	</LinearLayout>
+	
+	    <TextView 
+	        android:layout_centerVertical="true"
+	        android:layout_alignParentRight="true"
+	        android:id="@+id/date"
+	        android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="2013-02-12"
+    android:layout_marginRight="@dimen/margin_right"
+	        />
+</RelativeLayout>

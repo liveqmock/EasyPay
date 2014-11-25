@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/title" />
+
+    <LinearLayout
+        android:id="@+id/func_container"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#FFF3F3F3"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="20dp" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical" >
+                
+                <TextView
+                    style="@style/item_text_padding_noborder"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="您还没有银行卡信息，需要补充登记后才能获得返利："
+                        android:textColor="#ababab"
+                        android:textSize="@dimen/content_size14" />
+
+                <LinearLayout
+                    style="@style/item_text_padding_noborder"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="2.5"
+                        android:text="开户人:"
+                        android:textColor="@color/gray_bg"
+                        android:textSize="@dimen/content_size" />
+
+                    <EditText
+                        android:id="@+id/kaihu_name_edit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/default_regist_edit_bg"
+                        android:hint="请输入姓名"
+                        android:textColorHint="#ababab"
+                        android:singleLine="true"
+                        android:inputType="text"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/item_text_padding_noborder"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="2.5"
+                        android:text="手机号码:"
+                        android:textColor="@color/gray_bg"
+                        android:textSize="@dimen/content_size" />
+
+                    <EditText
+                        android:id="@+id/phone_edit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/default_regist_edit_bg"
+                        android:inputType="number"
+                        android:hint="请输入银行登记手机"
+                        android:textColorHint="#ababab"
+                        android:maxLength="11"
+                        android:singleLine="true"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/item_text_padding_noborder"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="2.5"
+                        android:text="开户银行:"
+                        android:textColor="@color/gray_bg"
+                        android:textSize="@dimen/content_size" />
+
+                    <EditText
+                        android:id="@+id/kaihu_bank_edit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/default_regist_edit_bg"
+                        android:inputType="text"
+                        android:hint="请选择银行"
+                        android:singleLine="true"
+                        android:textColorHint="#ababab"
+                        android:maxLines="3"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp" />
+                </LinearLayout>
+                
+                <LinearLayout
+                    style="@style/item_text_padding_noborder"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="2.5"
+                        android:text="银行卡号:"
+                        android:textColor="@color/gray_bg"
+                        android:textSize="@dimen/content_size" />
+
+                    <EditText
+                        android:id="@+id/bank_card_edit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/default_regist_edit_bg"
+                        android:inputType="text"
+                        android:hint="请输入银行卡号"
+                        android:textColorHint="#ababab"
+                        android:singleLine="true"
+                        android:maxLines="3"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp" />
+                </LinearLayout>
+                
+                <LinearLayout android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    
+                    <Button
+                    android:id="@+id/cridet_back_btn"
+                    style="@style/btn_single_style"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="@dimen/margin_bottom"
+                    android:layout_marginLeft="@dimen/margin_left"
+                    android:layout_marginRight="@dimen/margin_right"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/default_blue_btn_action"
+                    android:text="确定"
+                    android:textColor="@color/text_color_white"
+                    android:textSize="@dimen/content_size" />
+                    
+                    <Button
+                    android:id="@+id/give_up_btn"
+                    style="@style/btn_single_style"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="@dimen/margin_bottom"
+                    android:layout_marginLeft="@dimen/margin_left"
+                    android:layout_marginRight="@dimen/margin_right"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/default_yellow_btn_action"
+                    android:text="放弃返利"
+                    android:textColor="@color/text_color_white"
+                    android:textSize="@dimen/content_size" />
+                    
+                </LinearLayout>
+
+                
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</LinearLayout>

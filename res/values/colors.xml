@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="text_color_white">#ffffff</color>
+    <color name="text_color_blue">#2AA2D5</color>
+	<color name="text_color_red">#ff0000</color>
+	<color name="text_color_yellow">#F9963F</color>
+	<color name="text_color_gray">#6b6b6b</color>
+	<color name="dark_gray">#808080</color>
+	<color name="light_gray">#F4F4F4</color>
+	<color name="gray">#808080</color>
+	<color name="transparent">#00000000</color>
+    <color name="new_text_color_btn">#595959</color>
+    <color name="red">#ff0000</color>
+    <color name="set_press">#bde3ff</color>
+    <color name="black">#000000</color>
+    <color name="bigtext">#333333</color>
+    <color name="smalltext">#676767</color>
+    <color name="diabk">#eff9ff</color>
+    <color name="sliding_item_pressed">#f8ffbd</color>
+    <color name="agree_bg">#DBEEFE</color>
+     <color name="green">#ff559817</color>
+     <color name="line">#e1e1e1</color>
+     <color name="gray_bg">#ababab</color>
+     
+     <color name="agent_blue">#29aee6</color>
+     <color name="agent_orange">#ffaf00</color>
+     <color name="agent_gray_bg">#dbdbdb</color>
+     <color name="agent_gray_bg2">#f5f5f5</color>
+     <color name="agent_gray_bg3">#eaeaea</color>
+     <color name="agent_apply_blue_bg">#0075C1</color>
+     
+     <color name="agent_yellow_dark">#bf715f</color>
+     <color name="agent_gray">#b73516</color>
+     <color name="agent_gray2">#c1c2c3</color>
+     <color name="agent_green">#8dc738</color>
+     <color name="agent_yellow">#f9f615</color>
+     <color name="agent_apply_yellow">#f6ac1b</color>
+     <color name="agent_red">#ff0701</color>
+     <color name="agent_green_light">#95b645</color>
+     <color name="agent_red_light">#ff5401</color>
+     <color name="agent_pink">#b479a7</color>
+     <color name="agent_yellow_light">#2bb3bb</color>
+     <color name="agent_yellow_light_press">#37c3cb</color>
+     <color name="agent_blue_dark">#8c98cc</color>
+     <color name="agent_blue_dark_press">#9ea9db</color>
+     <color name="agent_blue_light">#5ea1bf</color>
+     <color name="agent_blue_light_press">#6db3d2</color>
+     <color name="agent_apply">#b479a7</color>
+     <color name="agent_apply_press">#c78eba</color>
+     <color name="agent_title_bg">#00669c</color>
+     
+     <color name="mybank_layout_bg">#f5f5f5</color>
+     <color name="hotel_textcolor_gray">#ababab</color>
+     <color name="hotel_listview_bg">#7FCDF3</color>
+     <color name="hotel_button_selected_bg">#3AC1E1</color>
+     <color name="hotel_button_normal_bg">#CCCCCC</color>
+     
+     <color name="hotel_gray_bg">#666666</color>
+     <color name="hotel_gray_bg_un">#4D4D4D</color>
+     <color name="hotel_gray_line">#c1c2c3</color>
+     
+     <color name="sms_font_dark">#575757</color>
+     <color name="sms_font_gray">#a2a2a2</color>
+     
+     <color name="game_gray">#E2E2E2</color>
+     <color name="game_blue">#13C1F4</color>
+     <color name="game_orange">#FFAF00</color>
+     <color name="game_text_gray">#A8A8A8</color>
+     
+     <color name="air_bg">#FFF3F6F6</color>
+     <color name="air_city_nonal">#a5eeff</color>
+     <color name="air_city_selecte">#13c1f5</color>
+     <color name="air_query_nonal">#E2E2E2</color>
+     <color name="air_query_selecte">#13c1f5</color>
+     <color name="air_list_selecte">#1a000000</color>
+     <color name="airline_add_passenger_bg">#7ecef3</color>
+     <color name="airline_add_passenger_info_bg">#a1a1a1</color>
+     <color name="white">#ffffff</color>
+     <color name="white4c">#4cffffff</color>
+     <color name="hayline">#00000000</color>
+     <color name="ariticket_rg_backgroud">#90C320</color>
+     <color name="ariticket_rg_fore">#CCE299</color>
+     
+     <color name="main_topbar">#005687</color>
+     <color name="main_line">#ECA723</color>
+     <color name="main_gray_pink">#666666</color>
+     <color name="main_gray">#4D4D4D</color>  
+     <color name="main_blue">#1D78BD</color>
+     
+     <color name="main_line_color">#1b9acc</color>
+     
+     <color name="salarypay_bg_gray">#F2F6F7</color>
+     <color name="salarypay_bg_blue">#00A1E9</color>
+     
+     <color name="userlevel_blue_pink">#48C4F2</color>
+     <color name="userlevel_organge_pink">#FBC75B</color>
+     <color name="userlevel_green_pink">#B6D96C</color>
+     
+     <color name="userlevel_bule">#2A89D8</color>
+     <color name="userlevel_orange">#FEB001</color>
+     <color name="userlevel_green">#8FC21F</color>
+     
+     <color name="userlevel_ll_gray_one">#EBEBEB</color>
+     <color name="userlevel_ll_orange_two">#F7F2E4</color>
+     
+     <color name="salarypay_text_gray">#828284</color>
+     <color name="salarypay_text_gray_pink">#BFC3C4</color>
+     
+     <color name="creditcard_text_clear">#90000000</color>
+     <color name="creditcard_text_unclear">#AABABA</color>
+     <color name="creditcard_text_unclear_more">#A7B5B6</color>
+     
+</resources>

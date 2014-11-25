@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, InternationalTradeActivity!</string>
+    <string name="app_name">通付宝</string>
+    <string name="left_user_info">用户信息设置</string>
+    <string name="left_bind_agent">服务信息</string>
+    <string name="set_pwdsafety_info">设置密保问题</string>
+    <string name="left_mima">密码管理</string>
+    <string name="left_open_shuakaqi">开通刷卡器</string>
+    <string name="left_feedback">意见反馈</string>
+    <string name="left_update">检查更新</string>
+    <string name="left_about">关于我们</string>
+    <string name="left_bank">收款银行卡</string>
+    <string name="left_mybank">我的银行卡</string>
+    <string name="left_help">帮助中心</string>
+    <string name="left_main_string">主界面</string>
+    <string name="wallet_total">钱包总额</string>
+    <string name="daikuan_total">贷款金额</string>
+    <string name="no_daikuan_total">非贷款金额</string>
+    
+    <string name="btn_zhuanzhang">转账</string>
+    <string name="btn_chongzhi">充值</string>
+    <string name="btn_next">下一步</string>
+    <string name="finish">完成</string>
+    <string name="btn_login">登录</string>
+    <string name="btn_login_gesture">尝试手势密码登录</string>
+    <string name="btn_register">注册</string>
+    <string name="btn_re_sms">重新获取验证码</string>
+    <string name="btn_submit">提交</string>
+    <string name="btn_confirm">确定</string>
+    <string name="btn_check">核对完成</string>
+    <string name="btn_pay">支付</string>
+    <string name="btn_confirm_submit">确认提交</string>
+    
+    <string name="loading">请稍候...</string>
+    <string name="zhuanzhang_chose_bank">选择收款银行*</string>
+     <string name="support_bank">点击选择</string>
+      <string name="fee_compute">点击计算</string>
+    <string name="zhuanzhang_reciever_card">收款人卡号</string>
+    <string name="zhuanzhang_input_card">输入卡号</string>
+    <string name="zhuanzhang_card_again">再次输入卡号</string>
+    <string name="zhuanzhang_card_confirm">再次确认卡号</string>
+    <string name="confirm_again">再次确认</string>
+    <string name="zhuanzhang_reciever_name">收款人姓名</string>
+    <string name="zhuanzhang_reciever_realname">真实姓名</string>
+    <string name="zhuanzhang_money">转账金额</string>
+    <string name="zhuanzhang_cost">手续费</string>
+     <string name="zhuanzhang_cost_money">2元</string>
+    <string name="zhuangzhang_prompt">*单笔最高转账金额2万元,每日累计转账额度5万元</string>
+    <string name="zhuangzhang_date">到账日期</string>
+    <string name="return_pay_prompt_again">支付信息</string>
+    <string name="zhuangzhang_way">到账方式</string>
+    <string name="zhuangzhang_date_real">实时(两个小时内到达)</string>
+    <string name="zhuangzhang_date_next">下个工作日</string>
+    <string name="zhuangzhang_remark">备注</string>
+    <string name="zhuangzhang_remark_please">输入备注信息</string>
+    <string name="zhuangzhang_inform_reciever">免费通知收款人</string>
+    <string name="zhuangzhang_reciever_phone">手机</string>
+    <string name="zhuangzhang_title">普通转账</string>
+    <string name="zhuangzhang_reciever_phone_input">输入收款人手机号码</string>
+    <string name="zhuangzhang_protocol">已阅读并同意《通付宝转账汇款服务协议》</string>
+    
+    <string name="zhuanzhang_serial_number">交易流水号</string>
+	<string name="zhuanzhang_success">您已成功转账！</string>
+	<string name="zhuanzhang_debit_card">转账借记卡</string>
+	<string name="zhuanzhang_pay_card">付款借记卡</string>
+	<string name="zhuanzhang_swiping_count">刷卡金额</string>
+	
+	<string name="mybk_bank_name">开户银行</string>
+	<string name="mybk_card_id">银行卡号</string>
+	<string name="mybk_person_name">开户人</string>
+	<string name="mybk_phone">手机号码</string>
+	<string name="mybk_credit_cvv">CVV验证码</string>
+	<string name="mybk_credit_phone">预留手机号</string>
+	<string name="mybk_credit_name">持卡人姓名</string>
+	<string name="mybk_credit_person_id">身份证号码</string>
+	<string name="mybk_save">保存</string>
+	<string name="mybk_delete">解除绑定</string>
+	
+	<string name="login_name">帐号</string>
+	<string name="login_pwd">密码</string>
+	<string name="login_name_prompt">请输入手机号码</string>
+	<string name="login_pwd_prompt">请输入登录密码</string>
+	<string name="login_remenber_pwd">记住帐号</string>
+	<string name="login_find_pwd">找回密码</string>
+	
+	<string name="rigester_phone">手机号码</string>
+	<string name="rigester_phone_prompt">请输入手机号码</string>
+	<string name="forget_pwd">只支持注册或者绑定过的手机号</string>
+	<string name="active_swip_please">请输入刷卡器设备号</string>
+	<string name="rigester_number_prompt">请输入验证码</string>
+	<string name="rigester_sms_number">获取手机验证码</string>
+	<string name="active_swip">key号为刷卡器的唯一号</string>
+	<string name="active_swip_prompt">设备号:</string>
+	<string name="active_swip_btn">立即开通</string>
+	<string name="rigester_userinfo_title">填写用户资料</string>
+	<string name="rigester_pwd_compose">密码由6~20位英文字母、数字组成</string>
+	<string name="set_pwd_compose">设置登录密码</string>
+	<string name="rigester_login_pwd">登录密码</string>
+	<string name="rigester_login_pwd_again_no">确认密码</string>
+	<string name="rigester_login_pwd_xing">登录密码*</string>
+	<string name="rigester_login_pwd_again">确认密码*</string>
+	<string name="rigester_pwd_see">密码可见</string>
+	<string name="rigester_real_info">为了保障交易安全，请您填写真实资料</string>
+	<string name="rigester_real_name">真实姓名</string>
+	<string name="rigester_real_name_xing">*真实姓名</string>
+	<string name="rigester_identity_card">*身份证号</string>
+	<string name="rigester_identity_card_xing">身份证号</string>
+	<string name="rigester_email">*电子邮箱</string>
+	<string name="rigester_email_address">电子邮箱地址</string>
+	
+	<string name="rigester_modify_pwd_title">修改登录密码</string>
+	<string name="rigester_current_pwd_prompt">输入原密码</string>
+	<string name="rigester_current_pwd">当前密码</string>
+	<string name="rigester_new_pwd">新密码</string>
+	<string name="rigester_new_pwd_prompt">输入新密码</string>
+	<string name="rigester_new_pwd_prompt_again">确认新密码</string>
+	<string name="rigester_gesture_modify_pwd">手势修改登录密码</string>
+	<string name="rigester_mibao_modify_pwd">密保修改登录密码</string>
+	
+	<string name="feedback_prompt">尊敬的用户:感谢您提供任何疑问、意见、建议、需求,我们会在第一时间解决相关问题,感谢您的支持!</string>
+	<string name="feedback_hint">请输入您的反馈意见(10-200字)</string>
+	<string name="feedback_suggest">建议留下您的姓名和联系方式</string>
+	<string name="feedback_submit">提交反馈</string>
+	
+	<string name="userinfo_title">用户信息设置</string>
+	<string name="agent_userinfo_title">代理商用户信息设置</string>
+	<string name="userinfo_identity">身份证照片</string>
+	<string name="userinfo_name">*姓名</string>
+	
+	
+	<string name="about_title">关于我们</string>
+	<string name="about_protocol">通付宝服务协议</string>
+	<string name="about_wallet_protocol">通付宝钱包服务协议</string>
+	<string name="about_android">关于通付宝公司</string>
+	<string name="about_tfb_weixin">关注通付宝官方微信</string>
+	<string name="about_phone">服务电话:400-6868-956</string>
+	<string name="about_phone_prompt">联系电话</string>
+	<string name="about_default_version">版本号：V 1.0.0</string>
+	
+	<string name="pwd_login">修改登录密码</string>
+	<string name="pwd_pay">修改支付密码</string>
+	<string name="gesture_pay">修改手势密码</string>
+	
+	<string name="open_bank">开户银行</string>
+	<string name="check_title">核对信息</string>
+	<string name="check_prompt">请核对一下信息</string>
+	
+	<string name="cridet_reciever_card">还款银行卡号</string>
+	<string name="cridet_title">还贷款</string>
+	<string name="return_bank">还款银行</string>
+	<string name="return_bank_no">还款卡号</string>
+	
+	<string name="cridet_card_title">信用卡还款</string>
+	<string name="cridet_card_prompt">还信用卡及金额</string>
+	<string name="cridet_insert">请插入刷卡器</string>
+	<string name="cridet_insert_prompt">可手动输入卡号</string>
+	<string name="cridet_swip_prompt">请刷卡或输入卡号</string>
+	<string name="cridet_swip_prompt2">请刷卡</string>
+	<string name="cridet_back_count_prompt">请输入还款金额</string>
+	<string name="cridet_back_count">还款金额</string>
+	
+	<string name="cridet_open_name">请输入开户名</string>
+	<string name="cridet_phone">银行预留手机号码</string>
+	<string name="cridet_sms_code">短信验证码</string>
+	<string name="cridet_sms_code_prompt">请输入验证码</string>
+	<string name="cridet_sms_code_btn">获取</string>
+	<string name="cridet_btn_confirm">确认提交</string>
+	<string name="send_sms">发送短信</string>
+	<string name="find_sms_format">获取查询短信</string>
+	<string name="return_confirm">确认还贷</string>
+	<string name="recharge_btn_confirm">确认充值</string>
+	
+	<string name="input_pwd">输入密码</string>
+	<string name="input_pwd_prompt">输入银行卡密码</string>
+	
+	<string name="cridet_back_card">还款信用卡</string>
+	<string name="cridet_swip_count">刷卡金额</string>
+	<string name="cridet_swip_title">刷卡</string>
+	<string name="cridet_swip_confirm_title">确认还款</string>
+	<string name="cridet_swip_finish_title">还款</string>
+	<string name="cridet_pay_card">付款卡号</string>
+	<string name="cridet_pay_total">还款总计</string>
+	<string name="cridet_pay_detial">还款历史</string>
+	
+	<string name="cridet_pay_prompt">您已提交还款</string>
+	<string name="return_pay_prompt">您已成功还贷</string>
+	<string name="history_pay_prompt">历史还款记录</string>
+	
+	<string name="recharge_cridet">信用卡充值</string>
+	<string name="recharge_deposit_card">储蓄卡充值</string>
+	<string name="recharge_count">充值金额</string>
+	<string name="yuan">元</string>
+	<string name="recharge_count_prompt">输入充值金额</string>
+	<string name="recharge_prompt">免费短信通知账户充值号所有人</string>
+	<string name="recharge_title">充值</string>
+	<string name="recharge_sms_prompt">短信提醒</string>
+	
+	<string name="recharge_cridet_info">信用卡信息</string>
+	<string name="recharge_cridet_date">有效日期</string>
+	<string name="recharge_cridet_cvn2">CVN2</string>
+	<string name="recharge_cridet_cvn2_prompt">签名拦后三位数字</string>
+	
+	<string name="recharge_cridet_year">年</string>
+	<string name="recharge_cridet_month">月</string>
+	<string name="cridet_code">信用卡号</string>
+	<string name="cridet_pwd">信用卡密码</string>
+	<string name="cridet_pwd_prompt">请输入信用卡密码</string>
+	
+	<string name="recharge_cridet_confirm">确认充值</string>
+	<string name="recharge_carde_name">充值银行卡</string>
+	<string name="card_code">银行卡号</string>
+	<string name="card_code_input">请输入银行卡号</string>
+	<string name="card_code_encrypt">银行卡信息经过加密处理，仅用于通付宝业务</string>
+	
+	<string name="comit_success">您已提交成功！</string>
+	<string name="open_name">开户人姓名</string>
+	<string name="openname">开户人:</string>
+	<string name="openname_input">请输入开户人姓名</string>
+	<string name="open_name_prompt">开户人身份证号</string>
+	
+	<string name="buy_coupon">购买优惠券</string>
+	<string name="coupon_back">兑换优惠券</string>
+	
+	<string name="buy_record">购买记录</string>
+	<string name="shui_record">兑换记录</string>
+	
+	<string name="coupon_mianzhi">优惠券面值</string>
+	<string name="coupon_amount">输入额度</string>
+	<string name="coupon_prompt">温馨提示：\n现金抵用券只可购买商家产品。\n在明盛商城下单后，可勾选现金抵用券来进行付款。</string>
+	<string name="coupon_btn_texst">立刻购买</string>
+	<string name="coupon_total">优惠券额度</string>
+	
+	<string name="cridet_card_pwd">信用卡密码</string>
+	<string name="cridet_card_pwd_prompt">请输入信用卡密码</string>
+	
+	<string name="balance_prompt">请将刷卡器插入手机的耳机孔</string>
+	<string name="card_prompt">*支持所有银联借记卡</string>
+	<string name="card_btn_status">我已插入</string>
+	
+	<string name="query_success">查询成功</string>
+	
+	<string name="query_code">查询卡号</string>
+	
+	<string name="card_left">卡内余额</string>
+	
+	<string name="order_title">订单付款</string>
+	<string name="order_number">订单号</string>
+	<string name="coupon_count">优惠券金额</string>
+	<string name="pay_cridet">付款信用卡</string>
+	<string name="pay_count">付款金额</string>
+	<string name="swip_count">刷卡金额</string>
+	<string name="query_history">查看历史纪录</string>
+	
+	<string name="last_message">已加载到最后一条</string>
+	<string name="exchange_submit">提交兑换申请</string>
+	<string name="exchange_submit_prompt">请输入打款的银行卡信息</string>
+	<string name="exchange_confirm">确认兑换</string>
+	
+	<string name="exchange_confirm_card">打款银行卡号</string>
+	<string name="exchange_confirm_amount">兑换金额</string>
+	<string name="exchange_confirm_cost">兑换手续费</string>
+	
+	<string name="net_error">服务器繁忙,请稍后再试</string>
+	<string name="req_error">服务器繁忙,请稍后再试</string>
+	<string name="net_or_system_error">网络异常或系统维护中</string>
+	
+	<string name="belong_shanghu">所属商户</string>
+	<string name="coupon_limit">收款额度</string>
+	<string name="coupon_limit_prompt">选择抵用券额度</string>
+	<string name="buy_count">购买数量</string>
+	
+	<string name="has_checked_swip">检测到刷卡器</string>
+	<string name="swip_out">刷卡器已拔出</string>
+	<string name="more">更多</string>
+	
+	<string name="account_manage">账户管理</string>
+	
+	<string name="agent_user_company_name">公司名称</string>
+	<string name="agent_user_company_name_hint">请输入公司名称</string>
+	<string name="agent_user_gsd">归属地</string>
+	<string name="agent_user_gsd_hint">请输入归属地</string>
+	<string name="agent_user_address">地址</string>
+	<string name="agent_user_address_hint">请输入地址</string>
+	<string name="agent_user_telphone">联系电话</string>
+	<string name="agent_user_telphone_hint">请输入联系电话</string>
+	<string name="agent_user_fax">传真</string>
+	<string name="agent_user_fax_hint">请输入传真</string>
+	<string name="agent_user_contract">合同起止时间</string>
+	<string name="agent_user_risk">风险保证金余额</string>
+	
+	<string name="title">Mobile Reader UI Demo</string>
+    <string name="MobileReaderAppTitle">Mobile Reader UI Demo Version 1.2.4</string>
+    <string name="MainTitleString">Mobile Reader UI Demo</string>
+    <string name="CheckBoxText">Play Sound</string>
+    <string name="strModel">Model</string>
+    
+    <string name="return_bank_name">还贷银行</string>
+    <string name="return_daibank_no">还贷银行卡号</string>
+    <string name="pay_bank_no">付款银行帐号</string>
+    
+    <string name="input_login_pwd">输入登录密码</string>
+     <string name="input_login_pwd_again">再次确认密码</string>
+     
+     <string name="order_confirm">确认付款</string>
+   <string name="order_pay_title">订单号付款</string>
+   <string name="order_pay_history">订单历史</string>
+   <string name="order_pay_no">订单号</string>
+   <string name="btn_query">查询</string>
+   <string name="order_status">订单状态:</string>
+   <string name="order_no">订单编号:</string>
+   <string name="order_no_prompt">请输入订单号</string>
+   <string name="order_date">下单时间:</string>
+   <string name="order_money">订单金额:</string>
+   <string name="order_type">支付方式:</string>
+   <string name="order_man">收货人:</string>
+   <string name="order_company">公司:</string>
+   <string name="order_tel">电话号码:</string>
+   <string name="order_address">收货地址:</string>
+   <string name="order_storage">配送仓库:</string>
+   <string name="order_method">配货方式:</string>
+   <string name="order_bak">订单备注:</string>
+   <string name="order_contain_shui">含税价:</string>
+   <string name="order_good_money">商品金额:</string>
+   <string name="order_cost">运费:</string>
+    <string name="virtual_wallet">虚拟账户</string>
+     <string name="swip_pay">刷卡支付</string>
+   <string name="order_all_money">订单总金额:</string>
+    <string name="order_shangpin_info">订单商品信息:</string>
+    <string name="check_swip">请检查是否插入刷卡器</string>
+    <string name="shoud_pay">应付款:</string>
+    <string name="shoud_pay_monye">支付金额:</string>
+   <string name="swip_pay_monye">刷卡金额:</string>
+    <string name="swip_pay_no">付款卡号:</string>
+     <string name="order_card_cridet">银行信用评级结果</string>
+     <string name="order_card_cridet_level">信誉良好</string>
+      <string name="order_success_prompt">订单已经支付成功，等待客服处理!!</string>
+      
+       <string name="order_one_month_ago">一个月前订单</string>
+      <string name="order_near_month">近一个月订单</string>
+    <string name="express_title">快递查询</string>
+    <string name="express_btn">查看更多</string>
+    
+    <string name="bank_record_card_no">卡号</string>
+    <string name="bank_record_name">银行名</string>
+    <string name="bank_record_man_name">姓名</string>
+    <string name="histor_bank_record">选择历史账户</string>
+     <string name="suptfmg_title">超级转账</string>
+     
+     <string name="query_tv">查询条件</string>
+     <string name="query_prompt">请输入查询条件</string>
+     
+     <string name="telephone_edit_prompt">请输入手机号码</string>
+     <string name="mobile_number">充值号码:</string>
+     <string name="mobile_rechamobileprov">号码归属:</string>
+     <string name="mobile_rechamoney">充值金额:</string>
+     <string name="mobile_rechapaymoney">实际支付金额:</string>
+     <string name="mobile_markinfo">温馨提示：\n逢月底月初，因交易流量大，偶尔会出现延时请耐心等待。</string>
+     
+     <string name="qq_edit_prompt">请输入QQ号码</string>
+     <string name="qmoney_edit_prompt">请输入Q币数额</string>
+     <string name="qq_number">充值QQ</string>
+     <string name="qq_money">充值数额</string>
+     <string name="qq_money_limit">（单笔充值最大为5000）</string>
+     <string name="discount_qMoney">优惠价：</string>
+     
+     <string name="action_settings">Settings</string>
+    <string name="cancel">取消</string>
+    <string name="try_again">重试</string>
+    <string name="goon">继续</string>
+    <string name="confirm">确认</string>
+    
+     <string name="lockpattern_recording_incorrect_too_short" >"至少连接4个点，请重试"</string>
+      <string name="lockpattern_error" >"手势密码不对"</string>
+
+    <!-- Accessibility description sent when user starts drawing a lock pattern. [CHAR LIMIT=NONE] -->
+    <string name="lockscreen_access_pattern_start">Pattern started</string>
+    <!-- Accessibility description sent when the pattern times out and is cleared. [CHAR LIMIT=NONE] -->
+    <string name="lockscreen_access_pattern_cleared">Pattern cleared</string>
+    <!-- Accessibility description sent when user adds a cell to the pattern. [CHAR LIMIT=NONE] -->
+    <string name="lockscreen_access_pattern_cell_added">Cell added</string>
+    <!-- Accessibility description sent when user completes drawing a pattern. [CHAR LIMIT=NONE] -->
+    <string name="lockscreen_access_pattern_detected">Pattern completed</string>
+    
+    <string name="pay_pwd">支付密码</string>
+    <string name="check_pwd">核对密码</string>
+    <string name="pay_pwd_prompt">账户密码</string>
+    <string name="check_pwd_prompt">确认密码</string>
+    <string name="new_mobile_text">换了新手机</string>
+    <string name="weixin_login_text">微信登录</string>
+    <string name="before_pay_pwd">原支付密码</string>
+    <string name="before_pay_pwd_prompt">请输入原始支付密码</string>
+    <string name="input_new_pwd_prompt">输入新密码</string>
+    <string name="confirm_new_pwd_prompt">确认新密码</string>
+    
+    <string name="selecte_pwdsafety">选择密保问题</string>
+    <string name="reply_pwdsafety1">回答密保问题1</string>
+    <string name="reply_pwdsafety2">回答密保问题2</string>
+    <string name="reply_pwdsafety3">回答密保问题3</string>
+    
+    <string name="register_protocol">同意通付宝注册协议</string>
+    <string name="buy_swipcard_describe">拥有一个刷卡器作为安全认证，您可以进行更大额度的交易，并且获得更低的交易费率折扣。</string>
+    <string name="buy_swipcard_text">立即购买</string>
+    
+    <!-- 机票 -->
+    <string name="airticket_dancheng">单程</string>
+    <string name="airticket_wangfan">往返</string>
+    <string name="airticket_start">出发</string>
+    <string name="airticket_end">到达</string>
+    <string name="airticket_start_date">请选择出发日期</string>
+    <string name="airticket_fan_date">请选择返程日期</string>
+    
+    
+    <string name="game_recharge_detail_text1">类别:</string>
+    <string name="game_recharge_detail_text2">优惠价:</string>
+    <string name="game_recharge_detail_text3">数量:</string>
+    <string name="game_recharge_detail_text4">请输入游戏账号</string>
+    <string name="game_recharge_detail_text5">立即充值</string>
+    
+    <string name="game_recharge_bill_text1">账单信息</string>
+    <string name="game_recharge_bill_text2">充值种类</string>
+    <string name="game_recharge_bill_text3">游戏分区</string>
+    <string name="game_recharge_bill_text4">游戏账号</string>
+    <string name="game_recharge_bill_text5">优惠金额(元)</string>
+    <string name="game_recharge_bill_text6">购买数量</string>
+    <string name="game_recharge_bill_text7">支付金额(元)</string>
+    <string name="game_recharge_bill_text8">支付账号信息</string>
+    <string name="game_recharge_bill_text9">请刷入或输入卡号</string>
+    <string name="game_recharge_bill_text10">前往银联支付</string>
+    
+    
+    <string name="game_recharge_success_text1">支付金额(元)</string>
+    <string name="game_recharge_success_text2">支付类型</string>
+    <string name="game_recharge_success_text3">充值种类</string>
+    <string name="game_recharge_success_text4">付款账号</string>
+    <string name="game_recharge_success_text5">充值成功!</string>
+    <string name="game_recharge_success_text6">充值记录</string>
+    <string name="game_recharge_success_text7">继续充值</string>
+    
+    
+    <string name="game_recharge_record_text1">·游戏分区</string>
+    <string name="game_recharge_record_text2">·游戏账号</string>
+    <string name="game_recharge_record_text3">·购买数量</string>
+    <string name="game_recharge_record_text4">·优惠单价</string>
+    <string name="game_recharge_record_text5">·付款账户</string>
+    
+    <string name="warn_repate_commit">交易请求已发出,请不要重复提交!</string>
+    
+    <string name="coupon_money_tip">需支付金额%1$s元</string>
+    <string name="salarypay_history_list">总共%1$s名员工,发放总额%2$s元</string>
+    <string name="salaryget_history_list">应发工资%1$s元</string>
+    <string name="salarypay_summary">本月发放%1$s人次,共%2$s元</string>
+    <string name="_common_bank_text">请选择银行</string>
+    <string name="_common_name_text">请输入姓名</string>
+    <string name="_common_money_text">请输入金额</string>
+    
+</resources>

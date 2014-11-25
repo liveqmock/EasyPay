@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <RelativeLayout
+                    style="@style/item_text_padding"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/arrive_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/zhuangzhang_date_next"
+                        android:textSize="@dimen/content_size" 
+                        android:layout_centerVertical="true"/>
+
+                     <RadioButton
+                         android:id="@+id/arrive_radio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                         android:button="@drawable/radio_style"
+                        ></RadioButton>
+                </RelativeLayout>
+    <LinearLayout 
+        android:id="@+id/remark_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" 
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        >
+        <TextView
+            android:paddingLeft="@dimen/item_padding_left"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/zhuangzhang_remark"
+                        android:textSize="@dimen/content_size" 
+                        android:visibility="gone"
+                        />
+        <TextView
+             android:paddingLeft="@dimen/item_padding_left"
+                        android:id="@+id/arrive_remark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_color_blue"
+                android:textSize="@dimen/little_size" 
+                       />
+    </LinearLayout>
+	<include layout="@layout/line_layout"/>
+</LinearLayout>

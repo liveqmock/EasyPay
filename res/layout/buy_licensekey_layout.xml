@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFF3F3F3"
+	android:padding="10dp"
+    >
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+            <ImageView 
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/tfb_picture"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/swipcard_info_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="2.2"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginRight="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/key_frame" 
+                android:orientation="vertical">
+                
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" 
+                        android:layout_marginTop="6dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="【通付宝授权码】" 
+                            android:textSize="@dimen/content_size"
+                            android:textColor="@color/text_color_gray"/>
+                    </LinearLayout>
+                    
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" 
+                        android:layout_marginTop="6dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="优惠价" 
+                            android:background="#00b7ee"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:textSize="@dimen/little_size"
+                            android:textColor="@color/text_color_white"/>
+                        
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="￥" 
+                            android:textSize="22sp"
+                            android:textColor="#00b7ee"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="298.00" 
+                            android:textSize="22sp"
+                            android:textColor="#00b7ee"/>
+                    </LinearLayout>
+                    
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="6dp"
+                        android:layout_gravity="center"
+                        android:gravity="center_horizontal"
+                        android:layout_weight="1" >
+
+                        <TextView
+                            android:id="@+id/product_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="原价: ￥478.00" 
+                            android:textColor="#635c5c"/>
+                    </LinearLayout>
+                    
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="4dp"
+                android:layout_weight="1" 
+                android:background="@drawable/key_frame" 
+                android:orientation="vertical">
+                
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" 
+                        android:layout_marginTop="6dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="【已拥有刷卡器】" 
+                            android:textSize="@dimen/content_size"
+                            android:textColor="@color/text_color_gray"/>
+                    </LinearLayout>
+                    
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" 
+                        android:layout_marginTop="6dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/tv_bind"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="立即绑定" 
+                            android:textSize="20sp"
+                            android:textColor="#00b7ee"/>
+                    </LinearLayout>
+                    
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="6dp"
+                        android:layout_gravity="center"
+                        android:gravity="center_horizontal"
+                        android:layout_weight="1" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="点击即绑定已有刷卡器" 
+                            android:textColor="#635c5c"/>
+                    </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:layout_weight="1" >
+	        <Button
+		        android:id="@+id/btn_buy_licensekey"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:background="@drawable/default_yellow_btn_action"
+		        android:text="@string/buy_swipcard_text"
+		        android:textColor="@color/text_color_white"
+		        android:textSize="@dimen/content_size" />
+    	</LinearLayout>
+    	
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:layout_weight="1" >
+	        <ImageView
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:background="@drawable/key_dashed_line"/>
+    	</LinearLayout>
+    	
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:layout_weight="1" >
+
+            <LinearLayout
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal"
+	            android:layout_gravity="center"
+	            android:gravity="center_horizontal"
+	            >
+                    
+	            <ImageView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:background="@drawable/left_pic_key"
+	                />
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_marginLeft="10dp"
+	                android:layout_marginRight="10dp"
+	                android:textSize="15sp"
+	                android:text="授权码说明" 
+	                android:textColor="#635c5c"/>
+	            <ImageView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:background="@drawable/right_pic_key"
+	                />
+            
+            </LinearLayout>
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="#635c5c"
+                android:text="1、购买授权码后，即可使用通付宝掌上银行业务；\n2、购买了通付宝刷卡器的用户，可以将刷卡器编号作为授权码进行账户绑定；\n3、一个授权码只能绑定一个注册账户；\n4、一个授权码只能在一台终端设备上使用，如果更换了终端设备，需要解除绑定后在新设备上重新进行绑定。" 
+                />
+        </LinearLayout>
+        
+	</LinearLayout>
+</ScrollView>

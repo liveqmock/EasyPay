@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                style="@style/corner_margin_style"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/atte_corners"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:id="@+id/login_layout"
+                    style="@style/item_text_padding"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" 
+                    android:background="@drawable/left_item_action">
+
+                    <ImageView
+                        android:id="@+id/image_in"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/in" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@id/image_in"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/login_text"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/btn_login"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/content_size" />
+
+                        <TextView
+                            android:id="@+id/login_id"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:textColor="@color/gray"
+                            android:textSize="@dimen/content_size" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <include layout="@layout/line_layout" />
+
+                <RelativeLayout
+                     android:id="@+id/pwd_layout"
+                    style="@style/item_text_padding"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" 
+                    android:background="@drawable/left_item_action">
+
+                    <ImageView
+                        android:id="@+id/image_in"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/in" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@id/image_in"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/bank_name"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/left_mima"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/content_size" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:textColor="@color/gray"
+                            android:textSize="@dimen/content_size" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <include layout="@layout/line_layout" />
+
+                <RelativeLayout
+                     android:id="@+id/userinfo_layout"
+                    style="@style/item_text_padding"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/left_item_action" >
+
+                    <ImageView
+                        android:id="@+id/image_in"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/in" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@id/image_in"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/bank_name"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/left_user_info"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/content_size" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:textColor="@color/gray"
+                            android:textSize="@dimen/content_size" />
+                    </LinearLayout>
+                </RelativeLayout>
+                   <include layout="@layout/line_layout"/>
+                <RelativeLayout
+                    android:id="@+id/bank_layout"
+                    style="@style/item_text_padding"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" 
+                    android:background="@drawable/left_item_action">
+
+                    <ImageView
+                        android:id="@+id/image_in"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/in" />
+
+                    <LinearLayout
+                        android:id="@+id/banklinear_layout"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@id/image_in"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/banknm"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/left_bank"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/content_size" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:textColor="@color/gray"
+                            android:textSize="@dimen/content_size" />
+                    </LinearLayout>
+                </RelativeLayout>
+                
+                <include layout="@layout/line_layout" />
+                
+                <RelativeLayout
+                    android:id="@+id/mybank_layout"
+                    style="@style/item_text_padding"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" 
+                    android:background="@drawable/left_item_action">
+
+                    <ImageView
+                        android:id="@+id/image_in"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/in" />
+
+                    <LinearLayout
+                        android:id="@+id/mybanklinear_layout"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@id/image_in"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/mybanknm"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/left_mybank"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/content_size" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:textColor="@color/gray"
+                            android:textSize="@dimen/content_size" />
+                    </LinearLayout>
+                </RelativeLayout>
+                
+                <include layout="@layout/line_layout" />
+
+                <RelativeLayout
+                     android:id="@+id/pwdsafety_layout"
+                    style="@style/item_text_padding"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/left_item_action" >
+
+                    <ImageView
+                        android:id="@+id/image_in"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/in" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@id/image_in"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/bank_name"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/set_pwdsafety_info"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/content_size" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:textColor="@color/gray"
+                            android:textSize="@dimen/content_size" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+            
+             <LinearLayout
+                style="@style/corner_margin_style"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/atte_corners"
+                android:orientation="vertical" 
+                android:visibility="gone">
+
+                <RelativeLayout
+                     android:id="@+id/open_layout"
+                    style="@style/item_text_padding"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" 
+                    android:background="@drawable/left_item_action">
+
+                    <ImageView
+                        android:id="@+id/image_in"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/in" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@id/image_in"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/bank_name"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/left_open_shuakaqi"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/content_size" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:textColor="@color/gray"
+                            android:textSize="@dimen/content_size" />
+                    </LinearLayout>
+                </RelativeLayout>
+                </LinearLayout>
+                
+             <LinearLayout
+                style="@style/corner_margin_style"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/atte_corners"
+                android:orientation="vertical" 
+                android:visibility="gone"
+                >
+
+                <RelativeLayout
+                     android:id="@+id/feedback_layout"
+                    style="@style/item_text_padding"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/left_item_action" >
+
+                    <ImageView
+                        android:id="@+id/image_in"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/in" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@id/image_in"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/bank_name"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/left_feedback"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/content_size" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:textColor="@color/gray"
+                            android:textSize="@dimen/content_size" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <include layout="@layout/line_layout" />
+
+                <RelativeLayout
+                     android:id="@+id/check_layout"
+                    style="@style/item_text_padding"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/left_item_action" >
+
+                    <ImageView
+                        android:id="@+id/image_in"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/in" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@id/image_in"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/bank_name"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/left_update"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/content_size" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:textColor="@color/gray"
+                            android:textSize="@dimen/content_size" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <include layout="@layout/line_layout" />
+
+                <RelativeLayout
+                     android:id="@+id/help_layout"
+                    style="@style/item_text_padding"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/left_item_action" >
+
+                    <ImageView
+                        android:id="@+id/image_in"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/in" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@id/image_in"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/bank_name"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/left_help"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/content_size" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:textColor="@color/gray"
+                            android:textSize="@dimen/content_size" />
+                    </LinearLayout>
+                </RelativeLayout>
+                <include layout="@layout/line_layout"/>
+                <RelativeLayout
+                    android:id="@+id/about_layout"
+                    style="@style/item_text_padding"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" 
+                    android:background="@drawable/left_item_action">
+
+                    <ImageView
+                        android:id="@+id/image_in"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/in" />
+
+                    <LinearLayout
+                        android:id="@+id/about_layout"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@id/image_in"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/bank_name"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/left_about"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/content_size" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:textColor="@color/gray"
+                            android:textSize="@dimen/content_size" />
+                    </LinearLayout>
+                </RelativeLayout>
+               
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

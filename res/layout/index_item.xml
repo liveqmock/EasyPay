@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/index_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <!--  <GridView
+        android:id="@+id/func_grid"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="@dimen/margin_bottom"
+        android:layout_marginLeft="@dimen/margin_left"
+        android:layout_marginRight="@dimen/margin_right"
+        android:background="#ffffff"
+        android:cacheColorHint="@color/transparent"
+        android:focusable="false"
+        android:gravity="center"
+        android:horizontalSpacing="20dp"
+        android:listSelector="@color/transparent"
+        android:numColumns="3"
+        android:stretchMode="columnWidth"
+        android:scrollbars="none"
+        android:verticalSpacing="20dp" /> -->
+    
+    <com.inter.trade.ui.fragment.MyGridView 
+	    android:focusable="false"
+	     android:id="@+id/func_grid"
+	     	android:cacheColorHint="@color/transparent"
+	     	android:listSelector="@color/transparent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:numColumns="3"
+            android:stretchMode="columnWidth"
+            android:scrollbars="none"
+            android:layout_marginTop="@dimen/main_fun_grid_margin_top"
+	    />
+
+</LinearLayout>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <SlidingDrawer
+        android:id="@+id/slidingdrawer"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:content="@+id/content"
+        android:handle="@+id/handle"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <!-- 设置handle，就是用一个图片按钮来处理滑动抽屉的 -->
+
+        <ImageButton
+            android:id="@id/handle"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_vertical"
+            android:background="@null"
+            android:scaleType="center"
+            android:src="@drawable/selector_btn_favourite" />
+        <!-- 设置内容，一个布局View，其中包含一个文本框，当我们拖动的时候就会看到 -->
+
+        <LinearLayout
+            android:id="@id/content"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#ffffff"
+            android:orientation="horizontal" >
+
+            <ImageButton
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:src="@drawable/selector_btn_money" />
+
+            <ImageButton
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:src="@drawable/selector_btn_airplane" />
+
+            <ImageButton
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:src="@drawable/selector_btn_convinence" />
+        </LinearLayout>
+    </SlidingDrawer>
+
+    <LinearLayout
+        android:id="@+id/ll_right_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/bg_right_menu"
+        android:orientation="horizontal"
+        android:visibility="visible" >
+
+        <ImageButton
+            android:id="@+id/btn_favourite"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_vertical"
+            android:background="@null"
+            android:scaleType="center"
+            android:layout_marginLeft="16dp"
+            android:src="@drawable/selector_btn_favourite" />
+
+       <!--  <ImageButton
+            android:id="@+id/btn_shopping"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_vertical"
+            android:background="@null"
+            android:src="@drawable/selector_btn_shopping" /> -->
+
+       
+
+        <!-- <ImageButton
+            android:id="@+id/btn_airplane"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_vertical"
+            android:background="@null"
+            android:src="@drawable/selector_btn_airplane" /> -->
+
+        <ImageButton
+            android:id="@+id/btn_convinence"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="16dp"
+            android:layout_gravity="center_vertical"
+            android:background="@null"
+            android:scaleType="center"
+            android:src="@drawable/selector_btn_convinence" />
+         <ImageButton
+            android:id="@+id/btn_money"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="16dp"
+            android:layout_gravity="center_vertical"
+            android:background="@null"
+            android:scaleType="center"
+            android:src="@drawable/selector_btn_money" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_menu"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/selector_menu" />
+
+</RelativeLayout>

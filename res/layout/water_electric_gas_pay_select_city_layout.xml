@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/light_gray"
+    >
+    
+    <EditText
+        android:id="@+id/city_edit"
+        style="@style/agent_padding_style"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/atte_corners"
+        android:hint="请输入缴费城市"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:textSize="@dimen/agent_content_size" />
+    
+	<com.inter.trade.ui.views.IndexableListView
+	    android:layout_width="fill_parent" 
+	    android:layout_height="fill_parent"
+	    android:id="@+id/listview" />
+</LinearLayout>

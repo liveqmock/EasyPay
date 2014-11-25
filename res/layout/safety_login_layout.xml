@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            style="@style/corner_margin_style"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/atte_corners"
+            android:orientation="vertical" >
+            
+            <LinearLayout
+                style="@style/item_text_padding"
+                android:layout_width="fill_parent"
+                android:layout_height="100dp"
+                android:orientation="horizontal" 
+                android:background="@drawable/default_frame">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="通付宝--认证注册"
+                    android:textSize="@dimen/content_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/item_text_padding"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:text="@string/pay_pwd"
+                    android:textSize="@dimen/content_size" />
+
+                <EditText
+                    android:id="@+id/pay_name_edit"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/text_color_white"
+                    android:hint="@string/pay_pwd_prompt"
+                    android:inputType="textPassword" />
+            </LinearLayout>
+
+            <include layout="@layout/line_layout" />
+
+            <LinearLayout
+                style="@style/item_text_padding"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:text="@string/check_pwd"
+                    android:textSize="@dimen/content_size" />
+
+                <EditText
+                    android:id="@+id/check_pwd_edit"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/text_color_white"
+                    android:hint="@string/check_pwd_prompt"
+                    android:inputType="textPassword" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_left"
+            android:layout_marginRight="@dimen/margin_right" 
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:orientation="horizontal" 
+                >
+
+                <CheckBox
+                    android:id="@+id/remenber_ck"
+                    style="@style/custome_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/margin_left"
+                    android:text="@string/login_remenber_pwd"
+                    android:textSize="@dimen/little_size" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/find_pwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="@string/login_find_pwd"
+                android:textColor="@color/text_color_blue"
+                android:textSize="@dimen/little_size" />
+        </RelativeLayout>
+
+        <LinearLayout
+            style="@style/corner_margin_style"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/login"
+                style="@style/btn_single_style"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/wihte_btn_action"
+                android:text="@string/new_mobile_text"
+                android:textColor="@color/black"
+                android:textSize="@dimen/content_size" />
+
+            <Button
+                android:id="@+id/register"
+                style="@style/btn_single_style"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_left"
+                android:layout_weight="1"
+                android:background="@drawable/blue_btn_action"
+                android:text="@string/btn_next"
+                android:textColor="@color/text_color_white"
+                android:textSize="@dimen/content_size" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

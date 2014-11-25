@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="32dp"
+    android:paddingRight="32dp"
+    android:orientation="vertical" >
+     <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:visibility="gone" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/game_recharge_record_text1"
+                android:textColor="@color/game_text_gray" />
+
+            <TextView
+                android:id="@+id/tv_game_area"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_weight="1"
+                android:gravity="right|center_vertical"
+                android:text="赤壁20元直冲"
+                android:textColor="@color/game_text_gray" />
+
+        </TableRow>
+        
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/game_recharge_record_text2"
+                android:textColor="@color/game_text_gray" />
+
+            <TextView
+                android:id="@+id/tv_game_account"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_weight="1"
+                android:gravity="right|center_vertical"
+                android:text="赤壁20元直冲"
+                android:textColor="@color/game_text_gray" />
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/game_recharge_record_text3"
+                android:textColor="@color/game_text_gray" />
+
+            <TextView
+                android:id="@+id/tv_game_quantity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_weight="1"
+                android:gravity="right|center_vertical"
+                android:text="赤壁20元直冲"
+                android:textColor="@color/game_text_gray" />
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:visibility="gone" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/game_recharge_record_text4"
+                android:textColor="@color/game_text_gray" />
+
+            <TextView
+                android:id="@+id/tv_game_price"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:gravity="right|center_vertical"
+                android:textColor="@color/game_text_gray"
+                android:text="赤壁20元直冲" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:visibility="gone" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/game_recharge_record_text5"
+                android:textColor="@color/game_text_gray" />
+
+            <TextView
+                android:id="@+id/tv_game_no"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:gravity="right|center_vertical"
+                android:textColor="@color/game_text_gray"
+                android:text="赤壁20元直冲" />
+        </TableRow>
+
+    </TableLayout>
+
+     <View 
+          android:layout_width="match_parent"
+                android:layout_height="16dp"
+         />
+</LinearLayout>

@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.inter.trade"
+    android:versionCode="333"
+    android:versionName="3.3.3" >
+
+    <uses-sdk android:minSdkVersion="8" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission> 
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+	<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"></uses-permission>
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+	<uses-permission android:name="android.permission.READ_CONTACTS"/>
+	<uses-permission android:name="android.permission.CALL_PHONE"/>
+	<uses-permission android:name="android.permission.INTERNET" />  
+	
+	<uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+     <!-- 发送短信-->
+   <uses-permission android:name="android.permission.SEND_SMS" />
+    <!-- 阅读消息 -->
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <!-- 写入消息 -->
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <!-- 接收消息 -->
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+	 <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    
+	
+    <application
+        android:icon="@drawable/easy_pay_logo"
+        android:label="@string/app_name" 
+        android:theme="@android:style/Theme.Light.NoTitleBar"
+        android:persistent="true"
+        android:name="com.inter.trade.ui.PayApp">
+        <activity
+            android:name=".ui.Splash"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <service android:enabled="true" android:name="com.gdseed.mobilereader.swap.MobileReaderCallStateService">
+			<intent-filter>
+                <action android:name="com.gdseed.mobilereader.CALL_STATE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+		</service>
+		 
+        <activity
+            android:name=".ui.manager.UIManagerActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.inter.trade.ui.WebViewActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+		<activity
+            android:name=".ui.RecordDetialActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ui.BankRecordListActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ui.TranserRecordActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity
+            android:name=".ui.DaikuanSwipActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.inter.trade.ui.fragment.wallet.DetialXiangqingActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ui.MainActivity"
+            android:screenOrientation="portrait" 
+            android:configChanges="orientation|keyboardHidden">
+        </activity>
+        <activity
+            android:name=".ui.CommonActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ui.RechargeSelectedActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity
+            android:name=".ui.DetialActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.inter.trade.ui.fragment.order.DetialOrderActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.inter.trade.ui.PayActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ui.RechargeActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+         <activity
+            android:name=".ui.DaikuanActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity
+            android:name=".ui.CridetActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ui.CridetPayActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ui.BankCardActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ui.MyBankCardActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity
+            android:name="com.unionpay.uppayplugin.demo.UnionpayActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ui.BankListActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ui.FunctionActivity"
+            android:screenOrientation="portrait" 
+            android:configChanges="orientation|keyboardHidden"
+            >
+        </activity>
+        <activity
+            android:name=".ui.IndexActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        <activity
+            android:name=".ui.UserInfoActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        <activity
+            android:name=".ui.fragment.wallet.DetialMonthActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+         <activity
+            android:name=".ui.LoginActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        <activity
+            android:name=".ui.CounponActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+         <activity
+            android:name=".ui.ConfirmActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        <activity
+            android:name=".ui.TelephonePayActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        <activity
+            android:name=".ui.TelphonePayRecordActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        <activity
+            android:name=".ui.QMoneyPayActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        <activity
+            android:name=".ui.QMoneyPayRecordActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        <activity
+            android:name=".ui.WaterElectricGasCitySelectActivity"
+            android:screenOrientation="portrait" 
+            android:windowSoftInputMode = "adjustPan"
+            >
+        </activity>
+        <activity
+            android:name=".ui.WaterElectricGasCompanySelectActivity"
+            android:screenOrientation="portrait" 
+            android:windowSoftInputMode = "adjustPan"
+            >
+        </activity>
+        <activity
+            android:name=".ui.WaterElectricGasPayActivity"
+            android:screenOrientation="portrait" 
+            android:windowSoftInputMode = "adjustPan"
+            >
+        </activity>
+        <activity
+            android:name=".ui.WaterElectricGasCityRecordActivity"
+            android:screenOrientation="portrait" 
+            android:windowSoftInputMode = "adjustPan"
+            >
+        </activity>
+        <activity
+            android:name=".ui.GameRechargeMainActivity"
+            android:screenOrientation="portrait" 
+            android:windowSoftInputMode = "adjustPan"
+            >
+        </activity>
+        <activity
+            android:name=".ui.GameRechargeSelectActivity"
+            android:screenOrientation="portrait" 
+            android:windowSoftInputMode = "adjustPan"
+            >
+        </activity>
+        <activity
+            android:name=".ui.GameRechargeInfoActivity"
+            android:screenOrientation="portrait" 
+            android:windowSoftInputMode = "adjustPan"
+            >
+        </activity>
+        <activity
+            android:name=".ui.AgentUserInfoActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        <activity
+            android:name=".ui.AgentApplyActivity"
+            android:screenOrientation="portrait" 
+            android:windowSoftInputMode = "adjustPan"
+            >
+        </activity>
+        <activity
+            android:name=".ui.AgentApplyNewActivity"
+            android:screenOrientation="portrait" 
+            android:windowSoftInputMode = "adjustPan"
+            >
+        </activity>
+        <activity
+            android:name=".ui.AgentMainContentActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        <activity
+            android:name=".ui.AgentQueryActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode = "adjustPan" 
+            >
+        </activity>
+        <activity
+            android:name=".ui.AgentReplenishActivity"
+            android:screenOrientation="portrait" 
+            android:windowSoftInputMode = "adjustPan"
+            >
+        </activity>
+        <activity
+            android:name=".ui.AgentQueryWheelDateActivity"
+            android:theme="@style/MyDialogStyleBottom"
+            android:screenOrientation="portrait" 
+            android:windowSoftInputMode = "adjustPan"
+            >
+        </activity>
+        <activity
+            android:name=".ui.AgentPayActivity"
+            android:screenOrientation="portrait" 
+            android:windowSoftInputMode = "adjustPan"
+            >
+        </activity>
+        <activity
+            android:name=".ui.HotelSelectPriceActivity"
+            android:theme="@style/MyDialogStyleBottom"
+            android:screenOrientation="portrait" 
+            android:windowSoftInputMode = "adjustPan"
+            >
+        </activity>
+        <activity
+            android:name=".ui.HotelSelectStarLevelActivity"
+            android:theme="@style/MyDialogStyleBottom"
+            android:screenOrientation="portrait" 
+            android:windowSoftInputMode = "adjustPan"
+            >
+        </activity>
+        <activity
+            android:name="com.inter.trade.ui.fragment.coupon.activity.CouponListActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        <activity
+            android:name="com.inter.trade.ui.OderHistoryActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        <activity
+            android:name="com.inter.trade.ui.fragment.checking.GestureModifyPwdActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        <activity
+            android:name="com.inter.trade.ui.fragment.checking.LockActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        <activity
+            android:name="com.inter.trade.ui.fragment.checking.LockSetupActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        <activity
+            android:name="com.inter.trade.ui.fragment.checking.SafetyLoginActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        <activity
+            android:name="com.inter.trade.ui.fragment.checking.SafetyRigesterActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        <activity
+            android:name="com.inter.trade.ui.fragment.checking.NewMobileAuthActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        <activity
+            android:name="com.inter.trade.ui.fragment.checking.pwdsafety.PwdSafetySettingActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        <activity
+            android:name="com.inter.trade.ui.fragment.checking.pwdsafety.PwdSafetyReplyActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        <activity
+            android:name="com.inter.trade.ui.ReadPwdProtectionActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        <activity
+            android:name="com.inter.trade.ui.BuySwipcardPayActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        <activity
+            android:name="com.inter.trade.ui.BuySwipCardRecordActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        <activity
+            android:name="com.inter.trade.ui.BuySwipCardAddressRecordActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        <activity
+            android:name="com.inter.trade.ui.BuySwipCardCreateAddressActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        <activity
+            android:name="com.inter.trade.ui.BuySwipCardAddBankCardActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        
+        <activity
+            android:name="com.inter.trade.ui.fragment.smsreceivepayment.activity.ReceiveBankCardActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        
+        <!--选择已有卡号当做默认收款账号  -->
+        <activity
+            android:name="com.inter.trade.ui.fragment.smsreceivepayment.activity.SelectReceiveBankCardActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        
+        <!--新增卡号当做默认收款账号  -->
+        <activity
+            android:name="com.inter.trade.ui.fragment.smsreceivepayment.activity.AddReceiveBankCardActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        
+        <!--短信收款历史记录  -->
+        <activity
+            android:name="com.inter.trade.ui.fragment.smsreceivepayment.activity.SmsRecordActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        
+        <activity
+            android:name="com.inter.trade.ui.TFBMainActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        <activity
+            android:name="com.inter.trade.ui.RegistActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        <activity
+            android:name="com.inter.trade.ui.fragment.checking.ForgetPasswordActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        <activity
+            android:name="com.inter.trade.ui.HomeMoblieRechangeActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        
+        <!-- 充值游戏账单页面 -->
+        <activity
+            android:name="com.inter.trade.ui.GameRechargeBillActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode = "adjustPan"  
+            >
+        </activity>
+        
+        <!-- 游戏充值成功页面 -->
+        <activity
+            android:name="com.inter.trade.ui.GameRechargeSuccessActivity"
+            android:screenOrientation="portrait" 
+            android:windowSoftInputMode = "adjustPan" 
+            >
+        </activity>
+        
+        <!-- 游戏充值历史页面 -->
+        <activity
+            android:name="com.inter.trade.ui.GameRechargeRecordActivity"
+            android:screenOrientation="portrait" 
+            android:windowSoftInputMode = "adjustPan" 
+            >
+        </activity>
+        
+        <!-- 信用卡付款-->
+        <activity
+            android:name="com.inter.trade.ui.creditcard.CommonEasyCreditcardPayActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        
+         <!-- 二维码扫描-->
+        <activity
+            android:name="com.inter.trade.qrsacncode.CaptureActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+         <!-- 二维码扫描-->
+        <activity
+            android:name="com.inter.trade.ui.func.childfragment.UpdateAppFragment"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        <!-- 我的银行卡列表-->
+        <activity
+            android:name="com.inter.trade.ui.creditcard.MyBankCardActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        
+         <!-- 汇通宝支付页面-->
+        <activity
+            android:name="com.inter.trade.ui.fragment.coupon.activity.HTBActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        
+         <!--发工资主页-->
+        <activity
+            android:name="com.inter.trade.ui.activity.SalaryPayMainActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        
+         <!--签收工资主页-->
+        <activity
+            android:name="com.inter.trade.ui.activity.SalaryGetMainActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+         <!--new 第一次使用的页面-->
+        <activity
+            android:name="com.inter.trade.ui.fragment.checking.SafetyMainActivity"
+            android:screenOrientation="portrait" 
+            >
+        </activity>
+        
+         <!--new 账户切换页面-->
+        <activity
+            android:name="com.inter.trade.ui.fragment.checking.SafetyAccountChangeActivity"
+            android:screenOrientation="portrait"
+             android:windowSoftInputMode = "adjustPan" 
+            >
+        </activity>
+         <activity
+            android:name="com.inter.trade.ui.fragment.checking.SafetyAccountChangeOnceActivity"
+            android:screenOrientation="portrait"
+             android:windowSoftInputMode = "adjustPan"
+	            />
+         <!-- 引导界面 -->
+         <activity
+            android:name="com.inter.trade.ui.fragment.guide.GuideActivity"
+            android:screenOrientation="portrait"
+             android:windowSoftInputMode = "adjustPan"
+	            />
+       
+    </application>
+
+</manifest>

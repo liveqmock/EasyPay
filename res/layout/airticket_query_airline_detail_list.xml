@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <RadioGroup
+        android:id="@+id/qu_wang_class_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/qu_class_navigation"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_airticket_navigation"
+            android:button="@null"
+            android:gravity="center"
+            android:text="去程"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="45dp"
+            android:background="@color/white" />
+
+        <RadioButton
+            android:id="@+id/wang_class_navigation"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_airticket_navigation"
+            android:button="@null"
+            android:gravity="center"
+            android:text="返程"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/explain"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical"
+        android:padding="5dp" >
+
+        <Button
+            android:id="@+id/explain_button"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:background="#00000000"
+            android:drawableLeft="@drawable/air_wow"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:hint=""
+            android:singleLine="true"
+            android:text="非成人购票说明"
+            android:textColor="#39afed"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <com.inter.trade.ui.MyListView
+        android:id="@+id/mm_listview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/explain"
+        android:layout_below="@id/qu_wang_class_navigation"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@color/transparent"
+        android:listSelector="@android:color/transparent" />
+
+</RelativeLayout>

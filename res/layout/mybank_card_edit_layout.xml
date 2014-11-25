@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFF3F6F6" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:paddingBottom="15dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" >
+
+        <LinearLayout
+            android:id="@+id/mybk_bank_name_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/default_regist_edit_bg2"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingLeft="12dp"
+            android:paddingRight="8dp" >
+
+            <LinearLayout
+                android:layout_weight="2.5"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:gravity="center_vertical">
+	            <TextView
+	                android:id="@+id/pay_name_edit"
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_gravity="center_vertical"
+	                android:textColor="#ffababab"
+	                android:text="@string/mybk_bank_name"
+	                android:textSize="@dimen/content_size"
+	                />
+            </LinearLayout>
+            
+	        <LinearLayout
+	                android:layout_weight="1"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:gravity="center_vertical">
+	            <!-- <EditText
+	                android:id="@+id/mybk_bank_name_edit"
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_gravity="center_vertical"
+	                android:paddingLeft="10dp"
+	                android:background="#00000000"
+	                android:hint="请输入开户银行"
+	                android:textColorHint="#ffababab"
+	                android:textSize="@dimen/content_size"
+	                /> -->
+	            <Button
+	                android:id="@+id/btn_bank"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_marginLeft="10dp"
+	                android:background="@drawable/bg_btn_choose"
+	                android:drawableRight="@drawable/chosen"
+	                android:gravity="center"
+	                android:hint="点击选择银行"
+	                android:layout_gravity="center_vertical"
+	                android:textColorHint="#ffababab"
+	                android:textSize="@dimen/content_size" />
+        	</LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/mybk_card_id_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/default_regist_edit_bg2"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingLeft="12dp"
+            android:paddingRight="8dp" >
+
+            <LinearLayout
+                android:layout_weight="2.5"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:gravity="center_vertical">
+	            <TextView
+	                android:id="@+id/pay_name_edit"
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_gravity="center_vertical"
+	                android:textColor="#ffababab"
+	                android:text="@string/mybk_card_id"
+	                android:textSize="@dimen/content_size"
+	                />
+            </LinearLayout>
+            
+	        <LinearLayout
+	                android:layout_weight="1"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:gravity="center_vertical">
+	            <EditText
+	                android:id="@+id/mybk_card_id_edit"
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_gravity="center_vertical"
+	                android:paddingLeft="10dp"
+	                android:background="#00000000"
+	                android:hint="请输入银行卡号"
+	                android:inputType="number"
+	                android:textColorHint="#ffababab"
+	                android:textSize="@dimen/content_size"
+	                />
+        	</LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/mybk_person_name_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/default_regist_edit_bg2"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingLeft="12dp"
+            android:paddingRight="8dp" >
+
+            <LinearLayout
+                android:layout_weight="2.5"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:gravity="center_vertical">
+	            <TextView
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_gravity="center_vertical"
+	                android:textColor="#ffababab"
+	                android:text="@string/mybk_person_name"
+	                android:textSize="@dimen/content_size"
+	                />
+            </LinearLayout>
+            
+	        <LinearLayout
+	                android:layout_weight="1"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:gravity="center_vertical">
+	            <EditText
+	                android:id="@+id/mybk_person_name_edit"
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_gravity="center_vertical"
+	                android:paddingLeft="10dp"
+	                android:background="#00000000"
+	                android:hint="请输入开户人姓名"
+	                android:textColorHint="#ffababab"
+	                android:textSize="@dimen/content_size"
+	                />
+        	</LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/mybk_phone_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/default_regist_edit_bg2"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingLeft="12dp"
+            android:paddingRight="8dp" >
+
+            <LinearLayout
+                android:layout_weight="2.5"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:gravity="center_vertical">
+	            <TextView
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_gravity="center_vertical"
+	                android:textColor="#ffababab"
+	                android:text="@string/mybk_phone"
+	                android:textSize="@dimen/content_size"
+	                />
+            </LinearLayout>
+            
+	        <LinearLayout
+	                android:layout_weight="1"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:gravity="center_vertical">
+	            <EditText
+	                android:id="@+id/mybk_phone_edit"
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_gravity="center_vertical"
+	                android:paddingLeft="10dp"
+	                android:background="#00000000"
+	                android:hint="请输入手机号码"
+	                android:inputType="number"
+                	android:maxLength="11"
+	                android:textColorHint="#ffababab"
+	                android:textSize="@dimen/content_size"
+	                />
+        	</LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp" >
+
+            <CheckBox
+                android:id="@+id/cb_default_receive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/custome_checkbox"
+                android:layout_marginLeft="0dp"
+                android:layout_weight="0"
+                android:textColorHint="#ababab" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_marginLeft="8dp"
+                android:gravity="left"
+                android:text="设为默认收款卡"
+                android:textColor="#a5b5d4"
+                android:textSize="@dimen/content_size" />
+
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/btn_mybk_save"
+                style="@style/btn_single_style"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/default_blue_btn_action"
+                android:text="@string/mybk_save"
+                android:textColor="@color/text_color_white"
+                android:textSize="@dimen/content_size" />
+        </LinearLayout>
+        
+        <LinearLayout
+            android:id="@+id/login_gesture_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/btn_mybk_delete"
+                style="@style/btn_single_style"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/weg_button_style"
+                android:text="@string/mybk_delete"
+                android:textColor="@color/text_color_white"
+                android:textSize="@dimen/content_size" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F6F7"
+    android:orientation="vertical"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="账号信息"
+        android:textSize="@dimen/agent_little_size"
+        android:textColor="#A1A3A2" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/dashed_line" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="账号"
+                android:textSize="@dimen/agent_little_size"
+                android:textColor="#A1A3A2" />
+
+            <TextView
+                android:id="@+id/tv_game_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_weight="1"
+                android:gravity="right|center_vertical"
+                android:textSize="@dimen/agent_little_size"
+                android:textColor="#A1A3A2" />
+
+        </TableRow>
+        
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="账户余额"
+                android:textSize="@dimen/agent_little_size"
+                android:textColor="#A1A3A2" />
+
+            <TextView
+                android:id="@+id/tv_game_area"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_weight="1"
+                android:gravity="right|center_vertical"
+                android:textSize="@dimen/agent_little_size"
+                android:textColor="#A1A3A2" />
+
+        </TableRow>
+        
+    </TableLayout>
+    
+
+
+    <EditText
+        android:id="@+id/et_bank_account"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/et_bg_game_detail"
+        android:hint="请输入支付金额"
+        android:inputType="number"
+        android:padding="10dp"
+        android:textSize="16sp" /> 
+    <Button
+        android:id="@+id/btn_commit"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/weg_button_style"
+        android:text="确定"
+        android:textColor="#ffffff"
+        android:textSize="16sp" />
+
+</LinearLayout>

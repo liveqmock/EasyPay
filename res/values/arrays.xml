@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* //device/apps/common/assets/res/any/colors.xml
+**
+** Copyright 2006, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string-array name="Ids">
+        <item>身份证</item>
+        <item>护照</item>
+        <item>驾照</item>
+        <item>学生证</item>
+    </string-array>
+    <string-array name="banks">
+        <item>邮政储蓄银行</item>
+        <item>深圳发展银行</item>
+        <item>民生银行</item>
+        <item>邮政储蓄银行</item>
+        <item>包商银行</item>
+        <item>北京银行</item>
+        <item>上海银行</item>
+        <item>招商银行</item>
+        <item>中信银行</item>
+        <item>浦东发展银行</item>
+        <item>兴业银行</item>
+        <item>华夏银行</item>
+        <item>农业银行</item>
+        <item>广东发展银行</item>
+        <item>工商银行</item>
+        <item>中国银行</item>
+       <!--  <item>交通银行</item> -->
+        <item>建设银行</item>
+        <item>平安银行</item>
+        <item>光大银行</item>
+    </string-array>
+
+    
+    <string-array name="months">
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>05</item>
+        <item>06</item>
+        <item>07</item>
+        <item>08</item>
+        <item>09</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+    
+    <string-array name="years">
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+    </string-array>
+</resources>

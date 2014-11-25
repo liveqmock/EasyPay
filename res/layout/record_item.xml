@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+<LinearLayout 
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+    
+    <LinearLayout 
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        style="@style/detial_item_style"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        
+        <TextView
+            android:id="@+id/money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="9000" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="优惠券20130908010120444444444444444444"
+            android:maxEms="14"
+            android:singleLine="true"
+            android:ellipsize="end"
+             />
+    </RelativeLayout>
+
+    <RelativeLayout
+        style="@style/detial_item_style"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="2013-02-12" />
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="税换成功" />
+    </RelativeLayout>
+</LinearLayout>
+
+    <ImageView 
+         android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+        android:background="@drawable/to_detail"
+        android:layout_marginRight="8dp"
+        />
+</LinearLayout>
+
+<include layout="@layout/line_layout" />
+</LinearLayout>

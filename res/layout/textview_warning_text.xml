@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tv_creditcard_tips"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="温馨提醒：同一信用卡当天请勿频繁交易."
+    android:textSize="14sp" 
+    android:textColor="#ababab"
+    android:gravity="center">
+</TextView>

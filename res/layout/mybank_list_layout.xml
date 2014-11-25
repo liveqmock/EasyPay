@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mybank_layout_id"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical" >
+	
+    <LinearLayout 
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+    	<ImageView
+            android:id="@+id/img_bank_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:gravity="center"
+            android:background="@drawable/bank_big"
+           />
+    
+    
+	<LinearLayout
+	    android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" 
+        android:gravity="center_vertical">
+	    
+        <TextView
+            android:id="@+id/bank_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="left"
+            android:text="中国银行"
+            android:textColor="@color/text_color_gray"
+            android:textSize="@dimen/agent_little_size" />
+        <LinearLayout
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal" 
+	        android:gravity="center_vertical">
+	        <TextView
+	            android:id="@+id/person_name"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="10dp"
+	            android:gravity="left"
+	            android:text="牛大力牛"
+	            android:textColor="@color/text_color_gray"
+	            android:textSize="@dimen/agent_little_size12" />
+	        <TextView
+	            android:id="@+id/bankCard_id4"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="10dp"
+	            android:gravity="left"
+	            android:text="尾号6789"
+	            android:textColor="@color/text_color_gray"
+	            android:textSize="@dimen/agent_little_size12" />
+	        <TextView
+	            android:id="@+id/bankCard_type"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="10dp"
+	            android:gravity="left"
+	            android:text="信用卡"
+	            android:textColor="@color/text_color_gray"
+	            android:textSize="@dimen/agent_little_size12" />
+    	</LinearLayout>
+    </LinearLayout>
+
+	<LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" 
+        android:gravity="center_horizontal">
+	
+		<LinearLayout
+		    android:visibility="gone"
+		    android:id="@+id/bankCard_default_receive"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical" 
+	        android:background="@drawable/sms_receive_def"
+	        android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="6dp"
+	        android:gravity="center_horizontal">
+		
+			<TextView
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="收\n款"
+	            android:textSize="12sp"
+	            android:layout_gravity="center_horizontal"
+	            android:textColor="@color/text_color_white"
+	            />
+		</LinearLayout>
+		
+		<LinearLayout
+		    android:visibility="gone"
+		    android:id="@+id/bankCard_default"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical" 
+	        android:background="@drawable/sms_pay_def"
+            android:layout_marginRight="10dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="6dp"
+	        android:gravity="center_horizontal">
+		
+			<TextView
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="支\n付"
+	            android:textSize="12sp"
+	            android:layout_gravity="center_horizontal"
+	            android:textColor="@color/text_color_white"
+	            />
+		</LinearLayout>
+	</LinearLayout>
+	
+	<LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" 
+        android:gravity="center_horizontal">
+		<ImageView
+            android:id="@+id/img_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/to_detail"
+           />
+	</LinearLayout>
+	
+	</LinearLayout>
+	<View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:background="@color/gray" />
+</LinearLayout>

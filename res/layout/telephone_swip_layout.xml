@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:overScrollMode="never" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/coupon_layout"
+            style="@style/corner_margin_style"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/atte_corners"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                style="@style/item_text_padding"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:text="@string/coupon_total"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title_name_size" />
+
+                <TextView
+                    android:id="@+id/acount"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text="8000.00元"
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/title_name_size" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/mobile_show_layout"
+            style="@style/moblierechange_margin_style"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/image_in"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/mobile_number"
+                android:textColor="@color/black"
+                android:textSize="@dimen/content_size" />
+
+            <TextView
+                android:id="@+id/mobile_number"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:textColor="@color/game_blue"
+                android:textSize="@dimen/content_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/mobile_show_layout"
+            style="@style/moblierechange_margin_style"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/image_in"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/mobile_rechamobileprov"
+                android:textColor="@color/black"
+                android:textSize="@dimen/content_size" />
+
+            <TextView
+                android:id="@+id/mobile_rechamobileprov"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:textColor="@color/game_blue"
+                android:textSize="@dimen/content_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/mobile_show_layout"
+            style="@style/moblierechange_margin_style"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/image_in"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="充值面额:"
+                android:textColor="@color/black"
+                android:textSize="@dimen/content_size" />
+
+            <TextView
+                android:id="@+id/mobile_rechamoney"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:textColor="@color/game_orange"
+                android:textSize="@dimen/content_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/mobile_show_layout"
+            style="@style/moblierechange_margin_style"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/image_in"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="支付金额:"
+                android:textColor="@color/black"
+                android:textSize="@dimen/content_size" />
+
+            <TextView
+                android:id="@+id/mobile_rechapaymoney"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:textColor="@color/game_orange"
+                android:textSize="@dimen/content_size" />
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_left"
+            android:layout_marginTop="@dimen/margin_top"
+            android:text="支付账户信息"
+            android:textSize="@dimen/content_size" />
+        
+        
+        <ImageView 
+             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/key_dashed_line"
+             android:layout_marginLeft="@dimen/margin_left"
+              android:layout_marginRight="@dimen/margin_left"
+              android:layout_marginTop="8dp"
+            />
+
+        <include layout="@layout/layout_pay_ways"
+            android:layout_marginTop="20dp"/>
+
+        <Button
+            android:id="@+id/cridet_back_btn"
+            style="@style/btn_single_style"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_bottom"
+            android:layout_marginLeft="@dimen/margin_left"
+            android:layout_marginRight="@dimen/margin_right"
+            android:background="@drawable/selector_btn_game_record"
+            android:text="@string/cridet_btn_confirm"
+            android:textColor="@color/white"
+            android:textSize="@dimen/content_size" />
+        <include layout="@layout/textview_warning_text"/>
+    </LinearLayout>
+
+</ScrollView>

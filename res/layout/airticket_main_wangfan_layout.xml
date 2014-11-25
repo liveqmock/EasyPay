@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFF3F6F6"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/default_regist_edit_bg2"
+            android:padding="2dp" >
+
+            <RelativeLayout
+                android:id="@+id/start_city_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <ImageView
+                    android:id="@+id/left_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/air_start" />
+
+                <ImageView
+                    android:id="@+id/right_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/air_right_to" />
+
+                <EditText
+                    android:id="@+id/start_address"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_toLeftOf="@id/right_icon"
+                    android:layout_toRightOf="@id/left_icon"
+                    android:background="#00000000"
+                    android:singleLine="true"
+                    android:textColor="#c4c3c3"
+                    android:focusable="false"
+                    android:hint="@string/airticket_start"
+                    android:textColorHint="#c4c3c3" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/default_regist_edit_bg2"
+            android:padding="2dp" >
+
+            <RelativeLayout
+                android:id="@+id/end_city_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <ImageView
+                    android:id="@+id/left_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/air_arrived" />
+
+                <ImageView
+                    android:id="@+id/right_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/air_right_to" />
+
+                <EditText
+                    android:id="@+id/end_address"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_toLeftOf="@id/right_icon"
+                    android:layout_toRightOf="@id/left_icon"
+                    android:background="#00000000"
+                    android:hint="@string/airticket_end"
+                    android:textColor="#c4c3c3"
+                    android:focusable="false"
+                    android:singleLine="true"
+                    android:textColorHint="#c4c3c3" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/calendar_picker_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/pwdsafety_input_bg"
+        android:padding="2dp" >
+        
+        <ImageView
+            android:id="@+id/air_calen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/air_calendar" />
+
+        <ImageView
+            android:id="@+id/alendar_picker_chosen1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/air_right_to" />
+
+        <EditText
+            android:id="@+id/calendar_picker_date"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/alendar_picker_chosen1"
+            android:layout_toRightOf="@id/air_calen"
+            android:paddingLeft="5dp"
+            android:background="#00000000"
+            android:focusable="false"
+            android:hint="@string/airticket_start_date"
+            android:textColor="#c4c3c3"
+            android:singleLine="true"
+            android:textColorHint="#c4c3c3" />
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/calendar_picker_fan_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/pwdsafety_input_bg"
+        android:padding="2dp" >
+        
+        <ImageView
+            android:id="@+id/air_calen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/air_calendar" />
+
+        <ImageView
+            android:id="@+id/alendar_picker_chosen1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/air_right_to" />
+
+        <EditText
+            android:id="@+id/calendar_picker_fan_date"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/alendar_picker_chosen1"
+            android:layout_toRightOf="@id/air_calen"
+            android:paddingLeft="5dp"
+            android:background="#00000000"
+            android:focusable="false"
+            android:hint="@string/airticket_fan_date"
+            android:textColor="#c4c3c3"
+            android:singleLine="true"
+            android:textColorHint="#c4c3c3" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/submit"
+        style="@style/btn_single_style"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_bottom"
+        android:background="@drawable/default_yellow_btn_action"
+        android:text="查询"
+        android:textColor="@color/text_color_white"
+        android:textSize="@dimen/content_size" />
+
+</LinearLayout>

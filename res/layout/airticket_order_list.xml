@@ -1,0 +1,17 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tfbbar="http://schemas.android.com/apk/res/com.inter.trade"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/air_bg"
+    android:orientation="vertical">
+
+    <com.inter.trade.ui.MyListView 
+        android:id="@+id/mm_listview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:divider="@color/transparent"
+        android:listSelector="@android:color/transparent"
+        android:cacheColorHint="@android:color/transparent"
+        />
+
+</LinearLayout>

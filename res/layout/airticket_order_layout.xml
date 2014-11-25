@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#e8edef"
+    android:padding="5dp" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/air_order_top_bg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/start_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2014-7-14"
+                    android:textColor="#ffffffff"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/start_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="14:05"
+                    android:textColor="#ffffffff"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/start_airport"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="白云机场"
+                    android:textColor="#ffffffff"
+                    android:textSize="@dimen/content_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.9"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/air_start_end_arrow" />
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/start_city"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:maxLength="3"
+                        android:text="广州"
+                        android:textColor="#ffffffff"
+                        android:textSize="@dimen/content_size" />
+
+                    <TextView
+                        android:id="@+id/end_city"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="right"
+                        android:maxLength="3"
+                        android:text="上海"
+                        android:textColor="#ffffffff"
+                        android:textSize="@dimen/content_size" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/end_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2014-7-14"
+                    android:textColor="#ffffffff"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/end_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="16:05"
+                    android:textColor="#ffffffff"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/end_airport"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="太空场"
+                    android:textColor="#ffffffff"
+                    android:textSize="@dimen/content_size" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/air_default_qucheng_bg"
+            android:gravity="center_vertical"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            >
+            
+            <TextView
+                android:id="@+id/qucheng"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="去程"
+                android:textColor="#ffffffff"
+                android:textSize="@dimen/content_size" />
+
+            <TextView
+                android:id="@+id/aviation_company"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="南方航空"
+                android:textColor="#ffffffff"
+                android:textSize="@dimen/content_size" />
+
+            <TextView
+                android:id="@+id/flight"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="NF2014"
+                android:textColor="#ffffffff"
+                android:textSize="@dimen/content_size" />
+
+            <TextView
+                android:id="@+id/air_class"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="头等舱"
+                android:textColor="#ffffffff"
+                android:textSize="@dimen/content_size" />
+
+            
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/air_default_order_white"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:padding="10dp" >
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="票价"
+                    android:textColor="#ffababab"
+                    android:textSize="@dimen/content_size" />
+
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="end"
+                    android:text="￥1580.00"
+                    android:textColor="#ffababab"
+                    android:textSize="@dimen/content_size" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="机建"
+                    android:textColor="#ffababab"
+                    android:textSize="@dimen/content_size" />
+
+                <TextView
+                    android:id="@+id/jijian"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="end"
+                    android:text="￥580.00"
+                    android:textColor="#ffababab"
+                    android:textSize="@dimen/content_size" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="燃油"
+                    android:textColor="#ffababab"
+                    android:textSize="@dimen/content_size" />
+
+                <TextView
+                    android:id="@+id/fuel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="end"
+                    android:text="￥50.00"
+                    android:textColor="#ffababab"
+                    android:textSize="@dimen/content_size" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/ticket_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="*查看退改票须知"
+                android:textColor="#39AFED"
+                android:textSize="@dimen/content_size" />
+        </LinearLayout>
+        
+        <LinearLayout android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:background="@drawable/air_default_dengjiren_bg_green"
+            >
+            
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical" 
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10dp"
+                    android:padding="3dp"
+                    android:text="登机人"
+                    android:textColor="#ffffffff"
+                    android:textSize="@dimen/content_size" />
+
+                <TextView
+                    android:id="@+id/add_djr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="end"
+                    android:padding="3dp"
+                    android:text="添加登机人"
+                    android:textColor="#ffffffff"
+                    android:textSize="@dimen/content_size" 
+                    android:background="#4cffffff"/>
+            </RelativeLayout>
+            
+            <View android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/air_line"/>
+            
+            <com.inter.trade.ui.views.IListView 
+                android:id="@+id/djr_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:dividerHeight="1px"
+                android:divider="@drawable/air_line">
+                
+            </com.inter.trade.ui.views.IListView >
+            
+        </LinearLayout>
+        
+        <LinearLayout android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:background="@drawable/air_default_order_white"
+            >
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical" 
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10dp"
+                    android:padding="3dp"
+                    android:text="联系人"
+                    android:textColor="#ababab"
+                    android:textSize="@dimen/content_size" />
+
+                <TextView
+                    android:id="@+id/add_linkman"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="end"
+                    android:padding="3dp"
+                    android:text="添加联系人"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/content_size" 
+                    android:background="#4c000000"/>
+            </RelativeLayout>
+            
+            <View android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/air_line"/>
+            
+            <com.inter.trade.ui.views.IListView 
+                android:id="@+id/linkman_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:dividerHeight="1px"
+                android:divider="@drawable/air_line">
+                
+            </com.inter.trade.ui.views.IListView >
+            
+        </LinearLayout>
+        
+        <Button
+            android:id="@+id/submit"
+            style="@style/btn_single_style"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="@dimen/margin_bottom"
+            android:background="@drawable/default_yellow_btn_action"
+            android:text="@string/btn_next"
+            android:textColor="@color/text_color_white"
+            android:textSize="@dimen/content_size" />
+        
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/index_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/agent_title" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fillViewport="true" >
+
+        <LinearLayout
+            style="@style/edit_text_padding"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                style="@style/edit_text_padding"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.9"
+                android:background="@drawable/agent_bg2"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/agent_login_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/board" />
+
+                    <TextView
+                        android:visibility="gone"
+                        android:id="@+id/agent_id_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:textColor="@color/text_color_white"
+                        android:textSize="@dimen/agent_main_content_size" />
+                    
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="您今天的收益（元）"
+                        android:textColor="@color/text_color_white"
+                        android:textSize="@dimen/agent_main_content_size" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/todayfenrun"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="0"
+                    android:textColor="@color/text_color_white"
+                    android:textSize="@dimen/agent_main_money" />
+
+                <TextView
+                    android:id="@+id/areafenrun"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical"
+                    android:text="本区历史总收益0元"
+                    android:textColor="@color/text_color_white"
+                    android:textSize="@dimen/agent_main_content_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/agent_yellow_dark"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/agent_appling_content_tv"
+                        style="@style/agent_padding_no_bottom_style"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="本月销量（台）"
+                        android:textColor="@color/text_color_white"
+                        android:textSize="@dimen/agent_main_content_size" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/salepaycardnum45"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="@color/agent_green"
+                            android:textSize="@dimen/agent_main_sell" />
+
+                        <TextView
+                            android:visibility="gone"
+                            android:id="@+id/salepaycardnum20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textColor="@color/text_color_white"
+                            android:textSize="@dimen/agent_main_number_small" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/agent_green_light"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/agent_appling_content_tv"
+                        style="@style/agent_padding_no_bottom_style"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="本区刷卡器（台）"
+                        android:textColor="@color/text_color_white"
+                        android:textSize="@dimen/agent_main_content_size" />
+
+                    <TextView
+                        android:id="@+id/areapaycardnum"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/agent_red_light"
+                        android:textSize="@dimen/agent_main_number" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/agent_pink"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/agent_appling_content_tv"
+                        style="@style/agent_padding_no_bottom_style"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="本区用户数"
+                        android:textColor="@color/text_color_white"
+                        android:textSize="@dimen/agent_main_content_size" />
+
+                    <TextView
+                        android:id="@+id/areaauthornum"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/text_color_white"
+                        android:textSize="@dimen/agent_main_number" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/agent_main_replenish"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/agent_replenish_bg_style"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/agent_main_replenish_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/buhuo" />
+
+                    <TextView
+                        android:id="@+id/agent_main_replenish_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:text="我要补货"
+                        android:textColor="@color/text_color_white"
+                        android:textSize="@dimen/agent_main_content_size" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:id="@+id/agent_main_query"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/agent_query_bg_style"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/agent_main_query_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/search" />
+
+                    <TextView
+                        android:id="@+id/agent_main_query_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:text="查询历史收益"
+                        android:textColor="@color/text_color_white"
+                        android:textSize="@dimen/agent_main_content_size" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/agent_main_mytfb"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/agent_mytfb_bg_style"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/agent_main_mytfb_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/home" />
+
+                    <TextView
+                        android:id="@+id/agent_main_mytfb_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:text="我的通付宝"
+                        android:textColor="@color/text_color_white"
+                        android:textSize="@dimen/agent_main_content_size" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

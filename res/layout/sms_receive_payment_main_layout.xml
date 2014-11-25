@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFFAFAFF"
+	android:padding="6dp"
+    >
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+        
+        <LinearLayout
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:padding="6dp"
+	        android:background="@drawable/sms_pay_gray_bg"
+	        android:orientation="vertical" >
+	        
+        	<LinearLayout
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal"
+	            android:gravity="center_vertical"
+	            android:background="@drawable/sms_pay_receive_white_bg"
+	            android:padding="10dp" >
+	
+	            <TextView
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:layout_centerVertical="true"
+	                android:gravity="left"
+	                android:layout_marginLeft="0dp"
+	                android:text="对方手机号码"
+	                android:textColor="@color/sms_font_dark"
+	                android:textSize="@dimen/content_size16" />
+				<RelativeLayout
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:gravity="center_vertical"
+	                android:layout_weight="0.5" >
+	                <Button
+		                android:id="@+id/btn_addressbook"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:layout_alignParentRight="true"
+		                android:layout_centerVertical="true"
+		                android:background="@drawable/sms_pay_addressbook"
+		                android:focusable="true" />
+		            <EditText
+		                android:id="@+id/et_phone"
+		                android:layout_width="fill_parent"
+		                android:layout_height="wrap_content"
+		                android:layout_toLeftOf="@id/btn_addressbook"
+		                android:background="#00000000"
+		                android:hint="请输入或者选择号码"
+		                android:inputType="number"
+		                android:maxLength="11"
+		                android:layout_centerVertical="true"
+		                android:textColorHint="@color/sms_font_gray" 
+		                android:textSize="@dimen/content_size14"/>
+	              </RelativeLayout>
+	        </LinearLayout>
+	        
+        	<LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/sms_pay_receive_white_bg"
+            android:layout_marginTop="6dp"
+            android:padding="10dp" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_centerVertical="true"
+                android:gravity="left"
+                android:layout_marginLeft="0dp"
+                android:text="收款金额(元)"
+                android:textColor="@color/sms_font_dark"
+                android:textSize="@dimen/content_size16" />
+
+            <EditText
+                android:id="@+id/et_money"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:layout_centerVertical="true"
+                android:inputType="numberDecimal"
+                android:background="#00000000"
+                android:hint="单笔限5,000.00,日累计20,000.00"
+                android:textColorHint="@color/sms_font_gray" 
+                android:textSize="@dimen/content_size14"/>
+        </LinearLayout>
+        
+        	<LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/sms_pay_receive_white_bg"
+            android:layout_marginTop="6dp"
+            android:padding="10dp" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_centerVertical="true"
+                android:gravity="left"
+                android:layout_marginLeft="0dp"
+                android:text="手续费(元)"
+                android:textColor="@color/sms_font_gray"
+                android:textSize="@dimen/content_size16" />
+
+            <TextView
+                android:id="@+id/tv_fee"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:layout_centerVertical="true"
+                android:inputType="numberDecimal"
+                android:background="#00000000"
+                android:hint="手续费由系统计算"
+                android:textColorHint="@color/sms_font_gray" />
+        </LinearLayout>
+        	
+        	<LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/sms_pay_receive_white_bg"
+            android:layout_marginTop="6dp"
+            android:padding="10dp" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_centerVertical="true"
+                android:gravity="left"
+                android:layout_marginLeft="0dp"
+                android:text="留言"
+                android:textColor="@color/sms_font_dark"
+                android:textSize="@dimen/content_size16" />
+
+            <EditText
+                android:id="@+id/et_message"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:layout_centerVertical="true"
+                android:maxLength="50"
+                android:background="#00000000"
+                android:hint="限20个汉字（如：请付12月份服装货款）"
+                android:textColorHint="@color/sms_font_gray" 
+                android:textSize="@dimen/content_size14"/>
+        </LinearLayout>
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp" >
+        	<LinearLayout
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/sms_pay_receive_bg"
+	            android:orientation="vertical"
+	            android:layout_marginTop="10dp"
+	            android:layout_marginBottom="-1dp" >
+	        	<TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:paddingLeft="8dp"
+	                android:paddingRight="16dp"
+	                android:paddingTop="4dp"
+	                android:paddingBottom="4dp"
+	                android:gravity="left"
+	                android:text="收款账户 "
+	                android:textColor="#717171"
+	            	android:textSize="@dimen/content_size" />
+	        </LinearLayout>
+			<LinearLayout 
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:background="@drawable/sms_pay_receive_detail_bg"
+			    android:padding="10dp"
+			    android:gravity="center_vertical"
+			    android:orientation="horizontal" >
+		    	<ImageView
+		            android:id="@+id/img_bank_logo"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_marginLeft="5dp"
+		            android:layout_marginRight="5dp"
+		            android:gravity="center"
+		            android:background="@null"
+		           />
+			    
+				<LinearLayout
+				    android:layout_weight="1"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:orientation="vertical" 
+			        android:gravity="center_vertical">
+				    
+			        <TextView
+			            android:id="@+id/bank_name"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_marginLeft="10dp"
+			            android:gravity="left"
+			            android:text=""
+			            android:textColor="@color/sms_font_dark"
+			            android:textSize="@dimen/agent_little_size" />
+			        <LinearLayout
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:orientation="horizontal" 
+				        android:gravity="center_vertical">
+				        <TextView
+				            android:id="@+id/person_name"
+				            android:layout_width="wrap_content"
+				            android:layout_height="wrap_content"
+				            android:layout_marginLeft="10dp"
+				            android:gravity="left"
+				            android:text=""
+				            android:textColor="@color/sms_font_gray"
+				            android:textSize="@dimen/agent_little_size12" />
+				        <TextView
+				            android:id="@+id/bankCard_id4"
+				            android:layout_width="wrap_content"
+				            android:layout_height="wrap_content"
+				            android:layout_marginLeft="10dp"
+				            android:gravity="left"
+				            android:text=""
+				            android:textColor="@color/sms_font_gray"
+				            android:textSize="@dimen/agent_little_size12" />
+				        <TextView
+				            android:id="@+id/bankCard_type"
+				            android:layout_width="wrap_content"
+				            android:layout_height="wrap_content"
+				            android:layout_marginLeft="10dp"
+				            android:gravity="left"
+				            android:text=""
+				            android:textColor="@color/sms_font_gray"
+				            android:textSize="@dimen/agent_little_size12" />
+			    	</LinearLayout>
+			    </LinearLayout>
+			
+				<LinearLayout
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:orientation="vertical" 
+			        android:gravity="center_horizontal">
+				
+					<ImageView
+				            android:id="@+id/bankCard_default"
+				            android:layout_width="wrap_content"
+				            android:layout_height="wrap_content"
+				            android:layout_gravity="center_vertical"
+			                android:layout_marginLeft="10dp"
+			                android:layout_marginRight="10dp"
+				            android:background="@drawable/sms_pay_select_card"
+				            />
+				</LinearLayout>
+				
+			</LinearLayout>
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp" >
+
+            <CheckBox
+                android:id="@+id/cb_default"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/custome_checkbox"
+                android:layout_marginLeft="0dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:gravity="left"
+                android:text="我已同意 "
+                android:textColor="#a9b1c8"
+            	android:textSize="@dimen/little_size" />
+            <TextView
+                android:id="@+id/tv_sms_pro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="《通付宝短信收款业务服务协议》"
+                android:textColor="#1183ae"
+            	android:textSize="@dimen/little_size" />
+
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            >
+	        <Button
+		        android:id="@+id/btn_sms"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:background="@drawable/default_yellow_btn_action"
+		        android:text="发起收款"
+		        android:textColor="@color/text_color_white"
+		        android:textSize="@dimen/content_size" />
+    	</LinearLayout>
+    	
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical"
+            >
+	        <ImageView
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:background="@drawable/key_dashed_line"/>
+    	</LinearLayout>
+    	
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            >
+
+            <LinearLayout
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal"
+	            android:layout_gravity="center"
+	            android:gravity="center_horizontal"
+	            >
+                    
+	            <ImageView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:background="@drawable/left_pic_key"
+	                />
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_marginLeft="10dp"
+	                android:layout_marginRight="10dp"
+	                android:textSize="15sp"
+	                android:text="业务说明" 
+	                android:textColor="@color/sms_font_dark"/>
+	            <ImageView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:background="@drawable/right_pic_key"
+	                />
+            
+            </LinearLayout>
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/sms_font_gray"
+                android:text="1.成功收款的款项将在您发起收款的一个工作日后转入您指定的银行账户。\n2.您的收款请求将以手机短信的形式发送到您指定的手机号码的使用人，请务必确认手机号码正确。" 
+                />
+        </LinearLayout>
+        
+	</LinearLayout>
+</ScrollView>

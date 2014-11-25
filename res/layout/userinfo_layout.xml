@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:id="@+id/common_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <include layout="@layout/title" />
+
+        <LinearLayout
+            android:id="@+id/func_container"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/picLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/text_color_white"
+        android:visibility="gone" >
+
+        <ImageView
+            android:layout_centerInParent="true"
+            android:id="@+id/bigpicture"
+            android:layout_width="150dp"
+            android:layout_height="200dp" />
+    </RelativeLayout>
+
+</FrameLayout>

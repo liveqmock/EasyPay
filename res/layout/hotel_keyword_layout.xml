@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tfbbar="http://schemas.android.com/apk/res/com.inter.trade"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="3"
+    android:background="#e3e1e1"
+    android:orientation="horizontal" >
+
+    <ListView
+        android:layout_weight="1"
+        android:id="@+id/expandablelist"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:background="@color/hotel_listview_bg"
+        >
+    </ListView>
+    
+    <ListView
+        android:layout_weight="2"
+        android:id="@+id/expandablelist2"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:background="#FFFFFFFF"
+        >
+    </ListView>
+
+</LinearLayout>

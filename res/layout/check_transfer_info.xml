@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@color/white" >
+
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+			<TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_top"
+                android:layout_marginLeft="@dimen/margin_left"
+                android:text="@string/check_prompt"
+                android:textColor="@color/black"
+                android:textSize="@dimen/little_size" />
+
+            <LinearLayout
+                style="@style/corner_margin_style"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/atte_corners"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        style="@style/item_text_padding"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:text="@string/open_bank"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/title_name_size" />
+
+                        <TextView
+                            android:id="@+id/openBankName"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:textColor="@color/gray"
+                            android:textSize="@dimen/title_name_size" />
+                    </LinearLayout>
+
+                    <include layout="@layout/line_layout" />
+                    
+                    <LinearLayout
+                        style="@style/item_text_padding"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:text="@string/zhuanzhang_reciever_card"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/title_name_size" />
+
+                        <TextView
+                            android:id="@+id/recieve_card"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:textColor="@color/gray"
+                            android:textSize="@dimen/title_name_size" />
+                    </LinearLayout>
+
+                    <include layout="@layout/line_layout" />
+                    
+                    <LinearLayout
+                        style="@style/item_text_padding"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:text="@string/zhuanzhang_reciever_name"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/title_name_size" />
+
+                        <TextView
+                            android:id="@+id/recieverName"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:textColor="@color/gray"
+                            android:textSize="@dimen/title_name_size" />
+                    </LinearLayout>
+
+                    <include layout="@layout/line_layout" />
+                    
+                    <LinearLayout
+                        style="@style/item_text_padding"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:text="@string/zhuanzhang_money"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/title_name_size" />
+
+                        <TextView
+                            android:id="@+id/transferCount"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:textColor="@color/gray"
+                            android:textSize="@dimen/title_name_size" />
+                    </LinearLayout>
+
+                    <include layout="@layout/line_layout" />
+                    
+                    <LinearLayout
+                        style="@style/item_text_padding"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:text="@string/zhuangzhang_way"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/title_name_size" />
+
+                        <TextView
+                            android:id="@+id/arriveWay"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:textColor="@color/gray"
+                            android:textSize="@dimen/title_name_size" />
+                    </LinearLayout>
+
+                    <include layout="@layout/line_layout" />
+                    <LinearLayout
+                        style="@style/item_text_padding"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:text="@string/zhuangzhang_reciever_phone"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/title_name_size" />
+
+                        <TextView
+                            android:id="@+id/phoneNumber"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:textColor="@color/gray"
+                            android:textSize="@dimen/title_name_size" />
+                    </LinearLayout>
+
+                    <include layout="@layout/line_layout" />
+                      <LinearLayout
+                        style="@style/item_text_padding"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:text="@string/zhuanzhang_cost"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/title_name_size" />
+
+                        <TextView
+                            android:id="@+id/transerCost"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:textColor="@color/gray"
+                            android:textSize="@dimen/title_name_size" />
+                    </LinearLayout>
+
+                    <include layout="@layout/line_layout" />
+                      <LinearLayout
+                        style="@style/item_text_padding"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:text="@string/zhuanzhang_swiping_count"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/title_name_size" />
+
+                        <TextView
+                            android:id="@+id/swipMoney"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:textColor="@color/gray"
+                            android:textSize="@dimen/title_name_size" />
+                    </LinearLayout>
+
+                    <include layout="@layout/line_layout" />
+                      <LinearLayout
+                        style="@style/item_text_padding"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:text="@string/zhuangzhang_remark"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/title_name_size" />
+
+                        <TextView
+                            android:id="@+id/bakContent"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:textColor="@color/gray"
+                            android:textSize="@dimen/title_name_size" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+            
+            <Button 
+                android:id="@+id/check_finish"
+                style="@style/btn_single_style"
+                android:background="@drawable/wihte_btn_action"
+                android:layout_marginLeft="@dimen/margin_left"
+                android:layout_marginRight="@dimen/margin_right"
+                android:layout_marginBottom="@dimen/margin_bottom"
+                android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:text="@string/btn_check"
+               android:textSize="@dimen/content_size"
+                />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

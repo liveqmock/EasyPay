@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:padding="10dp"
+	android:orientation="vertical" > 
+	
+	<LinearLayout 
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="20dp"
+		android:gravity="center"
+		android:orientation="horizontal" >
+		<ImageView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:background="@drawable/done_icon"
+	        android:layout_marginRight="4dp"
+	        android:gravity="center"
+	        />
+		<TextView
+	        android:id="@+id/tv_pay_status"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="4dp"
+	        android:gravity="center"
+	        android:text="支付成功"
+	        android:textColor="@color/gray" 
+	        android:textSize="20sp"/>
+	</LinearLayout>
+	 
+	<LinearLayout 
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="20dp"
+		android:orientation="vertical" >
+		<TextView
+	        android:id="@+id/tv_key"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:text="您的授权码为："
+	        android:textColor="@color/gray" 
+	        android:textSize="@dimen/content_size"/>
+		<TextView
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="10dp"
+	        android:gravity="center"
+	        android:text="已绑定当前登录账号和本设备"
+	        android:textColor="@color/gray" 
+	        android:textSize="@dimen/content_size"/>
+	</LinearLayout> 
+	
+	<Button
+	        android:id="@+id/btn_ok"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="20dp"
+	        android:gravity="center"
+	        android:background="@drawable/default_yellow_btn_action"
+	        android:text="我知道了"
+	        android:textColor="@color/text_color_white"
+	        android:textSize="@dimen/content_size" />
+</LinearLayout>        

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/grid_item_paddingbottom"
+    android:paddingLeft="@dimen/detial_item_padding_left"
+    android:paddingRight="@dimen/detial_item_padding_right"
+    android:paddingTop="@dimen/grid_item_paddingtop" >
+
+    <TextView
+        android:id="@+id/index_word"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/text_color_blue"
+        android:text="A"
+        android:textSize="@dimen/content_size"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/item_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/express_unload" />
+
+        <TextView
+            android:id="@+id/item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:layout_toRightOf="@+id/item_icon"
+            android:layout_marginLeft="@dimen/margin_left"
+            android:layout_centerVertical="true"
+            android:text="顺丰快递"
+            android:textSize="@dimen/content_size" />
+        
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/in" />
+    </RelativeLayout>
+
+</LinearLayout>

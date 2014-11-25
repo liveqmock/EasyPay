@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <dimen name="gridview_vertical_padding">6dp</dimen>
+    <dimen name="gridview_horizonal_padding">8dp</dimen>
+    <dimen name="grid_item_paddingtop">0dp</dimen>
+	<dimen name="grid_item_paddingbottom">0dp</dimen>
+	<dimen name="sidebar_size">10sp</dimen>
+	<dimen name="point_margin_bottom">4dp</dimen>
+	<dimen name="game_margin_top">10dp</dimen>
+	<dimen name="game_tablerow_margin">6dp</dimen>
+	
+	
+	<dimen name="main_fun_margin_top">0dp</dimen>
+	<dimen name="main_fun_grid_padding_vertical">10dp</dimen>
+	<dimen name="main_fun_grid_margin_top">0dp</dimen>
+	
+	<dimen name="main_fun_more_grid_height">106dp</dimen>
+	<dimen name="main_lock_image_size">100dp</dimen>
+	<dimen name="main_btn_padding_top">0dp</dimen>
+	
+</resources>

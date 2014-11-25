@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F6F7"
+    android:orientation="vertical"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="@string/game_recharge_success_text1"
+        android:textSize="@dimen/agent_little_size"
+        android:textColor="#A1A3A2" />
+
+    
+    <TextView
+        android:id="@+id/tv_game_money"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="19.80"
+        android:textSize="30sp"
+        android:textColor="@color/game_orange"
+        android:gravity="right|center_vertical"
+         />
+    
+
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+         android:layout_marginTop="24dp"
+        android:src="@drawable/dashed_line" />
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/game_recharge_success_text2"
+                android:textSize="@dimen/agent_little_size"
+                android:textColor="#A1A3A2" />
+
+            <TextView
+                android:id="@+id/tv_game_type"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:gravity="right|center_vertical"
+                android:textSize="@dimen/agent_little_size"
+                android:textColor="#A1A3A2"
+                android:text="游戏充值" />
+        </TableRow>
+        
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/game_recharge_success_text3"
+                android:textSize="@dimen/agent_little_size"
+                android:textColor="#A1A3A2" />
+
+            <TextView
+                android:id="@+id/tv_game_class"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:gravity="right|center_vertical"
+                android:textSize="@dimen/agent_little_size"
+                android:textColor="#A1A3A2"
+                android:text="赤壁20元直冲" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/game_recharge_success_text4"
+                android:textSize="@dimen/agent_little_size"
+                android:textColor="#A1A3A2" />
+
+            <TextView
+                android:id="@+id/tv_game_account"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:gravity="right|center_vertical"
+                android:textSize="@dimen/agent_little_size"
+                android:textColor="#A1A3A2"
+                android:text="赤壁20元直冲" />
+        </TableRow>
+
+    </TableLayout>
+    
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/dashed_line" />
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/game_recharge_success_text5"
+        android:textSize="20sp"
+        android:textColor="@color/game_orange"
+        android:drawableLeft="@drawable/icon_click"
+        android:gravity="center"
+        android:layout_gravity="center"
+         />
+
+	<LinearLayout 
+	    android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+	    >
+	    <Button
+        android:id="@+id/btn_record"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/selector_btn_game_record"
+        android:text="@string/game_recharge_success_text6"
+        android:textColor="#ffffff"
+        android:textSize="16sp" />
+	    
+	     <Button
+        android:id="@+id/btn_goto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginTop="18dp"
+        android:layout_marginLeft="24dp"
+        android:background="@drawable/selector_btn_game_goto"
+        android:text="@string/game_recharge_success_text7"
+        android:textColor="#ffffff"
+        android:textSize="16sp" />
+	    
+	    
+	</LinearLayout>
+    
+
+</LinearLayout>

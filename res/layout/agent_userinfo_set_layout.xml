@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+<LinearLayout 
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+	
+    <LinearLayout
+        style="@style/corner_margin_style"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/atte_corners"
+        android:orientation="vertical" >
+         <LinearLayout
+            style="@style/item_text_padding"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/userinfo_identity"
+                android:layout_weight="1"
+                android:textSize="@dimen/content_size" />
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                 >
+            <ImageView
+                android:id="@+id/identity_1" 
+                android:layout_width="@dimen/image_thumbnail_size"
+                android:layout_height="@dimen/image_thumbnail_size"
+                />
+            <ImageView 
+                android:id="@+id/identity_2" 
+                android:layout_marginLeft="@dimen/picture_margin_left"
+                android:layout_width="@dimen/image_thumbnail_size"
+                android:layout_height="@dimen/image_thumbnail_size"
+                />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+    
+    <LinearLayout
+        style="@style/corner_margin_style"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/atte_corners"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            style="@style/item_text_padding"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1.5"
+                android:text="@string/userinfo_name"
+                android:textSize="@dimen/content_size" />
+
+            <EditText
+                android:id="@+id/name_edit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/text_color_white"
+                android:hint="@string/userinfo_name"
+                android:inputType="text" />
+        </LinearLayout>
+		
+        <include 
+            android:id="@+id/my_line"
+            layout="@layout/line_layout"
+            />
+        
+        <LinearLayout
+            style="@style/item_text_padding"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1.5"
+                android:text="@string/rigester_identity_card"
+                android:textSize="@dimen/content_size" />
+
+            <EditText
+                android:id="@+id/identity_edit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/text_color_white"
+                android:hint="@string/rigester_identity_card"
+                android:inputType="text" />
+        </LinearLayout>
+		
+        <include 
+            android:id="@+id/my_line"
+            layout="@layout/line_layout"
+            />
+        
+        <LinearLayout
+            style="@style/item_text_padding"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1.5"
+                android:text="@string/rigester_email"
+                android:textSize="@dimen/content_size" />
+
+            <EditText
+                android:id="@+id/email_edit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/text_color_white"
+                android:hint="@string/rigester_email"
+                android:inputType="textEmailAddress" />
+        </LinearLayout>
+    </LinearLayout>
+    
+    
+    <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="下面几项是代理商增加的信息："
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textColor="#ababab"
+                android:textSize="@dimen/content_size" />
+    
+    
+    <LinearLayout
+        style="@style/corner_margin_style"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/atte_corners"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            style="@style/item_text_padding"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1.5"
+                android:text="@string/agent_user_company_name"
+                android:textSize="@dimen/content_size" />
+
+            <EditText
+                android:id="@+id/name_edit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/text_color_white"
+                android:hint="@string/agent_user_company_name_hint"
+                android:inputType="text" />
+        </LinearLayout>
+		
+        <include 
+            android:id="@+id/my_line"
+            layout="@layout/line_layout"
+            />
+        
+        <LinearLayout
+            style="@style/item_text_padding"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1.5"
+                android:text="@string/agent_user_gsd"
+                android:textSize="@dimen/content_size" />
+
+            <EditText
+                android:id="@+id/identity_edit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/text_color_white"
+                android:hint="@string/agent_user_gsd_hint"
+                android:inputType="text" />
+        </LinearLayout>
+		
+        <include 
+            android:id="@+id/my_line"
+            layout="@layout/line_layout"
+            />
+        
+        <LinearLayout
+            style="@style/item_text_padding"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1.5"
+                android:text="@string/agent_user_address"
+                android:textSize="@dimen/content_size" />
+
+            <EditText
+                android:id="@+id/email_edit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/text_color_white"
+                android:hint="@string/agent_user_address_hint"
+                android:inputType="textEmailAddress" />
+        </LinearLayout>
+        
+         <include 
+            android:id="@+id/my_line"
+            layout="@layout/line_layout"
+            />
+        
+        <LinearLayout
+            style="@style/item_text_padding"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1.5"
+                android:text="@string/agent_user_telphone"
+                android:textSize="@dimen/content_size" />
+
+            <EditText
+                android:id="@+id/email_edit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/text_color_white"
+                android:hint="@string/agent_user_telphone_hint"
+                android:inputType="textEmailAddress" />
+        </LinearLayout>
+        
+         <include 
+            android:id="@+id/my_line"
+            layout="@layout/line_layout"
+            />
+        
+        <LinearLayout
+            style="@style/item_text_padding"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1.5"
+                android:text="@string/agent_user_fax"
+                android:textSize="@dimen/content_size" />
+
+            <EditText
+                android:id="@+id/email_edit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/text_color_white"
+                android:hint="@string/agent_user_fax_hint"
+                android:inputType="textEmailAddress" />
+        </LinearLayout>
+        
+         <include 
+            android:id="@+id/my_line"
+            layout="@layout/line_layout"
+            />
+        
+        <LinearLayout
+            style="@style/item_text_padding"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1.5"
+                android:text="@string/agent_user_contract"
+                android:textSize="@dimen/content_size" />
+
+            <EditText
+                android:id="@+id/email_edit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/text_color_white"
+                android:inputType="textEmailAddress" />
+        </LinearLayout>
+        
+         <include 
+            android:id="@+id/my_line"
+            layout="@layout/line_layout"
+            />
+        
+        <LinearLayout
+            style="@style/item_text_padding"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1.5"
+                android:text="@string/agent_user_risk"
+                android:textSize="@dimen/content_size" />
+
+            <EditText
+                android:id="@+id/email_edit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/text_color_white"
+                android:inputType="textEmailAddress" />
+        </LinearLayout>
+    </LinearLayout>
+    
+    
+
+
+</LinearLayout>
+</ScrollView>

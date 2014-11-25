@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:orientation="horizontal"
+    android:weightSum="3"
+     >
+            <TextView
+                android:id="@+id/tv_phone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="手机号"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:layout_marginLeft="30dp"
+                android:gravity="left|center_vertical"
+                android:textSize="14sp" />
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="姓名"
+                android:layout_gravity="center"
+                android:gravity="left|center_vertical"
+                android:layout_weight="1"
+                android:textSize="14sp" />
+            <TextView
+                android:id="@+id/tv_money"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="本月工资"
+                android:layout_gravity="center"
+                android:gravity="left|center_vertical"
+                android:layout_weight="1"
+                android:textSize="14sp" />
+            
+</LinearLayout>

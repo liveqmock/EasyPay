@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView 
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+    >
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        style="@style/corner_margin_style"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/atte_corners"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            style="@style/item_text_padding"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:text="@string/recharge_count"
+                android:textColor="@color/black"
+                android:textSize="@dimen/title_name_size" />
+
+            <TextView
+                android:id="@+id/recharge_count"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="10000元"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/title_name_size" />
+        </LinearLayout>
+
+        <include
+            android:id="@+id/my_line"
+            layout="@layout/line_layout" />
+
+        <LinearLayout
+            style="@style/item_text_padding"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:text="@string/zhuangzhang_reciever_phone"
+                android:textColor="@color/black"
+                android:textSize="@dimen/title_name_size" />
+
+            <TextView
+                android:id="@+id/recharge_phone_no"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="18664676691"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/title_name_size" />
+        </LinearLayout>
+
+        <include
+            android:id="@+id/my_line"
+            layout="@layout/line_layout" />
+
+        <LinearLayout
+            style="@style/item_text_padding"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:text="@string/cridet_code"
+                android:textColor="@color/black"
+                android:textSize="@dimen/title_name_size" />
+
+            <TextView
+                android:id="@+id/recharge_cridet_no"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:textColor="@color/gray"
+                android:text="12313123123123"
+                android:textSize="@dimen/title_name_size" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/swip_confirm_btn"
+        style="@style/btn_single_style"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_left"
+        android:layout_marginRight="@dimen/margin_right"
+        android:background="@drawable/wihte_btn_action"
+        android:text="@string/recharge_btn_confirm"
+        android:textColor="@color/black"
+        android:textSize="@dimen/content_size" />
+
+</LinearLayout>
+</ScrollView>

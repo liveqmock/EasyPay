@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content" >
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        style="@style/detial_item_style"
+        >
+        <TextView 
+            android:id="@+id/pay_count"
+            android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentRight="true"
+	        android:text="10000.00"
+	        android:textSize="@dimen/content_size"
+            />
+        <TextView 
+            android:id="@+id/serial_number"
+            android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_toLeftOf="@id/pay_count"
+	         android:textSize="@dimen/content_size"
+	        android:text="流水号20130808151832"
+            />
+    </RelativeLayout>
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        style="@style/detial_item_style"
+        >
+        <TextView 
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentRight="true"
+	        android:text="成功"
+	        android:textSize="@dimen/little_size"
+            />
+        <TextView 
+            android:id="@+id/serial_number"
+            android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_toLeftOf="@id/status"
+	         android:textSize="@dimen/little_size"
+	        android:text="2013-08-09"
+            />
+    </RelativeLayout>
+
+</LinearLayout>

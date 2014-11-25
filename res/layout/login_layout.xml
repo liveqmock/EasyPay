@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        style="@style/corner_margin_style"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/atte_corners"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            style="@style/item_text_padding"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="@string/login_name"
+                android:textSize="@dimen/content_size" />
+
+            <EditText
+                android:id="@+id/login_name_edit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/text_color_white"
+                android:hint="@string/login_name_prompt"
+                android:inputType="number" />
+        </LinearLayout>
+
+        <include layout="@layout/line_layout" />
+        
+        <LinearLayout
+            style="@style/item_text_padding"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="@string/login_pwd"
+                android:textSize="@dimen/content_size" />
+
+            <EditText
+                 android:id="@+id/login_pwd_edit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/text_color_white"
+                android:hint="@string/login_pwd_prompt"
+                android:inputType="textPassword" />
+        </LinearLayout>
+
+    </LinearLayout>
+    
+    <RelativeLayout 
+        android:layout_marginLeft="@dimen/margin_left"
+        android:layout_marginRight="@dimen/margin_right"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        >
+        <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentLeft="true"
+        >
+            <CheckBox 
+                android:id="@+id/remenber_ck"
+                style="@style/custome_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <TextView 
+                android:layout_marginLeft="@dimen/margin_left"
+                android:layout_width="wrap_content"
+                android:textSize="@dimen/little_size"
+                android:layout_height="wrap_content"
+                android:text="@string/login_remenber_pwd"
+                android:layout_gravity="center_vertical"
+                />
+        </LinearLayout>
+        <TextView 
+            android:id="@+id/find_pwd"
+            android:textSize="@dimen/little_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="@string/login_find_pwd"
+            android:textColor="@color/text_color_blue"
+            />
+    </RelativeLayout>
+    
+    <LinearLayout 
+        style="@style/corner_margin_style"
+         android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+       <Button 
+           android:id="@+id/login"
+           style="@style/btn_single_style"
+           android:layout_weight="1"
+            android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+                android:text="@string/btn_login"
+                android:textSize="@dimen/content_size"
+                android:background="@drawable/wihte_btn_action"
+           />
+        <Button 
+             android:id="@+id/register"
+             style="@style/btn_single_style"
+           android:layout_weight="1"
+            android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_left"
+        android:textColor="@color/text_color_white"
+                android:text="@string/btn_register"
+                android:textSize="@dimen/content_size"
+                   android:background="@drawable/blue_btn_action"
+           />
+    </LinearLayout>
+    <!-- 以下布局为测试阶段，安全登录入口 （包括手势密码登录） -->
+    <TextView 
+        android:id="@+id/safety_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="#00BFFF"
+        android:padding="5dp"
+        android:layout_marginTop="30dp"
+        android:visibility="gone"
+        android:text="安全登录 > >"
+        />
+
+</LinearLayout>
+
+</ScrollView>

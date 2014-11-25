@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    >
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+	
+    <ViewStub
+        android:id="@+id/vs_sms_get" 
+        android:inflatedId="@+id/layout_sms_get"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout="@layout/register_sms_get"
+        />
+    
+    <ViewStub
+        android:id="@+id/vs_sms_received" 
+        android:inflatedId="@+id/layout_sms_received"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout="@layout/register_sms_received"
+        />
+
+</LinearLayout>
+
+</ScrollView>

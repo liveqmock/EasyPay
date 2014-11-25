@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#fae09b"
+    android:paddingBottom="3dp"
+    android:paddingTop="3dp" >
+
+
+    <TextView
+        android:id="@+id/result_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:text="可以下拉刷新或者上拉加载更多"
+        android:singleLine="true"
+        android:textColor="@color/text_color_gray"
+        android:textSize="14sp" />
+
+</RelativeLayout>

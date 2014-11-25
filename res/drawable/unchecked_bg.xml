@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+   
+    <item android:drawable="@drawable/bg_gray_pink_main"></item>
+	<item android:drawable="@drawable/bg_gray_main" android:top="@dimen/main_navigation_head_height"></item>
+	 <!-- <item android:drawable="@drawable/line_unchecked"></item> -->
+</layer-list>

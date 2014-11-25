@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/light_gray"
+    style="@style/agent_padding_style"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+    
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/agent_applying_agreement_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        style="@style/agent_padding_style">
+        
+        <LinearLayout 
+            android:id="@+id/agent_appling_bt_layout"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentBottom="true"
+	        android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+	        android:orientation="horizontal">
+    	
+	        <Button
+	            android:id="@+id/agent_appling_refuse_btn"
+	            android:layout_weight="1"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:paddingTop="10dp"
+            	android:paddingBottom="10dp"
+	            android:background="@color/agent_blue"
+	            android:text="拒绝"
+	            android:textColor="@color/text_color_white"
+	            android:textSize="@dimen/agent_button_textsize" />
+	        <Button
+	            android:id="@+id/agent_appling_agree_btn"
+	            android:layout_weight="1"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="10dp"
+	            android:paddingTop="10dp"
+            	android:paddingBottom="10dp"
+	            android:background="@color/agent_orange"
+	            android:text="同意"
+	            android:textColor="@color/text_color_white"
+	            android:textSize="@dimen/agent_button_textsize" />
+        </LinearLayout>
+        
+        
+        <ScrollView
+		    android:layout_width="fill_parent"
+		    android:layout_height="fill_parent"
+		    android:layout_above="@id/agent_appling_bt_layout"
+	        android:background="@drawable/square"
+	        style="@style/agent_padding_style"
+	        android:layout_marginTop="10dp"
+	        android:layout_marginBottom="30dp" 
+		    >
+	        <LinearLayout 
+		        android:layout_width="fill_parent"
+		        android:layout_height="fill_parent"
+		        android:orientation="vertical">
+    		<TextView 
+	            android:id="@+id/agent_appling_agreement_tv"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:gravity="center"
+	            android:textColor="@color/gray"
+	            android:textSize="@dimen/agent_content_size"
+	            android:text="通付宝代理商协议"/>
+	        <TextView 
+	            android:id="@+id/agent_appling_agreement_tv"
+	            android:layout_width="fill_parent"
+	            android:layout_height="fill_parent"
+	            android:layout_marginTop="10dp"
+	            android:gravity="center"
+	            android:textColor="@color/gray"
+	            android:textSize="@dimen/agent_content_size"
+	            android:text="代理商申请协议
+代理商申请协议
+代理商申请协议
+代理商申请协议
+代理商申请协议
+代理商申请协议
+代理商申请协议
+代理商申请协议
+代理商申请协议
+代理商申请协议
+代理商申请协议
+代理商申请协议
+代理商申请协议
+代理商申请协议
+代理商申请协议
+代理商申请协议
+代理商申请协议
+代理商申请协议end
+"/>
+        	</LinearLayout>
+        </ScrollView>
+        
+    </RelativeLayout>
+    
+    <ScrollView
+        android:id="@+id/agent_applying_layout"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:fillViewport="true"
+	    >
+        <LinearLayout
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent"
+	        style="@style/agent_padding_style"
+	        android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_weight="2"
+		            android:layout_width="fill_parent"
+		            android:layout_height="fill_parent"
+		            android:background="@drawable/atte_corners"
+		            style="@style/agent_padding_style"
+		            android:layout_marginTop="0dp"
+		            android:layout_marginBottom="10dp"
+		            android:gravity="center"
+		            android:orientation="horizontal">
+                    
+                    <TextView
+		                android:id="@+id/agent_applying_name_tv"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:textColor="@color/gray"
+		                android:textSize="@dimen/agent_content_size"
+		                android:text="姓　　名:"/>
+                    
+                    <EditText
+                        android:id="@+id/agent_applying_name_edit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:inputType="textPersonName"
+                        android:maxLength="11"
+                        android:textSize="@dimen/agent_content_size" />
+                </LinearLayout>
+                
+                <LinearLayout
+                    android:layout_weight="2"
+		            android:layout_width="fill_parent"
+		            android:layout_height="fill_parent"
+		            android:background="@drawable/atte_corners"
+		            style="@style/agent_padding_style"
+		            android:layout_marginTop="10dp"
+		            android:layout_marginBottom="10dp"
+		            android:gravity="center"
+		            android:orientation="horizontal"
+		            >
+		
+		            <TextView
+		                android:id="@+id/agent_applying_phone_tv"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:textColor="@color/gray"
+		                android:textSize="@dimen/agent_content_size"
+		                android:text="手机号码:"/>
+		
+		            <EditText
+                        android:id="@+id/agent_applying_phone_edit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:inputType="number"
+                        android:maxLength="11"
+                        android:textSize="@dimen/agent_content_size" />
+		        </LinearLayout>
+		        
+                <LinearLayout
+		            android:layout_weight="2"
+		            android:layout_width="fill_parent"
+		            android:layout_height="fill_parent"
+		            android:gravity="center"
+		            style="@style/agent_padding_style"
+		            android:layout_marginTop="10dp"
+		            android:layout_marginBottom="10dp"
+		            android:orientation="horizontal">
+	                <ImageView
+				        android:id="@+id/agent_applying_photo_img"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:layout_marginLeft="20dp"
+		            	android:layout_marginRight="10dp"
+				        android:background="@drawable/camera_icon"/>
+				        
+				    <Button
+				        android:id="@+id/agent_applying_photo_btn"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:layout_marginLeft="10dp"
+		            	android:layout_marginRight="10dp"
+				        android:textColor="@color/text_color_blue"
+				        android:textSize="@dimen/agent_content_size"
+				        android:background="@null"
+				        android:text="拍照上传身份证"/>
+				    
+				    <ImageView
+				        android:id="@+id/agent_applying_photo_done_img"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:layout_marginLeft="30dp"
+		            	android:layout_marginRight="10dp"
+				        android:background="@drawable/done_icon"/>
+				    
+                </LinearLayout>
+                
+                <LinearLayout
+		            android:layout_weight="2"
+		            android:layout_width="fill_parent"
+		            android:layout_height="fill_parent"
+                    android:background="@drawable/atte_corners"
+                    style="@style/agent_padding_style"
+		            android:layout_marginTop="10dp"
+		            android:layout_marginBottom="10dp"
+		            android:gravity="center"
+		            android:orientation="horizontal"
+		            >
+		
+		            <TextView
+		                android:id="@+id/agent_applying_adress_tv"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:textColor="@color/gray"
+		                android:textSize="@dimen/agent_content_size"
+		                android:text="收货地址:"/>
+		
+		            <EditText
+                        android:id="@+id/agent_applying_adress_edit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:inputType="textPostalAddress"
+                        android:maxLength="100"
+                        android:textSize="@dimen/agent_content_size" />
+		        </LinearLayout>
+		        
+                
+                <LinearLayout
+		            android:layout_weight="1.4"
+		            android:layout_width="fill_parent"
+		            android:layout_height="fill_parent"
+		            android:orientation="vertical"
+		            >
+	                <ImageView
+					        android:id="@+id/agent_applying_payhint_line"
+					        android:layout_width="fill_parent"
+					        android:layout_height="wrap_content"
+					        style="@style/agent_margin_top_bottom_style"
+					        android:background="@drawable/dashed_line"/>
+	                
+			                <TextView
+					                android:id="@+id/agent_applying_pay_mode_tv"
+					                android:layout_width="fill_parent"
+					                android:layout_height="wrap_content"
+					                style="@style/agent_margin_top_bottom_style"
+					                android:gravity="center"
+					                android:textColor="@color/gray"
+					                android:textSize="@dimen/agent_content_size"
+					                android:text="缴费方式提示"/>
+			                
+			                <TextView
+					                android:id="@+id/agent_applying_pay_mode_tv2"
+					                android:layout_width="fill_parent"
+					                android:layout_height="wrap_content"
+					                style="@style/agent_margin_top_bottom_style"
+					                android:gravity="left"
+					                android:textColor="@color/gray"
+					                android:textSize="@dimen/agent_main_content_size"
+					                android:text="　　感谢您的信息提交，我们完成审核以后有客服与您联系，请保持您的手机畅通。您也可以通过致电400-6868-956进行咨询。"/>
+		               
+	                <ImageView
+					        android:id="@+id/agent_applying_payhint_line_end"
+					        android:layout_width="fill_parent"
+					        android:layout_height="wrap_content"
+					        style="@style/agent_margin_top_bottom_style"
+					        android:background="@drawable/dashed_line"/>
+                </LinearLayout>
+                
+                <Button
+                    android:layout_weight="2"
+		            android:layout_width="fill_parent"
+		            android:layout_height="fill_parent"
+		            style="@style/agent_padding_style"
+		            android:layout_marginTop="10dp"
+		            android:layout_marginBottom="5dp"
+			        android:id="@+id/agent_applying_submit_btn"
+			        android:layout_alignParentBottom="true"
+			        android:background="@color/agent_orange"
+			        android:text="提交申请"
+			        android:textColor="@color/text_color_white"
+			        android:textSize="@dimen/agent_button_textsize" />
+                
+		</LinearLayout>   
+    </ScrollView>
+</FrameLayout>

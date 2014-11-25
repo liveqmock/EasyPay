@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RadioGroup
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/rg_navigation"
+         >
+
+        <RadioButton
+            android:id="@+id/rb_favour"
+            android:drawableTop="@drawable/icon_favour_main"
+            android:text="爱用" 
+            style="@style/main_navigation"
+            />
+
+        <RadioButton
+            android:id="@+id/rb_bank"
+            android:text="掌上银行"
+            style="@style/main_navigation"
+            android:drawableTop="@drawable/icon_bank_main"
+             />
+        <RadioButton
+             android:id="@+id/rb_convince"
+            android:drawableTop="@drawable/icon_convince_main"
+            android:text="便民服务"
+            style="@style/main_navigation"/>
+        <RadioButton
+             android:id="@+id/rb_more"
+            android:drawableTop="@drawable/icon_more_main"
+            android:text="更多"
+            style="@style/main_navigation"
+            />
+    </RadioGroup>

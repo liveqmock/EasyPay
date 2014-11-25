@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EFEFEF" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:orientation="vertical"
+         >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/et_bg_game_detail"
+             >
+            
+            <TextView 
+                android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+                android:text="财务账号"
+                />
+            
+            <EditText
+                android:id="@+id/et_account"
+                android:layout_width="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:layout_marginLeft="16dp"
+                android:singleLine="true"
+                android:inputType="number"
+                android:maxLength="11"
+                android:hint="输入贵公司财务通付宝手机号"
+                android:textSize="14sp" />
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:text="员工姓名"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/et_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:layout_marginLeft="16dp"
+                android:background="#00000000"
+                android:enabled="false"
+                android:textColorHint="#ffababab"
+                android:textSize="14sp" />
+        </LinearLayout>
+        
+        <ImageView 
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="32dp"
+             android:background="@drawable/default_dashed_line"
+            />
+        
+          <TextView 
+                android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="说明:每家公司只能指派一名财务人员."
+                />
+           <TextView 
+                android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="1.设定贵公司财物后,财务人员可以再通过通付宝官网登陆企业用户平台,上传工资条信息;"
+            android:visibility="gone"
+                />
+            <TextView 
+                android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text=""
+            android:visibility="gone"
+                />
+        <ImageView 
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:background="@drawable/default_dashed_line"
+            />
+
+        <Button
+            android:id="@+id/btn_finish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/default_yellow_btn_action"
+            android:text="确认"
+            android:textColor="@color/text_color_white" />
+    </LinearLayout>
+
+</ScrollView>

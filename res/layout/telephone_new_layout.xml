@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" 
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:background="#f2f6f7">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/mobileAttribution"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="号码归属地"
+            android:textColor="#1E90FF"
+            android:visibility="gone" />
+
+        <LinearLayout
+            style="@style/corner_margin_style"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/atte_corners"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                style="@style/item_text_padding"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone" >
+
+                <ImageView
+                    android:id="@+id/image_in"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/in" />
+
+                <LinearLayout
+                    android:id="@+id/bank_layout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/image_in"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/zhuanzhang_chose_bank"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/content_size" />
+
+                    <TextView
+                        android:id="@+id/bank_name"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:text="@string/support_bank"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/content_size" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <include
+                layout="@layout/line_layout"
+                android:visibility="gone" />
+
+            <LinearLayout
+                style="@style/item_text_padding"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                android:visibility="gone" >
+
+                <TextView
+                    android:id="@+id/swip_prompt"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1.5"
+                    android:text="@string/cridet_insert"
+                    android:textSize="@dimen/content_size" />
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" >
+
+                    <ImageView
+                        android:id="@+id/swip_card"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/swip_card_bg"
+                        android:focusable="true" />
+
+                    <EditText
+                        android:id="@+id/card_edit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@id/swip_card"
+                        android:background="@color/text_color_white"
+                        android:hint="@string/cridet_insert_prompt"
+                        android:inputType="number"
+                        android:textSize="@dimen/little_size" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <include
+                layout="@layout/line_layout"
+                android:visibility="gone" />
+            <!-- 输入手机号码 -->
+
+            <LinearLayout
+                style="@style/item_text_padding"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal" >
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" >
+
+                    <Button
+                        android:id="@+id/addressbook"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/default_telbook_btn_action"
+                        android:focusable="true" />
+
+                    <EditText
+                        android:id="@+id/telephone_edit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@id/addressbook"
+                        android:background="@color/text_color_white"
+                        android:hint="@string/telephone_edit_prompt"
+                        android:inputType="number"
+                        android:maxLength="11"
+                        android:textSize="@dimen/content_size" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/payMoney"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/gray"
+                android:text="请选择充值面额" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:text="实际支付金额:"
+                android:textColor="#A52A2A"
+                android:visibility="invisible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal" >
+
+                    <LinearLayout
+                        android:id="@+id/chongzhi10"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/atte_corners_selector"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="10dip"
+                        android:visibility="gone" >
+
+                        <TextView
+                            android:id="@+id/chongzhi10_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#00FFFFFF"
+                            android:focusable="true"
+                            android:hint="0"
+                            android:text="10.0元"
+                            android:textColor="@color/textview_selector" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/chongzhi20"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/atte_corners_selector"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="10dip"
+                        android:visibility="gone" >
+
+                        <TextView
+                            android:id="@+id/chongzhi20_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#00FFFFFF"
+                            android:focusable="true"
+                            android:hint="0"
+                            android:text="20.0元"
+                            android:textColor="@color/textview_selector" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/chongzhi30"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/atte_corners_selector"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="10dip"
+                        android:visibility="gone" >
+
+                        <TextView
+                            android:id="@+id/chongzhi30_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#00FFFFFF"
+                            android:focusable="true"
+                            android:hint="0"
+                            android:text="30.0元"
+                            android:textColor="@color/textview_selector" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal" >
+
+                    <LinearLayout
+                        android:id="@+id/chongzhi50"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/atte_corners_selector"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="10dip"
+                        android:visibility="gone" >
+
+                        <TextView
+                            android:id="@+id/chongzhi50_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#00FFFFFF"
+                            android:focusable="true"
+                            android:hint="0"
+                            android:text="50.0元"
+                            android:textColor="@color/textview_selector" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/chongzhi100"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/atte_corners_selector"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="10dip"
+                        android:visibility="gone" >
+
+                        <TextView
+                            android:id="@+id/chongzhi100_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#00FFFFFF"
+                            android:focusable="true"
+                            android:hint="0"
+                            android:text="100.0元"
+                            android:textColor="@color/textview_selector" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/chongzhi200"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/atte_corners_selector"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="10dip"
+                        android:visibility="gone" >
+
+                        <TextView
+                            android:id="@+id/chongzhi200_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#00FFFFFF"
+                            android:focusable="true"
+                            android:hint="0"
+                            android:text="200.0元"
+                            android:textColor="@color/textview_selector" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal" >
+
+                    <LinearLayout
+                        android:id="@+id/chongzhi300"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/atte_corners_selector"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="10dip"
+                        android:visibility="gone" >
+
+                        <TextView
+                            android:id="@+id/chongzhi300_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#00FFFFFF"
+                            android:focusable="true"
+                            android:hint="0"
+                            android:text="300.0元"
+                            android:textColor="@color/textview_selector" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/chongzhi400"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/atte_corners_selector"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="10dip"
+                        android:visibility="gone" >
+
+                        <TextView
+                            android:id="@+id/chongzhi400_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#00FFFFFF"
+                            android:focusable="true"
+                            android:hint="0"
+                            android:text="400.0元"
+                            android:textColor="@color/textview_selector" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/chongzhi500"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/atte_corners_selector"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="10dip"
+                        android:visibility="gone" >
+
+                        <TextView
+                            android:id="@+id/chongzhi500_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#00FFFFFF"
+                            android:focusable="true"
+                            android:hint="0"
+                            android:text="500.0元"
+                            android:textColor="@color/textview_selector" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/cridet_back_btn"
+            style="@style/btn_single_style"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_bottom"
+            android:layout_marginLeft="@dimen/margin_left"
+            android:layout_marginRight="@dimen/margin_right"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/selector_btn_game_record"
+            android:text="充值"
+            android:textColor="@color/white"
+            android:textSize="@dimen/content_size" 
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/markinfo"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_left"
+            android:padding="@dimen/margin_left"
+            android:text="@string/mobile_markinfo"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/content_size14" >
+        </TextView>
+
+        <LinearLayout
+            android:id="@+id/query_layout"
+            style="@style/corner_margin_style"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <EditText
+                android:id="@+id/query_input"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/feedback_height" />
+
+            <Button
+                android:id="@+id/send"
+                style="@style/btn_single_style"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_bottom"
+                android:layout_marginTop="@dimen/margin_top"
+                android:background="@drawable/wihte_btn_action"
+                android:text="@string/send_sms"
+                android:textColor="@color/black"
+                android:textSize="@dimen/content_size" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

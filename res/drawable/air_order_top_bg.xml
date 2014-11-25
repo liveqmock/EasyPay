@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 布局圆角 solid 设置背景色 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">  
+    <solid android:color="#ff01b9ef" />  
+    <corners android:topLeftRadius="10dp" 
+                    android:topRightRadius="10dp"  
+                android:bottomRightRadius="0dp" 
+                android:bottomLeftRadius="0dp"/>
+      
+</shape>
+

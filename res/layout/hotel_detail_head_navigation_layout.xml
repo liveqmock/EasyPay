@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RadioGroup
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/rg_navigation"
+         >
+
+        <RadioButton
+            android:id="@+id/rb_house_type"
+            android:text="房型" 
+            android:layout_height="36dp"
+            style="@style/hotel_list_navigation"
+            />
+
+        <RadioButton
+            android:id="@+id/rb_comment"
+            android:text="评论"
+            android:layout_height="36dp"
+            style="@style/hotel_list_navigation"
+             />
+        <RadioButton
+            android:id="@+id/rb_photo"
+            android:text="照片"
+            android:layout_height="36dp"
+            style="@style/hotel_list_navigation"/>
+    </RadioGroup>

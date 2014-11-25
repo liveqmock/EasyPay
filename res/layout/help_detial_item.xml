@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    android:paddingTop="@dimen/list_item_paddingtop"
+    android:paddingBottom="@dimen/list_item_paddingbottom"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+<RelativeLayout 
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/atte_corners"
+    android:orientation="vertical" 
+    style="@style/corner_margin_style">
+
+    <LinearLayout
+        style="@style/item_text_padding"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+         >
+ 	<TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="优惠券 20130908010120"
+            android:textSize="@dimen/content_size" />
+        
+		<TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2013-02-12" 
+            android:layout_marginTop="@dimen/detial_item_padding_top"
+            />
+       <TextView
+            android:id="@+id/content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="税换成功"
+            android:layout_marginTop="@dimen/detial_item_padding_top"
+             />
+        
+    </LinearLayout>
+
+</RelativeLayout>
+</LinearLayout>

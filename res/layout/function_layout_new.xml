@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/index_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#1D78BD"
+    android:orientation="vertical" >
+
+    <include
+        layout="@layout/title"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:background="#8EB7EB" >
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_title_main" 
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="@dimen/point_margin_bottom"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/pointLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/point_margin_bottom"
+            android:orientation="horizontal" />
+
+        <com.inter.trade.ui.MyViewPager
+            android:id="@+id/ad_pager"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:focusable="false"
+            android:scrollbars="none"
+            android:persistentDrawingCache="animation" />
+
+        <include
+            android:id="@+id/navigation_bottom"
+            layout="@layout/layout_navigation_bottom" />
+    </LinearLayout>
+
+</LinearLayout>

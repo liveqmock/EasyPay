@@ -1,0 +1,9 @@
+<!-- Copyright 2012 Square, Inc. -->
+<resources>
+
+    <dimen name="splash_padding_left">16.0dp</dimen>
+    <dimen name="splash_padding_right">16.0dp</dimen>
+    <dimen name="splash_margion_bottom">75.0dp</dimen>
+    <dimen name="splash_margion_top">120.0dp</dimen>
+
+</resources>

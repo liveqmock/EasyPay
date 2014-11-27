@@ -21,6 +21,7 @@ import android.provider.Contacts.People.Phones;
 import android.provider.ContactsContract;
 import android.telephony.SmsManager;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -798,82 +799,101 @@ public class HomeTelephonePayMainFragment extends BaseFragment implements OnClic
 							 ContactsContract.CommonDataKinds.Phone.CONTACT_ID 
 							 + " = " + id, null, null); 
 					 while (phones.moveToNext()) { 
-						 phoneNumber = phones 
-								 .getString(phones 
-										 .getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER)); 
+						 phoneNumber = phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER)); 
+					 
+						 /**
+						  * 一个联系人可能有多个号码，一旦找到手机号（非固话等），不再继续查找。
+						  * 找不到手机号，默认不显示错误提示语
+						  */
+						 String tempNum=splitCharForPhone(phoneNumber);
+						 if(removeHeadNumberForPhone(tempNum, false)){
+							 break;
+						 }
 					 } 
 					 phones.close(); 
 				 } 
 			 } 
 			 
-			 //模拟带连接符“-”的手机号码，如：138-8888-8888
-//			 String tempNum = "0138-8888-88-88";
-			 String tempNum = phoneNumber;
-			 String[] phoneNumbers = tempNum.split("-");
+			 /**
+			  *  以下两句测试，显示非手机号的提示语
+			  */
+//			 String tempNum=splitCharForPhone(phoneNumber);
+//			 removeHeadNumberForPhone(tempNum, true);
 			 
-			 String tempPhoneNumber = "";
-			 for(int i = 0; i < phoneNumbers.length ; i ++){
-				 tempPhoneNumber +=  phoneNumbers[i];
-			 }
-			 if(tempPhoneNumber != null && !tempPhoneNumber.equals("")){
-				 if(tempPhoneNumber.length() != 11){
-					 String num = tempPhoneNumber.substring(0, 1);
-					 String tempNumber = "";
-					 if( num.equals("0") ){
-						 tempNumber =  tempPhoneNumber.substring(1);
-						 if(isMobileNum(tempNumber)){
-							 telephone_edit.setText(tempNumber);
-							 mobileQueryAttribution(tempNumber);
-						 }else{
-							 PromptUtil.showToast(getActivity(), "号码格式不正确");
-						 }
-					 }
-				 }else{
-					 if(isMobileNum(tempPhoneNumber)){
-						 telephone_edit.setText(tempPhoneNumber);
-						 mobileQueryAttribution(tempPhoneNumber);
-					 }else{
-						 PromptUtil.showToast(getActivity(), "号码格式不正确");
-					 }
-				 }
-			 }else{
-				 if(tempNum != null && !tempNum.equals("") && tempNum.length() == 11 && isMobileNum(tempNum)){
-					 if(isMobileNum(tempNum)){
-						 telephone_edit.setText(tempNum);
-						 mobileQueryAttribution(tempNum);
-					 }else{
-						 PromptUtil.showToast(getActivity(), "号码格式不正确");
-					 }
-					 
-				 }else{
-					 if(tempNum == null || tempNum.equals("")){
-						 PromptUtil.showToast(getActivity(), "号码格式不正确");
-						 return;
-					 }
-					 if(tempNum.length() > 11){
-						 String num = tempNum.substring(0, 1);
-						 if( num.equals("0") ){
-							 if(isMobileNum(tempNum.substring(1))){
-								 telephone_edit.setText(tempNum.substring(1));
-								 mobileQueryAttribution(tempNum.substring(1));
-							 }else{
-								 PromptUtil.showToast(getActivity(), "号码格式不正确");
-							 }
-						 }
-					 }else{
-						 PromptUtil.showToast(getActivity(), "号码格式不正确");
-					 }
-				 }
-				
-			 }
-//			 telephone_edit.setText(phoneNumber);
-//			 mobileQueryAttribution(phoneNumber);
 			 break; 
 		 } 
-
-
-		 
 	}
+	
+	/**
+	 * 去除连接符“-”或空格“ ”的手机号码
+	 * 如：138-8888-8888 得13888888888
+	 * 如：138 8888 8888 得13888888888
+	 * @param phone
+	 */
+	public String splitCharForPhone(String phone){
+		String newPhone=phone;
+		if(TextUtils.isEmpty(phone)){
+			return newPhone;
+		}
+		String[] specialCharArray ={"-", " "};
+		for(String schar: specialCharArray){
+			 String[] phoneNumbers = newPhone.split(schar);
+			 String tempPhoneNumber = "";
+			 
+			 if(phoneNumbers.length>1){
+				 for(int i = 0; i < phoneNumbers.length ; i ++){
+					 tempPhoneNumber +=  phoneNumbers[i];
+				 }
+			 }
+			 if(!(TextUtils.isEmpty(tempPhoneNumber))){
+				 newPhone=tempPhoneNumber; 
+			 }
+		}
+		 return newPhone;
+	}
+	
+	/**
+	 * 去除手机号前面的优惠号码如12593，+86, 0等
+	 * @param tempNum
+	 */
+	public boolean removeHeadNumberForPhone(String phone, boolean isShow){
+		if(TextUtils.isEmpty(phone)){
+			if(isShow){
+				PromptUtil.showToast(getActivity(), "手机号码为空");
+			}
+			return false;
+		}
+		
+		String tempNum=phone;
+		int len = tempNum.length();
+		 if(len>11){
+			 tempNum=tempNum.substring(len-11);
+			 if(UserInfoCheck.checkMobilePhone(tempNum)){
+				 telephone_edit.setText(tempNum);
+				 return true;
+			 }else{
+				 if(isShow){
+					 PromptUtil.showToast(getActivity(), "手机号码："+phone+"\n格式不正确");
+				 }
+			 }
+		 }else if(len==11){
+			 if(UserInfoCheck.checkMobilePhone(tempNum)){
+				 telephone_edit.setText(tempNum);
+				 return true;
+			 }else{
+				 if(isShow){
+					 PromptUtil.showToast(getActivity(), "手机号码："+phone+"\n格式不正确");
+				 }
+			 }
+		 }else{
+			 if(isShow){
+				 PromptUtil.showToast(getActivity(), "手机号码："+phone+"\n格式不正确");
+			 }
+		 }
+		 
+		 return false;
+	}
+	
 	/**
 	 * 手机归属地查询
 	 * @param mobileNumber 手机号码

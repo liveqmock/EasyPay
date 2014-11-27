@@ -42,5 +42,6 @@
         android:overScrollMode="never"
         android:divider="@color/game_gray"
         android:dividerHeight="1dp"
+        android:choiceMode="singleChoice"
 	    />
 </LinearLayout>

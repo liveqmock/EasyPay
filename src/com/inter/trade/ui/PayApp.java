@@ -282,7 +282,7 @@ public class PayApp extends Application {
 				// mMobileReader.close();
 				isSwipIn = false; // 测试代码，需要去掉
 				isOpen=false;
-				mKeyCode = null;
+//				mKeyCode = null;
 				cancelTimer();
 				cancelLittle();
 				if (mSwipListener != null) {

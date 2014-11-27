@@ -170,6 +170,8 @@ public class GetDefaultTask extends AsyncTask<String, Void, Void> {
 										bankCard.setBkcardcardtype(item.mValue);
 									}else if(item.mKey.equals("bkcardbankcode")){
 										bankCard.setBkcardbankcode(item.mValue);
+									}else if(item.mKey.equals("ctripbankctt")){
+										bankCard.setCtripbankctt(item.mValue);
 									}
 								}
 							}

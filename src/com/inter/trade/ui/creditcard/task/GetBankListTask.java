@@ -182,6 +182,9 @@ public class GetBankListTask extends AsyncTask<String, Integer, Boolean> {
 								} else if (item.mKey.equals("bkcardbankcode")) {
 									orderData.setBkcardbankcode(item.mValue);
 
+								} else if (item.mKey.equals("ctripbankctt")) {
+									orderData.setCtripbankctt(item.mValue);
+
 								}
 							}
 

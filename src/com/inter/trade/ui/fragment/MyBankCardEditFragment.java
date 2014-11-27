@@ -15,6 +15,7 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnFocusChangeListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -49,7 +50,7 @@ import com.inter.trade.util.UserInfoCheck;
  *
  */
 @SuppressLint("ValidFragment")
-public class MyBankCardEditFragment extends BaseFragment implements OnClickListener, IFavoriteCharacterDialogListener{
+public class MyBankCardEditFragment extends BaseFragment implements OnClickListener, IFavoriteCharacterDialogListener,OnFocusChangeListener{
 	
 	private Button btn_mybk_save;
 	private Button btn_mybk_delete;
@@ -163,6 +164,7 @@ public class MyBankCardEditFragment extends BaseFragment implements OnClickListe
 		mybk_card_id_edit = (EditText)view.findViewById(R.id.mybk_card_id_edit);
 		mybk_person_name_edit = (EditText)view.findViewById(R.id.mybk_person_name_edit);
 		mybk_phone_edit = (EditText)view.findViewById(R.id.mybk_phone_edit);
+		mybk_card_id_edit.setOnFocusChangeListener(this);
 		
 //		cb_default = (CheckBox) view.findViewById(R.id.cb_default);
 		cb_default_receive = (CheckBox) view.findViewById(R.id.cb_default_receive);
@@ -183,7 +185,7 @@ public class MyBankCardEditFragment extends BaseFragment implements OnClickListe
 		if(mBankCardData != null){
 //			mybk_bank_name_edit.setText(mBankCardData.bkcardbank);
 			btnBank.setText(mBankCardData.bkcardbank);
-			mybk_card_id_edit.setText(mBankCardData.bkcardno);
+			mybk_card_id_edit.setText(hideCardNo(mBankCardData.bkcardno));
 			mybk_person_name_edit.setText(mBankCardData.bkcardbankman);
 			mybk_phone_edit.setText(mBankCardData.bkcardbankphone);
 			isBank = true;
@@ -198,7 +200,22 @@ public class MyBankCardEditFragment extends BaseFragment implements OnClickListe
 			}
 		}
 	}
-	
+	/**
+	 * 隐藏信用卡的信息
+	 * 
+	 * @param cardno
+	 * @return
+	 * @throw
+	 * @return String
+	 */
+	public String hideCardNo(String cardno) {
+		String result = "";
+		if (cardno != null && cardno.length() >= 15) {
+			result = cardno.substring(0, 4) + "********"
+					+ cardno.substring(cardno.length()-4, cardno.length());
+		}
+		return result;
+	}
 	long time=0L;
 	@Override
 	public void onClick(View arg0) {
@@ -264,6 +281,12 @@ public class MyBankCardEditFragment extends BaseFragment implements OnClickListe
 //		String year = btnYear.getText().toString()+"";
 		
 		String cardid = mybk_card_id_edit.getText().toString();
+		
+		if(hideCardNo(mBankCardData.bkcardno).equals(cardid)){
+			cardid=mBankCardData.bkcardno;
+		}
+		
+		
 		String name = mybk_person_name_edit.getText().toString();
 		String phone = mybk_phone_edit.getText().toString();
 		
@@ -597,6 +620,13 @@ public class MyBankCardEditFragment extends BaseFragment implements OnClickListe
 					mList.add(picData);
 				}
 			}
+		}
+	}
+
+	@Override
+	public void onFocusChange(View v, boolean hasFocus) {
+		if(hasFocus){
+			mybk_card_id_edit.setText("");
 		}
 	}
 	

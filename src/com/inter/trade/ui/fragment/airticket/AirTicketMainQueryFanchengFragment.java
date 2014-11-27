@@ -139,7 +139,8 @@ public class AirTicketMainQueryFanchengFragment extends IBaseFragment implements
 
 	@Override
 	public void onRefreshDatas() {
-		((UIManagerActivity)getActivity()).setTopTitle("机票查询-返程");
+		String cityTitle = bundleData.getString("arriveCityNameCh") +" - "+ bundleData.getString("departCityNameCh");
+		((UIManagerActivity)getActivity()).setTopTitle("返程("+cityTitle+")");
 	}
 	
 	@Override

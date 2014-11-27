@@ -13,14 +13,14 @@
         <RadioButton
             android:id="@+id/qu_class_navigation"
             android:layout_width="0dp"
-            android:layout_height="45dp"
+            android:layout_height="50dp"
             android:layout_weight="1"
             android:background="@drawable/selector_airticket_navigation"
             android:button="@null"
             android:gravity="center"
             android:text="去程"
             android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textSize="15sp" />
 
         <View
             android:layout_width="0.5dp"
@@ -30,14 +30,14 @@
         <RadioButton
             android:id="@+id/wang_class_navigation"
             android:layout_width="0dp"
-            android:layout_height="45dp"
+            android:layout_height="50dp"
             android:layout_weight="1"
             android:background="@drawable/selector_airticket_navigation"
             android:button="@null"
             android:gravity="center"
             android:text="返程"
             android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textSize="15sp" />
     </RadioGroup>
 
     <LinearLayout

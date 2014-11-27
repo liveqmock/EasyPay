@@ -1,7 +1,11 @@
 package com.inter.trade.ui.fragment.airticket;
 
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,9 +18,11 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.inter.trade.R;
+import com.inter.trade.ui.fragment.airticket.util.ApiAirticketGetCityData;
 import com.inter.trade.ui.manager.IBaseFragment;
 import com.inter.trade.ui.manager.UIManagerActivity;
 import com.inter.trade.ui.manager.core.UIConstantDefault;
+import com.inter.trade.util.DateUtil;
 
 /**
  * 飞机票首页
@@ -106,9 +112,33 @@ public class AirTicketMainPagerFragment extends IBaseFragment implements OnClick
 		danchengButton.setOnClickListener(this);
 		wangfanButton.setOnClickListener(this);
 		
+		initCityData();
+		
 		setDanchengSelecte();
 		if(danFragment == null) danFragment = AirTicketMainDanchengFragment.newInstance(null);
-		switchContent(danFragment);
+		switchFragment(danFragment);
+	}
+	
+	/**
+	 * 初始化城市数据
+	 */
+	private void initCityData() {
+		ApiAirticketGetCityData airticketStartCityData = new ApiAirticketGetCityData();
+		airticketStartCityData.setCityNameCh("北京");
+		airticketStartCityData.setCityCode("BJS");
+		airticketStartCityData.setCityId("1");
+		((UIManagerActivity)getActivity()).dancheng_start_data = airticketStartCityData;
+		
+		ApiAirticketGetCityData airticketEndCityData = new ApiAirticketGetCityData();
+		airticketEndCityData.setCityNameCh("上海");
+		airticketEndCityData.setCityCode("SHA");
+		airticketEndCityData.setCityId("2");
+		((UIManagerActivity)getActivity()).dancheng_end_data = airticketEndCityData;
+		
+		String dateStr = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+		((UIManagerActivity)getActivity()).airTicketDate = DateUtil.getSpecifiedDayAfter(dateStr);
+		((UIManagerActivity)getActivity()).airTicketStartDate = DateUtil.getSpecifiedDayAfter(dateStr);
+		((UIManagerActivity)getActivity()).airTicketFanDate = DateUtil.getSpecified2DayAfter(dateStr);
 	}
 	
 	@Override
@@ -118,12 +148,12 @@ public class AirTicketMainPagerFragment extends IBaseFragment implements OnClick
 		case R.id.dancheng:
 			setDanchengSelecte();
 			if(danFragment == null) danFragment = AirTicketMainDanchengFragment.newInstance(null);
-			switchContent(danFragment);
+			switchFragment(danFragment);
 			break;
 		case R.id.wangfan:
 			setWangfanSelecte();
 			if(wangFragment == null ) wangFragment = AirTicketMainWangfanFragment.newInstance(null);
-			switchContent(wangFragment);
+			switchFragment(wangFragment);
 			break;
 		default:
 			break;
@@ -195,6 +225,22 @@ public class AirTicketMainPagerFragment extends IBaseFragment implements OnClick
 		}
 		currentFragment = to;
 	}
+	
+	private void switchFragment(IBaseFragment targetFragment){
+		
+		if(targetFragment == currentFragment) {
+			return;
+		}
+		
+		FragmentTransaction ft = getActivity().getSupportFragmentManager()
+				.beginTransaction();
+    	ft.replace(R.id.airticket_dancheng_container, targetFragment);
+    	ft.setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE)/**.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)*/;
+    	
+    	ft.commit();
+    	
+    	currentFragment = targetFragment;
+    }
 	
 	/**
 	 * 当前Fragment

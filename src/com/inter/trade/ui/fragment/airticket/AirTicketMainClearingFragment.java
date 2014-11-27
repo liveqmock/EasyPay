@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -568,6 +570,8 @@ implements OnClickListener, SwipListener
 			airTicketCreateOrderData.payinfoMap.put("cardHolder", defaultBankCardData.getBkcardbankman() !=null ? defaultBankCardData.getBkcardbankman() :"");//持卡人
 			airTicketCreateOrderData.payinfoMap.put("cardHolderIdCardType", "1");//持卡人证件类型
 			airTicketCreateOrderData.payinfoMap.put("cardHolderIdCardNumber", defaultBankCardData.getBkcardidcard() !=null ? defaultBankCardData.getBkcardidcard():"");//持卡人证件号
+			airTicketCreateOrderData.payinfoMap.put("phoneNumber", defaultBankCardData.getBkcardbankphone() !=null ? defaultBankCardData.getBkcardbankphone():"");//持卡人手机号
+			airTicketCreateOrderData.payinfoMap.put("bankCct", defaultBankCardData.getCtripbankctt() !=null ? defaultBankCardData.getCtripbankctt():"");//携程CTT
 		}
 
 		return airTicketCreateOrderData;
@@ -848,7 +852,7 @@ implements OnClickListener, SwipListener
 					PayApp.mKeyCode, 
 					PayApp.mKeyData, 
 					viewHandler.getCredit(), 
-					"airticket", asyncLoadWorkListener);
+					"airplane", asyncLoadWorkListener);
 			mKeyTask.execute("");
 
 			break;
@@ -1016,7 +1020,9 @@ implements OnClickListener, SwipListener
 			@Override
 			public void onSuccess(Object protocolDataList, Bundle bundle) {
 				data.putString("orderId", orderNum);
-				addFragmentToStack(UIConstantDefault.UI_CONSTANT_AIR_TICKET_ORDER_PAY_SUCCESS, 1, data);
+				String message = bundle.getString("message");
+				showSuccessDialog(message);
+//				addFragmentToStack(UIConstantDefault.UI_CONSTANT_AIR_TICKET_ORDER_PAY_SUCCESS, 1, data);
 			}
 
 			@Override
@@ -1026,6 +1032,20 @@ implements OnClickListener, SwipListener
 		}, false, true, true);
 		
 		asyncSmsPayWork.execute("ApiAirticket", "payWithCreditCard");
+	}
+	
+	private void showSuccessDialog(String message) {
+		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+		builder.setTitle("提示").setMessage(message);
+		builder.setPositiveButton("确定",new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				dialog.dismiss();
+				addFragmentToStack(UIConstantDefault.UI_CONSTANT_AIR_TICKET_ORDER_PAY_SUCCESS, 1, data);
+			}
+		});
+		builder.show();
 	}
 	
 	protected static final int SWIPING_START = 1;

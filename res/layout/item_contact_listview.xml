@@ -1,27 +1,32 @@
-<?xml version="1.0" encoding="utf-8"?><LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/passenger_layout"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/selector_btn_normal_two"
     android:gravity="center_vertical"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
     android:orientation="horizontal" >
-    
+
     <CheckBox
         android:id="@+id/cb_select"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-          android:layout_marginLeft="16dp"
-           android:layout_marginTop="10dp"
-    android:layout_marginBottom="10dp"
-        android:button="@drawable/selector_cb_passenger" />
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="10dp"
+        android:button="@drawable/selector_cb_passenger"
+        android:gravity="center_vertical" />
 
     <TextView
         android:id="@+id/tv_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="0.5"
-        android:textSize="16sp"
-        android:text="俩哈哈" />
+        android:text="俩哈哈"
+        android:textSize="16sp" />
 
     <LinearLayout
         android:layout_width="0dp"
@@ -42,11 +47,10 @@
         android:id="@+id/btn_delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:layout_marginLeft="10dp"
-         android:layout_marginTop="10dp"
-    android:layout_marginBottom="10dp"
-        android:background="@drawable/selector_btn_delecte_linkman" 
-         android:layout_marginRight="16dp"/>
-    
-    
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/selector_btn_delecte_linkman" />
+
 </LinearLayout>

@@ -91,7 +91,7 @@
                 android:layout_centerVertical="true"
                 android:inputType="numberDecimal"
                 android:background="#00000000"
-                android:hint="单笔限5,000.00,日累计20,000.00"
+                android:hint="限单笔5,000.00,日累计20,000.00"
                 android:textColorHint="@color/sms_font_gray" 
                 android:textSize="@dimen/content_size14"/>
         </LinearLayout>

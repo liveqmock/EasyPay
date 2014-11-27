@@ -260,6 +260,27 @@ public class ApiAirticketCreateOrderParser extends NetParser<String> {
 						serializer.endTag("", "validity");
 						
 					}
+					//持卡人手机号码
+					else if(data.mKey.equals("phoneNumber")){
+						serializer.startTag("", "phoneNumber");
+						serializer.text(data.mValue.trim());
+						serializer.endTag("", "phoneNumber");
+						
+					}
+					//持卡人手机号码
+					else if(data.mKey.equals("phoneNumber")){
+						serializer.startTag("", "phoneNumber");
+						serializer.text(data.mValue.trim());
+						serializer.endTag("", "phoneNumber");
+						
+					}
+					//CCT携程
+					else if(data.mKey.equals("bankCct")){
+						serializer.startTag("", "bankCct");
+						serializer.text(data.mValue.trim());
+						serializer.endTag("", "bankCct");
+						
+					}
 					//****************end*********************
 					
 				}

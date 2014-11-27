@@ -157,6 +157,12 @@ public class ReadBankListParser extends NetParser{
 						ProtocolData data = new ProtocolData("bankname", temp);
 						parent.addChild(data);
 					}
+				}else if (parser.getName().compareTo("ctripbankctt") == 0) {
+					String temp = parser.nextText();
+					if (temp != null && temp.length() > 0) {
+						ProtocolData data = new ProtocolData("ctripbankctt", temp);
+						parent.addChild(data);
+					}
 				}
 			}
 				break;

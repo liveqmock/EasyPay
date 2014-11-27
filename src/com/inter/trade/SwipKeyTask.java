@@ -331,6 +331,10 @@ public class SwipKeyTask extends AsyncTask<String, Integer, Boolean>{
 				if (bkcardbankno != null) {
 					card.setBkcardbankcode(bkcardbankno.get(0).mValue);
 				}
+				List<ProtocolData> ctripbankctt = data.find("/ctripbankctt");
+				if (ctripbankctt != null) {
+					card.setCtripbankctt(ctripbankctt.get(0).mValue);
+				}
 			}
 		}
 		return card;

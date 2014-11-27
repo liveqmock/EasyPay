@@ -18,6 +18,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 
@@ -63,7 +64,7 @@ public class PassengerAdapter extends BaseAdapter {
 	public long getItemId(int position) {
 		return position;
 	}
-
+	
 	@Override
 	public View getView(final int position, View convertView, ViewGroup parent) {
 		ViewHolder holder = null;
@@ -71,6 +72,7 @@ public class PassengerAdapter extends BaseAdapter {
 			convertView = View.inflate(context,
 					R.layout.item_passenger_listview, null);
 			holder = new ViewHolder();
+			holder.passengerLayout = (LinearLayout) convertView.findViewById(R.id.passenger_layout);
 			holder.tvName = (TextView) convertView.findViewById(R.id.tv_name);
 			holder.tvType = (TextView) convertView.findViewById(R.id.tv_type);
 			holder.tvNo = (TextView) convertView.findViewById(R.id.tv_no);
@@ -93,6 +95,19 @@ public class PassengerAdapter extends BaseAdapter {
 			public void onClick(View v) {
 				if (mListener != null) {
 					mListener.clickAtPosition(position);
+				}
+			}
+		});
+		
+		holder.passengerLayout.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				notifyDataSetChanged();
+				if (!sList.contains(mList.get(position))){
+					sList.add(mList.get(position));
+				} else {
+					sList.remove(mList.get(position));
 				}
 			}
 		});
@@ -128,6 +143,7 @@ public class PassengerAdapter extends BaseAdapter {
 	}
 
 	private class ViewHolder {
+		LinearLayout passengerLayout;
 		TextView tvName;
 		TextView tvType;
 		TextView tvNo;
@@ -143,6 +159,15 @@ public class PassengerAdapter extends BaseAdapter {
 	public ArrayList<PassengerData> getSelectedList(){
 		return sList;
 	}
+	
+//	public void setSelectedPassenger (int position) {
+//		if (!sList.contains(mList.get(position))){
+//			sList.add(mList.get(position));
+//		} else {
+//			sList.remove(mList.get(position));
+//		}
+//		notifyDataSetChanged();
+//	}
 
 	public interface ListViewButtonListener {
 		/**

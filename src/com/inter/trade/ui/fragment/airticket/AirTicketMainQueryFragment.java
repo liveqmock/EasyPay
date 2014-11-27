@@ -134,10 +134,12 @@ public class AirTicketMainQueryFragment extends IBaseFragment implements OnClick
 
 	@Override
 	public void onRefreshDatas() {
+		String cityTitle = bundleData.getString("departCityNameCh") +" - "+ bundleData.getString("arriveCityNameCh");
 		if(bundleData.getString("searchType").equals("D")) {
-			((UIManagerActivity)getActivity()).setTopTitle("机票查询-去程");
+			((UIManagerActivity)getActivity()).setTopTitle("去程("+cityTitle+")");
 		} else {
-			((UIManagerActivity)getActivity()).setTopTitle("机票查询");
+			
+			((UIManagerActivity)getActivity()).setTopTitle("去程("+cityTitle+")");
 		}
 		
 	}

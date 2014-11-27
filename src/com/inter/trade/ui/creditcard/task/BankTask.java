@@ -30,6 +30,11 @@ public class BankTask extends AsyncTask<String, Integer, Boolean> {
 		/***是否易宝的支持列表*/
 		private boolean isYibao;
 		
+		/**
+		 * 银行请求类型
+		 */
+		private String reqbanktype;
+		
 		public BankTask(Context context, ResponseStateListener listener) {
 			super();
 			this.context = context;
@@ -42,6 +47,13 @@ public class BankTask extends AsyncTask<String, Integer, Boolean> {
 			this.context = context;
 			this.listener = listener;
 			this.isYibao=isYibao;
+		}
+		
+		public BankTask(Context context, ResponseStateListener listener,String banktype) {
+			super();
+			this.context = context;
+			this.listener = listener;
+			this.reqbanktype=banktype;
 		}
 
 		@Override
@@ -155,6 +167,10 @@ public class BankTask extends AsyncTask<String, Integer, Boolean> {
 
 										picData.bankname = item.mValue;
 									}
+									else if (item.mKey.equals("ctripbankctt")) {
+
+										picData.ctripbankctt = item.mValue;
+									}
 								}
 							}
 						}
@@ -184,6 +200,11 @@ public class BankTask extends AsyncTask<String, Integer, Boolean> {
 			if(isYibao){
 				data.putValue("banktype", "yibao");
 			}
+			
+			if(reqbanktype != null && !reqbanktype.equals("")) {
+				data.putValue("banktype", reqbanktype);
+			}
+			
 			List<ProtocolData> mDatas = ProtocolUtil.getRequestDatas("ApiAppInfo",
 					"readBankList", data);
 

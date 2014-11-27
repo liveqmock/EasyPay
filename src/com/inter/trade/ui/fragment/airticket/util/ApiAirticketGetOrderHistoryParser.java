@@ -217,6 +217,7 @@ public class ApiAirticketGetOrderHistoryParser extends NetParser<ApiAirticketGet
 		ArrayList<ApiAirticketGetOrderHistoryData> responseDatas = new ArrayList<ApiAirticketGetOrderHistoryData>();
 		ResponseData response = new ResponseData();
 		LoginUtil.mLoginStatus.mResponseData = response;
+		
 		for (ProtocolData data : mDatas) {
 			if(data.mKey.equals(ProtocolUtil.msgheader)){
 				ProtocolUtil.parserResponse(response, data);
@@ -230,6 +231,9 @@ public class ApiAirticketGetOrderHistoryParser extends NetParser<ApiAirticketGet
 				List<ProtocolData> message = data.find("/message");
 				if(message != null){
 					LoginUtil.mLoginStatus.message = message.get(0).mValue;
+					if(bundle != null) {
+						bundle.putString("message", message.get(0).mValue);
+					}
 				}
 				
 				int mTotalCount, mLoadedCount;

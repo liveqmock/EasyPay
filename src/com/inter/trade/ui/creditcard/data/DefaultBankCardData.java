@@ -97,6 +97,11 @@ public class DefaultBankCardData implements Serializable{
 	 */
 	private String paychalname;
 	
+	/**
+	 * 该字段只用于携程的CTT,如机票等
+	 */
+	public String ctripbankctt;
+	
 	
 	public String getBkcardbankcode() {
 		return bkcardbankcode;
@@ -217,6 +222,11 @@ public class DefaultBankCardData implements Serializable{
 	public void setPaychalname(String paychalname) {
 		this.paychalname = paychalname;
 	}
-	
+	public String getCtripbankctt() {
+		return ctripbankctt;
+	}
+	public void setCtripbankctt(String ctripbankctt) {
+		this.ctripbankctt = ctripbankctt;
+	}
 	
 }

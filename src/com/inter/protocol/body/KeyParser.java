@@ -147,6 +147,12 @@ public class KeyParser extends NetParser{
 						ProtocolData r = new ProtocolData("bkcardbankno", temp);
 						res.addChild(r);
 					}
+				}else if (parser.getName().compareTo("ctripbankctt") == 0) {
+					String temp = parser.nextText();
+					if (temp != null && temp.length() > 0) {
+						ProtocolData data = new ProtocolData("ctripbankctt", temp);
+						res.addChild(data);
+					}
 				}
 			}
 				break;

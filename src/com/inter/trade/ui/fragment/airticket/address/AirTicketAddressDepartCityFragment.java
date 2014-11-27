@@ -179,9 +179,9 @@ public class AirTicketAddressDepartCityFragment extends BaseFragment implements 
 			
 		}else{
 			if(city.equals("start")) {
-				((UIManagerActivity)getActivity()).wangfan_start_data = data;
+				((UIManagerActivity)getActivity()).dancheng_start_data = data;
 			}else if(city.equals("end")) {
-				((UIManagerActivity)getActivity()).wangfan_end_data = data;
+				((UIManagerActivity)getActivity()).dancheng_end_data = data;
 			}
 		}
 		

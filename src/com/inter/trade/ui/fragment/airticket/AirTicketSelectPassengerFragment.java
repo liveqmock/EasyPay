@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -134,12 +135,21 @@ public class AirTicketSelectPassengerFragment extends IBaseFragment implements
 			task.cancel(true);
 		}
 	}
+	
+//	private OnItemClickListener itemClickListener = new OnItemClickListener() {
+//		public void onItemClick(android.widget.AdapterView<?> parent, View view, int position, long id) {
+//			
+//			adapter.setSelectedPassenger(position);
+//			Log.i("xxxxxxx", position+"");
+//		};
+//	};
 
 	private void initViews(View rootView) {
 		btnChoose=(Button) rootView.findViewById(R.id.btn_choose);
 		btnChoose.setOnClickListener(this);
 		
 		lvPassenger=(ListView)rootView.findViewById(R.id.lv_passenger);
+//		lvPassenger.setOnItemClickListener(itemClickListener);
 		
 		passengerList=new ArrayList<PassengerData>();
 	/*	PassengerData data=new PassengerData();

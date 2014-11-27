@@ -43,6 +43,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -90,6 +91,7 @@ import com.inter.trade.ui.fragment.smsreceivepayment.activity.SelectReceiveBankC
 import com.inter.trade.ui.fragment.smsreceivepayment.activity.SmsRecordActivity;
 import com.inter.trade.ui.fragment.smsreceivepayment.parser.SmsReceivePaymentSubmitParser;
 import com.inter.trade.ui.fragment.smsreceivepayment.task.GetSmsDefaultTask;
+import com.inter.trade.ui.fragment.smsreceivepayment.util.SmsUtil;
 import com.inter.trade.ui.fragment.waterelectricgas.data.ResponseStateListener;
 //import com.inter.trade.ui.fragment.hotel.adapter.HotelListAdapter;
 //import com.inter.trade.ui.fragment.hotel.data.HotelKeywordData;
@@ -107,6 +109,7 @@ import com.inter.trade.util.PromptUtil.NegativeListener;
 import com.inter.trade.util.PromptUtil.PositiveListener;
 //import com.inter.trade.view.dialog.MySweetDialog;
 //import com.inter.trade.view.dialog.MySweetDialog.MyAppListener;
+import com.inter.trade.view.styleddialog.SimpleDialogFragment;
 
 /**
  * 短信收款 主Fragment
@@ -207,6 +210,7 @@ public class SmsReceivePaymentMainFragment<MyDialogActivity> extends BaseFragmen
 	private SmsReceiveDialogFragment smsDialog;
 //	private SmsToastDialogFragment smsToastdf;
 	private SmsDialogFragment smsToastdf;
+	private Timer smsTimer;
 	private Handler mHandler;
 	public static final int CLOSE_DIALOG_DEFAULT = 0;
 	public static final int CLOSE_DIALOG_TOAST = 1;
@@ -238,6 +242,7 @@ public class SmsReceivePaymentMainFragment<MyDialogActivity> extends BaseFragmen
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 		Log.i(TAG, "onCreate");
 		Bundle bundle = getArguments();
 		if(bundle != null) {
@@ -561,8 +566,27 @@ public class SmsReceivePaymentMainFragment<MyDialogActivity> extends BaseFragmen
 	 */
 	private void showDialogMessage(String message, long time){
 		closeDialog();
+		
 		smsToastdf=SmsDialogFragment.newInstance(null, message, null, null);
 		smsToastdf.show(getFragmentManager(), "dialog");
+		
+//		final TextView tv_note;
+//		View view = View.inflate(getActivity(), R.layout.sms_toast_layout, null);
+//		tv_note = (TextView) view.findViewById(R.id.tv_note);
+//		tv_note.setText(message);
+//		
+//		SimpleDialogFragment.createBuilder(getActivity(), getFragmentManager())
+//		.setCancelableOnTouchOutside(true)
+//		.show().create();
+//		
+//		View view = View.inflate(getActivity(), R.layout.sms_toast_layout, null);
+//		tv_note = (TextView) view.findViewById(R.id.tv_note);
+//		tv_note.setText(getMessage());
+//		AlertDialog alertDialog = builder.create();
+//		alertDialog.setView(view, 0, 0, 0, 0);
+//		alertDialog.setCancelable(true);
+//		alertDialog.setCanceledOnTouchOutside(true);
+		
 		timerForDialog(CLOSE_DIALOG_TOAST, time);
 	}
 	
@@ -712,13 +736,19 @@ public class SmsReceivePaymentMainFragment<MyDialogActivity> extends BaseFragmen
 			smsToastdf.dismiss();
 			smsToastdf = null;
 		}
+		if(smsTimer != null){
+			smsTimer.cancel();
+			smsTimer = null;
+		}
+		
 		return false;
 	}
 	
 	public boolean timerForDialog(final int whichDialog, long time) {
 		// TODO Auto-generated method stub
 //		mHandler = new Handler(this);
-		new Timer().schedule(new TimerTask() {
+		smsTimer = new Timer();
+		smsTimer.schedule(new TimerTask() {
 			
 			@Override
 			public void run() {
@@ -1070,120 +1100,131 @@ public class SmsReceivePaymentMainFragment<MyDialogActivity> extends BaseFragmen
 	 * @param data
 	 */
 	public void checkPhoneFromAddressBook(int requestCode, int resultCode, Intent data) {
-		switch (requestCode) {
-		 
-		 case 2: 
-			 if (data == null) { 
-				 return; 
+		 if (data == null) { 
+			 return; 
+		 } 
+		 String phoneNumber = null; 
+		 Uri contactData = data.getData(); 
+		 if (contactData == null) { 
+			 return ; 
+		 } 
+		 Cursor cursor = getActivity().managedQuery(contactData, null, null, null, null); 
+		 if (cursor.moveToFirst()) { 
+			 //	                  String name = cursor.getString(cursor 
+					 //	                          .getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME)); 
+			 String hasPhone = cursor 
+					 .getString(cursor 
+							 .getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER)); 
+			 String id = cursor.getString(cursor 
+					 .getColumnIndex(ContactsContract.Contacts._ID)); 
+			 if (hasPhone.equalsIgnoreCase("1")) { 
+				 hasPhone = "true"; 
+			 } else { 
+				 hasPhone = "false"; 
 			 } 
-			 String phoneNumber = null; 
-			 Uri contactData = data.getData(); 
-			 if (contactData == null) { 
-				 return ; 
-			 } 
-			 Cursor cursor = getActivity().managedQuery(contactData, null, null, null, null); 
-			 if (cursor.moveToFirst()) { 
-				 //	                  String name = cursor.getString(cursor 
-						 //	                          .getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME)); 
-				 String hasPhone = cursor 
-						 .getString(cursor 
-								 .getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER)); 
-				 String id = cursor.getString(cursor 
-						 .getColumnIndex(ContactsContract.Contacts._ID)); 
-				 if (hasPhone.equalsIgnoreCase("1")) { 
-					 hasPhone = "true"; 
-				 } else { 
-					 hasPhone = "false"; 
-				 } 
-				 if (Boolean.parseBoolean(hasPhone)) { 
-					 Cursor phones = getActivity().getContentResolver().query( 
-							 ContactsContract.CommonDataKinds.Phone.CONTENT_URI, 
-							 null, 
-							 ContactsContract.CommonDataKinds.Phone.CONTACT_ID 
-							 + " = " + id, null, null); 
-					 while (phones.moveToNext()) { 
-						 phoneNumber = phones 
-								 .getString(phones 
-										 .getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER)); 
-					 } 
-					 phones.close(); 
-				 } 
-			 } 
-			 
-			 //模拟带连接符“-”的手机号码，如：138-8888-8888
-//			 String tempNum = "0138-8888-88-88";
-			 String tempNum = phoneNumber;
-			 String[] phoneNumbers = tempNum.split("-");
-			 
-			 String tempPhoneNumber = "";
-			 for(int i = 0; i < phoneNumbers.length ; i ++){
-				 tempPhoneNumber +=  phoneNumbers[i];
-			 }
-			 if(tempPhoneNumber != null && !tempPhoneNumber.equals("")){
-				 if(tempPhoneNumber.length() != 11){
-					 String num = tempPhoneNumber.substring(0, 1);
-					 String tempNumber = "";
-					 if( num.equals("0") ){
-						 tempNumber =  tempPhoneNumber.substring(1);
-						 if(UserInfoCheck.checkMobilePhone(tempNumber)){
-							 et_phone.setText(tempNumber);
-//							 mobileQueryAttribution(tempNumber);
-						 }else{
-							 PromptUtil.showToast(getActivity(), "号码格式不正确");
-						 }
-					 }
-				 }else{
-					 if(UserInfoCheck.checkMobilePhone(tempPhoneNumber)){
-						 et_phone.setText(tempPhoneNumber);
-//						 mobileQueryAttribution(tempPhoneNumber);
-					 }else{
-						 PromptUtil.showToast(getActivity(), "号码格式不正确");
-					 }
-				 }
-			 }else{
-				 if(tempNum != null && !tempNum.equals("") && tempNum.length() == 11 && UserInfoCheck.checkMobilePhone(tempNum)){
-					 if(UserInfoCheck.checkMobilePhone(tempNum)){
-						 et_phone.setText(tempNum);
-//						 mobileQueryAttribution(tempNum);
-					 }else{
-						 PromptUtil.showToast(getActivity(), "号码格式不正确");
-					 }
+			 if (Boolean.parseBoolean(hasPhone)) { 
+				 Cursor phones = getActivity().getContentResolver().query( 
+						 ContactsContract.CommonDataKinds.Phone.CONTENT_URI, 
+						 null, 
+						 ContactsContract.CommonDataKinds.Phone.CONTACT_ID 
+						 + " = " + id, null, null); 
+				 while (phones.moveToNext()) { 
+					 phoneNumber = phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER)); 
 					 
-				 }else{
-					 if(tempNum == null || tempNum.equals("")){
-						 PromptUtil.showToast(getActivity(), "号码格式不正确");
-						 return;
+					 /**
+					  * 一个联系人可能有多个号码，一旦找到手机号（非固话等），不再继续查找。
+					  * 找不到手机号，默认不显示错误提示语
+					  */
+					 String tempNum=splitCharForPhone(phoneNumber);
+					 if(removeHeadNumberForPhone(tempNum, false)){
+						 break;
 					 }
-					 if(tempNum.length() > 11){
-						 removeHeadNumberForPhone(tempNum);
-					 }else{
-						 PromptUtil.showToast(getActivity(), "号码格式不正确");
-					 }
-				 }
-				
-			 }
-//			 et_phone.setText(phoneNumber);
-//			 mobileQueryAttribution(phoneNumber);
-			 break; 
+				 } 
+				 phones.close(); 
+			 } 
+		 } 
 		 
+		 /**
+		  *  以下两句测试，显示非手机号的提示语
+		  */
+		 String tempNum=splitCharForPhone(phoneNumber);
+		 removeHeadNumberForPhone(tempNum, true);
+		 
+	}
+	
+	
+	/**
+	 * 去除连接符“-”或空格“ ”的手机号码
+	 * 如：138-8888-8888 得13888888888
+	 * 如：138 8888 8888 得13888888888
+	 * @param phone
+	 */
+	public String splitCharForPhone(String phone){
+		String newPhone=phone;
+		if(TextUtils.isEmpty(phone)){
+			return newPhone;
 		}
+		String[] specialCharArray ={"-", " "};
+		for(String schar: specialCharArray){
+			 String[] phoneNumbers = newPhone.split(schar);
+			 String tempPhoneNumber = "";
+			 
+			 if(phoneNumbers.length>1){
+				 for(int i = 0; i < phoneNumbers.length ; i ++){
+					 tempPhoneNumber +=  phoneNumbers[i];
+				 }
+			 }
+			 if(!(TextUtils.isEmpty(tempPhoneNumber))){
+				 newPhone=tempPhoneNumber; 
+			 }
+		}
+		 return newPhone;
 	}
 	
 	/**
-	 * 去除手机号前面的优惠号码如12593，+86, 等
+	 * 去除手机号前面的优惠号码如12593，+86, 0等
 	 * @param tempNum
 	 */
-	public void removeHeadNumberForPhone(String tempNum){
+	public boolean removeHeadNumberForPhone(String phone, boolean isShow){
+		if(TextUtils.isEmpty(phone)){
+			if(isShow){
+//				PromptUtil.showToast(getActivity(), "手机号："+phone);
+				showDialogMessage("手机号码为空", 5000);
+			}
+			return false;
+		}
+		
+		String tempNum=phone;
 		int len = tempNum.length();
 		 if(len>11){
 			 tempNum=tempNum.substring(len-11);
-//			 PromptUtil.showToast(getActivity(), "手机号>11："+tempNum);
 			 if(UserInfoCheck.checkMobilePhone(tempNum)){
 				 et_phone.setText(tempNum);
+				 return true;
 			 }else{
-				 PromptUtil.showToast(getActivity(), "号码格式不正确");
+				 if(isShow){
+//					 PromptUtil.showToast(getActivity(), "手机号："+phone+"\n号码格式不正确06");
+					 showDialogMessage("手机号码："+phone+"\n格式不正确", 5000);
+				 }
+			 }
+		 }else if(len==11){
+			 if(UserInfoCheck.checkMobilePhone(tempNum)){
+				 et_phone.setText(tempNum);
+				 return true;
+			 }else{
+				 if(isShow){
+//					 PromptUtil.showToast(getActivity(), "手机号："+phone+"\n号码格式不正确07");
+					 showDialogMessage("手机号码："+phone+"\n格式不正确", 5000);
+				 }
+			 }
+		 }else{
+			 if(isShow){
+//				 PromptUtil.showToast(getActivity(), "手机号："+phone+"\n号码格式不正确08");
+				 showDialogMessage("手机号码："+phone+"\n格式不正确", 5000);
 			 }
 		 }
+		 
+		 return false;
 	}
 	
 	/**

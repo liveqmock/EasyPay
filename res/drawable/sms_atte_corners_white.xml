@@ -2,7 +2,7 @@
 <!-- 布局圆角 solid 设置背景色 -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android">  
     <solid android:color="@color/white" />  
-    <corners android:radius="4dp"/> 
+    <corners android:radius="0dp"/> 
 	<padding android:left="0dp" android:top="0dp" android:right="0dp" android:bottom="0dp" />
 </shape>
 

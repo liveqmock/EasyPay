@@ -86,8 +86,8 @@ public class AirTicketMainWangfanFragment extends IBaseFragment implements OnCli
 		airTicketStartDate = ((UIManagerActivity)getActivity()).airTicketStartDate;
 		airTicketFanDate = ((UIManagerActivity)getActivity()).airTicketFanDate;
 		
-		airticketGetCityData = ((UIManagerActivity)getActivity()).wangfan_start_data;
-		airticketEndCityData = ((UIManagerActivity)getActivity()).wangfan_end_data;
+		airticketGetCityData = ((UIManagerActivity)getActivity()).dancheng_start_data;
+		airticketEndCityData = ((UIManagerActivity)getActivity()).dancheng_end_data;
 		
 		//模拟后一个页面返回前一个页面 填充数据
 		if( airTicketStartDate != null ) {

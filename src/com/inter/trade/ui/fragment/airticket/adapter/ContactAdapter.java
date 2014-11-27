@@ -18,6 +18,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.LinearLayout;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.TextView;
 
@@ -75,6 +76,7 @@ public class ContactAdapter extends BaseAdapter {
 	   if(convertView==null){
 		   convertView=View.inflate(context, R.layout.item_contact_listview, null);
 		   holder=new ViewHolder();
+		   holder.passengerLayout = (LinearLayout) convertView.findViewById(R.id.passenger_layout);
 		   holder.tvName=(TextView) convertView.findViewById(R.id.tv_name);
 		   holder.tvPhone=(TextView) convertView.findViewById(R.id.tv_phone);
 		   holder.cbSelect=(CheckBox) convertView.findViewById(R.id.cb_select);
@@ -87,6 +89,18 @@ public class ContactAdapter extends BaseAdapter {
 		PassengerData passenger = mList.get(position);
 		holder.tvName.setText(passenger.getName());
 		holder.tvPhone.setText(passenger.getPhoneNumber());
+		holder.passengerLayout.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				notifyDataSetChanged();
+				if (!sList.contains(mList.get(position))){
+					sList.add(mList.get(position));
+				} else {
+					sList.remove(mList.get(position));
+				}
+			}
+		});
 		holder.cbSelect.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			
 			@Override
@@ -135,6 +149,7 @@ public class ContactAdapter extends BaseAdapter {
 	}
 	
 	private class ViewHolder{
+		LinearLayout passengerLayout;
 		TextView tvName;
 		TextView tvPhone;
 		CheckBox cbSelect;

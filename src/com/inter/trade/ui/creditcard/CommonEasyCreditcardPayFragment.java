@@ -12,7 +12,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -221,14 +223,28 @@ public class CommonEasyCreditcardPayFragment extends BaseFragment implements
 		setTitle("信用卡支付");
 		initData();
 		
-		new BankTask(getActivity(), new ResponseStateListener() {
+		if(payKey==CreditCard.AIRTICKET){//机票，则获取携程支持的银行
+			new BankTask(getActivity(), new ResponseStateListener() {
+				
+				@SuppressWarnings("unchecked")
+				@Override
+				public void onSuccess(Object obj, Class cla) {
+					bankList=(ArrayList<BankData>) obj;
+				}
+			},"ctripctt").execute("");
 			
-			@SuppressWarnings("unchecked")
-			@Override
-			public void onSuccess(Object obj, Class cla) {
-				bankList=(ArrayList<BankData>) obj;
-			}
-		},true).execute("");
+		} else {
+			new BankTask(getActivity(), new ResponseStateListener() {
+				
+				@SuppressWarnings("unchecked")
+				@Override
+				public void onSuccess(Object obj, Class cla) {
+					bankList=(ArrayList<BankData>) obj;
+				}
+			},true).execute("");
+		}
+		
+		
 		
 		return view;
 	}
@@ -527,6 +543,8 @@ public class CommonEasyCreditcardPayFragment extends BaseFragment implements
 				data.setBankId(btnBank.getHint().toString());
 			}
 		}
+		
+		data.setCtripbankctt(bankList.get(bankIndex).ctripbankctt != null ? bankList.get(bankIndex).ctripbankctt : "");//携程ctt
 		
 		return data;
 	}
@@ -1215,6 +1233,9 @@ public class CommonEasyCreditcardPayFragment extends BaseFragment implements
 		airTicketCreateOrderData.payinfoMap.put("cardHolder", data.getUsername() !=null ? data.getUsername() :"");//持卡人
 		airTicketCreateOrderData.payinfoMap.put("cardHolderIdCardType", "1");//持卡人证件类型
 		airTicketCreateOrderData.payinfoMap.put("cardHolderIdCardNumber", data.getId() !=null ? data.getId():"");//持卡人证件号
+		airTicketCreateOrderData.payinfoMap.put("phoneNumber", data.getPhone() !=null ? data.getPhone():"");//持卡人手机号
+		
+		airTicketCreateOrderData.payinfoMap.put("bankCct", data.getCtripbankctt() !=null ? data.getCtripbankctt():"");//携程CTT
 		return airTicketCreateOrderData;
 	}
 	
@@ -1516,7 +1537,9 @@ public class CommonEasyCreditcardPayFragment extends BaseFragment implements
 			@Override
 			public void onSuccess(Object protocolDataList, Bundle bundle) {
 				orderDatas.putString("orderId", orderNum);
-				IMainHandlerManager.handlerUI(UIConstantDefault.UI_CONSTANT_AIR_TICKET_ORDER_PAY_SUCCESS, 1, orderDatas);
+				String message = bundle.getString("message");
+				showSuccessDialog(message);
+//				IMainHandlerManager.handlerUI(UIConstantDefault.UI_CONSTANT_AIR_TICKET_ORDER_PAY_SUCCESS, 1, orderDatas);
 			}
 
 			@Override
@@ -1526,6 +1549,20 @@ public class CommonEasyCreditcardPayFragment extends BaseFragment implements
 		}, false, true, true);
 		
 		asyncSmsPayWork.execute("ApiAirticket", "payWithCreditCard");
+	}
+	
+	private void showSuccessDialog(String message) {
+		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+		builder.setTitle("提示").setMessage(message);
+		builder.setPositiveButton("确定",new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				dialog.dismiss();
+				IMainHandlerManager.handlerUI(UIConstantDefault.UI_CONSTANT_AIR_TICKET_ORDER_PAY_SUCCESS, 1, orderDatas);
+			}
+		});
+		builder.show();
 	}
 	
 	/**

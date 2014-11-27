@@ -136,8 +136,8 @@ public class UIManagerActivity extends FragmentActivity implements IMainHandlerP
 	public ApiAirticketGetCityData dancheng_start_data = null;//单程-出发-模型数据
 	public ApiAirticketGetCityData dancheng_end_data = null;//单程-到达-模型数据
 	
-	public ApiAirticketGetCityData wangfan_start_data = null;//往返-出发-模型数据
-	public ApiAirticketGetCityData wangfan_end_data = null;//往返-到达-模型数据
+//	public ApiAirticketGetCityData wangfan_start_data = null;//往返-出发-模型数据
+//	public ApiAirticketGetCityData wangfan_end_data = null;//往返-到达-模型数据
 	
 	public ArrayList<PassengerData> selectedPassengerList = null;//乘机人列表
 	public ArrayList<PassengerData> selectedLinkmanList = null;//联系人列表

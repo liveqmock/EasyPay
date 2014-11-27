@@ -76,6 +76,29 @@ public class DateUtil {
         return dayAfter;  
     }  
     
+    /** 
+     * 获得指定日期的后2天 
+     *  
+     * @param specifiedDay 
+     * @return 
+     */  
+    public static String getSpecified2DayAfter(String specifiedDay) {  
+        Calendar c = Calendar.getInstance();  
+        Date date = null;  
+        try {  
+            date = new SimpleDateFormat("yy-MM-dd").parse(specifiedDay);  
+        } catch (ParseException e) {  
+            e.printStackTrace();  
+        }  
+        c.setTime(date);  
+        int day = c.get(Calendar.DATE);  
+        c.set(Calendar.DATE, day + 2);  
+  
+        String dayAfter = new SimpleDateFormat("yyyy-MM-dd")  
+                .format(c.getTime());  
+        return dayAfter;  
+    }  
+    
     /**
      * 比较日期，规定的日期和当天的日期进行比较
      * 如果规定的日期在当天日期之前返回true; 否则false

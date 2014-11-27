@@ -71,7 +71,10 @@ public class CreditCardData {
 	 */
 	private String bankId;
 	
-	
+	/**
+	 * CTT 该字段只用于携程,如机票等
+	 */
+	private String ctripbankctt;
 	
 	public String getBankId() {
 		return bankId;
@@ -145,4 +148,11 @@ public class CreditCardData {
 	public void setId(String id) {
 		this.id = id;
 	}
+	public String getCtripbankctt() {
+		return ctripbankctt;
+	}
+	public void setCtripbankctt(String ctripbankctt) {
+		this.ctripbankctt = ctripbankctt;
+	}
+	
 }

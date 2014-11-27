@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/air_query_layout"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/selector_btn_normal_two"
     android:orientation="vertical" >
+    
+   
 
     <!-- 去程 -->
 
@@ -174,12 +178,13 @@
             </RelativeLayout>
         </LinearLayout>
 
-        <View
+         <View
             android:layout_width="fill_parent"
-            android:layout_height="1px"
+            android:layout_height="2px"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="7dp"
             android:background="#1a000000" />
+        
     </LinearLayout>
 
     <!-- 回程 -->
@@ -354,7 +359,7 @@
 
         <View
             android:layout_width="fill_parent"
-            android:layout_height="1px"
+            android:layout_height="2px"
             android:background="@color/gray_bg" />
     </LinearLayout>
     

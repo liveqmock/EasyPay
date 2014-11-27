@@ -142,8 +142,11 @@ public class AirTicketOrderPaySuccessFragment extends IBaseFragment implements O
 				
 			}
 			
-			
 			mMaps.add(item6);
+			
+			HashMap<String,String> item7 = new HashMap<String,String>();
+			item7.put("订单状态", "恭喜您,下单成功,30分钟内完成扣款，请耐心等待，客服会尽快给您确认！");
+			mMaps.add(item7);
 
 		}
 
@@ -170,7 +173,7 @@ public class AirTicketOrderPaySuccessFragment extends IBaseFragment implements O
 
 	@Override
 	public void onRefreshDatas() {
-		((UIManagerActivity)getActivity()).setTopTitle("订单支付成功");
+		((UIManagerActivity)getActivity()).setTopTitle("订单结果");
 		((UIManagerActivity)getActivity()).setBackButtonOnClickListener(new OnClickListener() {
 
 			@Override

@@ -97,8 +97,10 @@ public class AirTicketExpandableListViewCityFragment extends IBaseFragment imple
 				((UIManagerActivity)getActivity()).dancheng_start_data = danchengStartData;
 				((UIManagerActivity)getActivity()).dancheng_end_data = danchengEndData;
 			} else {
-				((UIManagerActivity)getActivity()).wangfan_start_data = wangfanStartData;
-				((UIManagerActivity)getActivity()).wangfan_end_data = wangfanEndData;
+//				((UIManagerActivity)getActivity()).wangfan_start_data = wangfanStartData;
+//				((UIManagerActivity)getActivity()).wangfan_end_data = wangfanEndData;
+				((UIManagerActivity)getActivity()).dancheng_start_data = wangfanStartData;
+				((UIManagerActivity)getActivity()).dancheng_end_data = wangfanEndData;
 			}
 			
 			
@@ -106,6 +108,29 @@ public class AirTicketExpandableListViewCityFragment extends IBaseFragment imple
 			removeFragmentToStack();
 		}
 	};
+	
+	/**
+	 * 单击城市item，选择城市
+	 */
+	private void onClickCitySelected() {
+		if(((UIManagerActivity)getActivity()).danOrFan == 0) {
+			if(danchengStartData != null && danchengEndData != null && danchengStartData.getCityNameCh().equals(danchengEndData.getCityNameCh())) {
+				PromptUtil.showToast(getActivity(), "出发城市和到达城市不能相同");
+				return;
+			}
+			((UIManagerActivity)getActivity()).dancheng_start_data = danchengStartData;
+			((UIManagerActivity)getActivity()).dancheng_end_data = danchengEndData;
+		} else {
+			if(wangfanStartData != null && wangfanEndData != null && wangfanStartData.getCityNameCh().equals(wangfanEndData.getCityNameCh())) {
+				PromptUtil.showToast(getActivity(), "出发城市和到达城市不能相同");
+				return;
+			}
+			((UIManagerActivity)getActivity()).dancheng_start_data = wangfanStartData;
+			((UIManagerActivity)getActivity()).dancheng_end_data = wangfanEndData;
+		}
+		
+		removeFragmentToStack();
+	}
 	
 	public static AirTicketExpandableListViewCityFragment newInstance (Bundle data) {
 		AirTicketExpandableListViewCityFragment fragment = new AirTicketExpandableListViewCityFragment();
@@ -162,7 +187,7 @@ public class AirTicketExpandableListViewCityFragment extends IBaseFragment imple
 	 */
 	private void setTitleBar() {
 		((UIManagerActivity)getActivity()).setTopTitle("城市选择");
-		((UIManagerActivity)getActivity()).setRightButtonOnClickListener("确认", View.VISIBLE, onRightButtonClickListener);
+		((UIManagerActivity)getActivity()).setRightButtonOnClickListener("确认", View.GONE, onRightButtonClickListener);
 	}
 
 	@Override
@@ -237,8 +262,8 @@ public class AirTicketExpandableListViewCityFragment extends IBaseFragment imple
 			
 			
 		} else {
-			wangfanStartData = ((UIManagerActivity)getActivity()).wangfan_start_data;
-			wangfanEndData = ((UIManagerActivity)getActivity()).wangfan_end_data;
+			wangfanStartData = ((UIManagerActivity)getActivity()).dancheng_start_data;
+			wangfanEndData = ((UIManagerActivity)getActivity()).dancheng_end_data;
 			
 			if(data != null) {
 				selecteCity = data.getString("city");
@@ -353,7 +378,7 @@ public class AirTicketExpandableListViewCityFragment extends IBaseFragment imple
 //						airticket_start_city.setSelected(false);
 //						airticket_end_city.setSelected(true);
 						
-						selecteEndTity ();
+//						selecteEndTity ();
 						
 						if(((UIManagerActivity)getActivity()).danOrFan == 0) {
 //							((UIManagerActivity)getActivity()).dancheng_start_data = cityData;
@@ -378,6 +403,8 @@ public class AirTicketExpandableListViewCityFragment extends IBaseFragment imple
 					}
 					
 //					resultData(cityData);
+					
+					onClickCitySelected();
 				}
 				
 				return false;

@@ -24,6 +24,7 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnFocusChangeListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -73,7 +74,7 @@ import com.inter.trade.util.UserInfoCheck;
  *
  */
 @SuppressLint("ValidFragment")
-public class MyBankCreditCardEditFragment extends BaseFragment implements OnClickListener, IFavoriteCharacterDialogListener{
+public class MyBankCreditCardEditFragment extends BaseFragment implements OnClickListener, IFavoriteCharacterDialogListener,OnFocusChangeListener{
 	
 	private Button btn_mybk_save;
 	private Button btn_mybk_delete;
@@ -188,11 +189,14 @@ public class MyBankCreditCardEditFragment extends BaseFragment implements OnClic
 		
 //		et_bankname = (EditText) view.findViewById(R.id.et_bankname);
 		et_card = (EditText) view.findViewById(R.id.et_card);
+		et_card.setOnFocusChangeListener(this);
 		
 		etCvv = (EditText) view.findViewById(R.id.et_cvv);
 		etPhone = (EditText) view.findViewById(R.id.et_phone);
 		etName = (EditText) view.findViewById(R.id.et_name);
 		etID = (EditText) view.findViewById(R.id.et_id);
+		
+		etID.setOnFocusChangeListener(this);
 		
 		cb_default = (CheckBox) view.findViewById(R.id.cb_default);
 		cb_default_receive = (CheckBox) view.findViewById(R.id.cb_default_receive);
@@ -224,7 +228,7 @@ public class MyBankCreditCardEditFragment extends BaseFragment implements OnClic
 		if(mBankCardData != null){
 //			et_bankname.setText(mBankCardData.bkcardbank);
 			btnBank.setText(mBankCardData.bkcardbank);
-			et_card.setText(mBankCardData.bkcardno);
+			et_card.setText(hideCardNo(mBankCardData.bkcardno));
 			
 			
 			if(mBankCardData.bkcardyxmonth.length()==1){
@@ -239,7 +243,7 @@ public class MyBankCreditCardEditFragment extends BaseFragment implements OnClic
 			etCvv.setText(mBankCardData.bkcardcvv);
 			etPhone.setText(mBankCardData.bkcardbankphone);
 			etName.setText(mBankCardData.bkcardbankman);
-			etID.setText(mBankCardData.bkcardidcard);
+			etID.setText(hideCardNo(mBankCardData.bkcardidcard));
 			
 			isBank = true;
 			isMonth = true;
@@ -291,9 +295,9 @@ public class MyBankCreditCardEditFragment extends BaseFragment implements OnClic
 	 */
 	public String hideCardNo(String cardno) {
 		String result = "";
-		if (cardno != null && cardno.length() >= 16) {
+		if (cardno != null && cardno.length() >= 15) {
 			result = cardno.substring(0, 4) + "********"
-					+ cardno.substring(12, cardno.length());
+					+ cardno.substring(cardno.length()-4, cardno.length());
 		}
 		return result;
 	}
@@ -387,12 +391,23 @@ public class MyBankCreditCardEditFragment extends BaseFragment implements OnClic
 		String month = btnMonth.getText().toString()+"";
 		String year = btnYear.getText().toString()+"";
 		
+		
+		
 		String bkcardid = et_card.getText().toString();
+		
+		if(hideCardNo(mBankCardData.bkcardno).equals(bkcardid)){//如果输入框中的内容跟获取的卡号一致，则
+			bkcardid=mBankCardData.bkcardno;
+		}
+		
 //		String cvv = etCvv.getText().toString();//"009" 会变为 "9"
 		String cvv = etCvv.getText()+"";
 		String phone = etPhone.getText().toString();
 		String name = etName.getText().toString();
 		String id = etID.getText().toString();
+		
+		if(hideCardNo(mBankCardData.bkcardidcard).equals(id)){//如果输入框中的内容跟获取的卡号一致，则
+			id=mBankCardData.bkcardidcard;
+		}
 		
 //		if (TextUtils.isEmpty(bkname)) {
 //			PromptUtil.showToast(getActivity(), "请输入开户银行");
@@ -746,6 +761,18 @@ public class MyBankCreditCardEditFragment extends BaseFragment implements OnClic
 				}
 			}
 		}
+	}
+
+	@Override
+	public void onFocusChange(View v, boolean hasFocus) {
+		if(hasFocus){
+			if(v.equals(et_card)){
+				et_card.setText("");
+			}else{
+				etID.setText("");
+			}
+		}
+		
 	}
 	
 }

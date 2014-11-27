@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.InputFilter;
 import android.text.Spanned;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -244,7 +245,9 @@ public class BankCardActivity extends BaseActivity implements OnClickListener{
 			if("0".equals(info.aushoucardstate)){
 	//			setRightVisible(this, "编辑");
 			}
-			bank_name.setText(info.aushoucardbank);
+			if(!TextUtils.isEmpty(info.aushoucardbank)){
+				bank_name.setText(info.aushoucardbank);
+			}
 			mBankName = info.aushoucardbank;
 			
 			open_name_edit.setText(info.aushoucardno);

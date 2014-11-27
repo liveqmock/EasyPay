@@ -111,7 +111,7 @@
         android:id="@+id/mm_listview"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:divider="@color/transparent"
+        android:divider="@color/game_gray"
         android:listSelector="@android:color/transparent"
         android:cacheColorHint="@android:color/transparent"
         android:layout_below="@id/titlebar"

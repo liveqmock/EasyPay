@@ -183,9 +183,13 @@ implements OnClickListener,OnItemClickListener, OnCheckedChangeListener{
 
 	@Override
 	public void onRefreshDatas() {
-		((UIManagerActivity)getActivity()).setTopTitle("舱位选择");
+		
 		if(searchType.equals("D")) {
+			((UIManagerActivity)getActivity()).setTopTitle("舱位选择");
 			((UIManagerActivity)getActivity()).setRightButtonOnClickListener("确认", View.VISIBLE, onRightButtonClickListener);
+		} else{
+			String cityTitle = bundleData.getString("departCityNameCh") +" - "+ bundleData.getString("arriveCityNameCh");
+			((UIManagerActivity)getActivity()).setTopTitle("舱位("+cityTitle+")");
 		}
 	}
 
@@ -203,6 +207,11 @@ implements OnClickListener,OnItemClickListener, OnCheckedChangeListener{
 		quRadioButton = (RadioButton)qu_wang_class_navigation.findViewById(R.id.qu_class_navigation);
 		fanRadioButton = (RadioButton)qu_wang_class_navigation.findViewById(R.id.wang_class_navigation);
 
+		String cityTitle = bundleData.getString("departCityNameCh") +"-"+ bundleData.getString("arriveCityNameCh");
+		quRadioButton.setText("去程("+cityTitle+")");
+		
+		String cityTitle2 = bundleData.getString("arriveCityNameCh") +"-"+ bundleData.getString("departCityNameCh");
+		fanRadioButton.setText("返程("+cityTitle2+")");
 
 		mListView = (MyListView) rootView.findViewById(R.id.mm_listview);
 		mListView.setOnItemClickListener(this);
@@ -318,13 +327,14 @@ implements OnClickListener,OnItemClickListener, OnCheckedChangeListener{
 		if(airticketFanchengAirlineData != null) {//说明存在返程数据，处理如下(点“确定按钮”导航栏中的去程、返程中要有数据便提交)
 			
 			if(selected == 0) {//当前选的是单程选项卡
-				
-				quRadioButton.setText("去程-"+airlineData.aClass);
+				String cityTitle = bundleData.getString("departCityNameCh") +"-"+ bundleData.getString("arriveCityNameCh");
+				quRadioButton.setText("去程("+cityTitle+")-"+airlineData.aClass);
 				
 				quchengAirlineData = airlineData;
 				
 			} else { //当前选的是返程选项卡
-				fanRadioButton.setText("返程-"+airlineData.aClass);
+				String cityTitle = bundleData.getString("arriveCityNameCh") +"-"+ bundleData.getString("departCityNameCh");
+				fanRadioButton.setText("返程("+cityTitle+")-"+airlineData.aClass);
 				fanchengAirlineData = airlineData;
 			}
 			

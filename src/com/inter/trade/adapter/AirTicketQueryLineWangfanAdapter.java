@@ -63,6 +63,7 @@ public class AirTicketQueryLineWangfanAdapter extends BaseAdapter{
 		{
 			convertView = mInflater.inflate(R.layout.airticket_query_wangfan_item, null);//R.layout.record_item
 			mHolder = new Holder();
+//			convertView.findViewById(R.id.air_query_layout);
 			//去程
 			mHolder.qucheng_mark = (TextView)convertView.findViewById(R.id.qucheng_mark);
 			mHolder.start_airport = (TextView)convertView.findViewById(R.id.start_airport);

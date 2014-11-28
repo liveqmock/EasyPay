@@ -62,9 +62,9 @@
                         android:text="手机验证" />
 
                     <ImageView
+                        style="@style/userlevel_btn_click"
                         android:layout_alignBottom="@+id/tv_one"
                         android:layout_toRightOf="@+id/tv_one"
-                        style="@style/userlevel_btn_click"
                         android:background="@drawable/icon_blue_click" />
                 </RelativeLayout>
 
@@ -82,14 +82,20 @@
 
                     <TextView
                         android:id="@+id/tv_two"
-                        style="@style/userlevel_btn_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:background="@drawable/bg_blue_user"
                         android:drawableTop="@drawable/icon_idcard_user"
-                        android:text="身份验证" />
+                        android:gravity="center_horizontal"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text="身份证照\n及自拍照"
+                        android:textColor="@color/white"
+                        android:textSize="10sp" />
 
                     <ImageView
-                        android:layout_alignBottom="@+id/tv_two"
                         style="@style/userlevel_btn_click"
+                        android:layout_alignBottom="@+id/tv_two"
                         android:layout_toRightOf="@+id/tv_two"
                         android:background="@drawable/icon_blue_click" />
                 </RelativeLayout>
@@ -171,8 +177,8 @@
                         android:text="手机验证" />
 
                     <ImageView
+                        style="@style/userlevel_btn_click"
                         android:layout_alignBottom="@+id/tv_three"
-                       style="@style/userlevel_btn_click"
                         android:layout_toRightOf="@+id/tv_three"
                         android:background="@drawable/icon_orange_click" />
                 </RelativeLayout>
@@ -191,15 +197,19 @@
 
                     <TextView
                         android:id="@+id/tv_four"
-                        style="@style/userlevel_btn_style"
+                         android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:background="@drawable/bg_orange_user"
-                        android:drawablePadding="4dp"
                         android:drawableTop="@drawable/icon_idcard_user"
-                        android:text="身份验证" />
+                       android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text="身份证照\n及自拍照"
+                        android:textColor="@color/white"
+                        android:textSize="10sp" />
 
                     <ImageView
+                        style="@style/userlevel_btn_click"
                         android:layout_alignBottom="@+id/tv_four"
-                       style="@style/userlevel_btn_click"
                         android:layout_toRightOf="@+id/tv_four"
                         android:background="@drawable/icon_orange_click" />
                 </RelativeLayout>
@@ -260,8 +270,8 @@
                         android:text="手机验证" />
 
                     <ImageView
-                        android:layout_alignBottom="@+id/tv_five"
                         style="@style/userlevel_btn_click"
+                        android:layout_alignBottom="@+id/tv_five"
                         android:layout_toRightOf="@+id/tv_five"
                         android:background="@drawable/icon_green_click" />
                 </RelativeLayout>

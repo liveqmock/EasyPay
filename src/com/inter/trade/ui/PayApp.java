@@ -8,8 +8,14 @@ import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
+import org.apache.http.client.CookieStore;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.cookie.BasicClientCookie2;
+import org.json.JSONObject;
+
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -23,45 +29,85 @@ import android.util.Log;
 import com.gdseed.mobilereader.MobileReader;
 import com.gdseed.mobilereader.MobileReader.ReaderStatus;
 import com.gdseed.mobilereader.swap.CommonFunction;
-import com.inter.trade.R;
 import com.inter.trade.SwipKeyTask;
 import com.inter.trade.data.CardData;
 import com.inter.trade.data.KeyData;
 import com.inter.trade.data.ResultData;
 import com.inter.trade.db.DaoMaster.DevOpenHelper;
 import com.inter.trade.log.Logger;
-import com.inter.trade.util.AppCrashHandlerUtil;
+import com.inter.trade.net.NetworkUtil;
 import com.inter.trade.util.Constants;
+import com.inter.trade.util.EncryptUtil;
 import com.inter.trade.util.PromptUtil;
+import com.inter.trade.volley.RequestQueue;
+import com.inter.trade.volley.Response;
+import com.inter.trade.volley.VolleyError;
+import com.inter.trade.volley.util.HttpClientStack;
+import com.inter.trade.volley.util.Volley;
 
-public class PayApp extends Application {
-	public static Application pay;
+public class PayApp extends Application
+{
+	public static PayApp pay;
 	public static MobileReader mMobileReader;
 	public static DevOpenHelper helper;
+	private RequestQueue requestQueue;
+	private DefaultHttpClient mHttpClient;
+
 	@Override
-	public void onCreate() {
+	public void onCreate()
+	{
 		// TODO Auto-generated method stub
-//		Log.i("PayApp", "onCreate");
+		// Log.i("PayApp", "onCreate");
 		super.onCreate();
 		pay = this;
 		initReader();
 		startCallStateService();
 		// open();
 		openReader();
-		//CalligraphyConfig.initDefault("fonts/microsoft.ttf", R.attr.fontPath);
-//		AppCrashHandlerUtil.get().init(getApplicationContext());//初始化崩溃日志管理类
+		
 	}
-	
+	private void login()
+	{
+		Response.Listener<String> listener = new Response.Listener<String>()
+		{
+
+			@SuppressLint("InflateParams")
+			@Override
+			public void onResponse(String response)
+			{
+				String ecryptString = response.substring(1,response.length());
+				byte[] decrypt = ecryptString.getBytes();
+				String indexByte=response.substring(0,1);
+				String result =EncryptUtil.decrypt(new String(decrypt), 
+						Integer.parseInt(indexByte));
+				String s= result;
+			}
+		};
+		Response.ErrorListener errorListener = new Response.ErrorListener()
+		{
+
+			@Override
+			public void onErrorResponse(VolleyError error)
+			{
+			}
+
+		};
+		NetworkUtil.checkUpdate(pay, listener, errorListener);
+	}
 	@Override
-	public void onTerminate() {
+	public void onTerminate()
+	{
 		Logger.d("PayApp", "onTerminate");
 		super.onTerminate();
-    }
-	
-	public static DevOpenHelper getHelper() {
+	}
+
+	public static DevOpenHelper getHelper()
+	{
 		return helper;
 	}
-	public static void setHelper(DevOpenHelper helper) {
+
+	public static void setHelper(DevOpenHelper helper)
+	{
 		PayApp.helper = helper;
 	}
 
@@ -81,22 +127,30 @@ public class PayApp extends Application {
 	public static SwipListener mSwipListener; // 刷卡回掉接口
 	private static final int OPEN_READER = 1;
 	private static final int WAKEUP_READER = 2;
-	private static final int CHECK_READER=3;
+	private static final int CHECK_READER = 3;
 	private static final int DELAY = 3000;
-	public static Handler mHandler = new Handler() {
+	public static Handler mHandler = new Handler()
+	{
 		@Override
-		public void handleMessage(Message msg) {
+		public void handleMessage(Message msg)
+		{
 			// TODO Auto-generated method stub
-			if (msg.what == OPEN_READER) {
+			if (msg.what == OPEN_READER)
+			{
 				isOpen = mMobileReader.open(false);
 				log("flag: " + isOpen);
-				
-			} else if (msg.what == WAKEUP_READER) {
+
+			}
+			else if (msg.what == WAKEUP_READER)
+			{
 				// 发送命令唤醒监听器
 				sendCmd("0c");
 				initLitterTimer();
-			}else if(msg.what==CHECK_READER){
-				if(isSwipIn && !isOpen){
+			}
+			else if (msg.what == CHECK_READER)
+			{
+				if (isSwipIn && !isOpen)
+				{
 					PromptUtil.showToast(pay, "刷卡器休眠中，请重新插拔刷卡器");
 				}
 			}
@@ -126,55 +180,69 @@ public class PayApp extends Application {
 	public static final String CMD_KNS = "07";// 读取设备号命令
 	private static Timer mTimer;
 	private static Timer littleTimer;
-	public  static KeyData mKeyData = new KeyData();
+	public static KeyData mKeyData = new KeyData();
 	public SwipKeyTask mKeyTask;
 
 	/**
 	 * 开启定时器，5分钟唤醒一次刷卡器
 	 */
-	public static void startTimer() {
+	public static void startTimer()
+	{
 		mTimer = new Timer();
-		mTimer.schedule(new TimerTask() {
+		mTimer.schedule(new TimerTask()
+		{
 
 			@Override
-			public void run() {
+			public void run()
+			{
 				// TODO Auto-generated method stub
 				mHandler.sendEmptyMessage(WAKEUP_READER);
 				log("wake up mMobileReader");
 			}
-		}, 1000, 3*60* 1000);
+		}, 1000, 3 * 60 * 1000);
 	}
-	public static void initLitterTimer(){
+
+	public static void initLitterTimer()
+	{
 		littleTimer = new Timer();
-		littleTimer.schedule(new TimerTask() {
+		littleTimer.schedule(new TimerTask()
+		{
 
 			@Override
-			public void run() {
+			public void run()
+			{
 				// TODO Auto-generated method stub
 				mHandler.sendEmptyMessage(CHECK_READER);
 				log("check up mMobileReader");
 			}
-		},5 * 1000);
+		}, 5 * 1000);
 	}
-	public static void cancelLittle(){
-		if(littleTimer!=null){
+
+	public static void cancelLittle()
+	{
+		if (littleTimer != null)
+		{
 			littleTimer.cancel();
 		}
 	}
-	public static void cancelTimer() {
-		if (mTimer != null)
-			mTimer.cancel();
+
+	public static void cancelTimer()
+	{
+		if (mTimer != null) mTimer.cancel();
 	}
 
-	public static void initReader() {
-//		mMobileReader.setDebugOn("Zhangjd", true);
+	public static void initReader()
+	{
+		// mMobileReader.setDebugOn("Zhangjd", true);
 		// if(null == mMobileReader){
 		mMobileReader = new MobileReader(PayApp.pay);
 		// }
 		// mMobileReader = mMobileReaderCreator.createmMobileReader();
-		mMobileReader.setOnDataListener(new MobileReader.CallInterface() {
+		mMobileReader.setOnDataListener(new MobileReader.CallInterface()
+		{
 			@Override
-			public void call(ReaderStatus state) {
+			public void call(ReaderStatus state)
+			{
 				Intent intent = new Intent(INTENT_ACTION_CALL_STATE);
 				int tmp = state.ordinal();
 				intent.putExtra("ReaderStatus", tmp);
@@ -182,7 +250,8 @@ public class PayApp extends Application {
 			}
 		});
 		startCallStateService();
-		if (isSwipIn) {
+		if (isSwipIn)
+		{
 			isOpen = mMobileReader.open(playSounds);
 			log("open status:" + isOpen);
 		}
@@ -192,22 +261,74 @@ public class PayApp extends Application {
 	/**
 	 * 延时打开读卡器
 	 */
-	public static void openReader() {
-		mHandler.postDelayed(new Runnable() {
+	public static void openReader()
+	{
+		mHandler.postDelayed(new Runnable()
+		{
 
 			@Override
-			public void run() {
+			public void run()
+			{
 				// TODO Auto-generated method stub
 				mHandler.sendEmptyMessage(OPEN_READER);
 			}
 		}, DELAY);
 	}
 
-	public static boolean openReaderNow() {
-		if (isSwipIn && !isOpen) {
-			return isOpen = mMobileReader.open(playSounds);
-		}
+	public static boolean openReaderNow()
+	{
+		if (isSwipIn && !isOpen) { return isOpen = mMobileReader
+				.open(playSounds); }
 		return false;
+	}
+
+	/**
+	 * 将请求提交到队列 add by hzx
+	 * 
+	 * @param req
+	 */
+	public <T> void addToRequestQueue(com.inter.trade.volley.Request<T> req)
+	{
+		req.setTag(TAG);
+		if (null != mHttpClient)
+		{
+			setCookie();
+		}
+		getRequestQueue().add(req);
+	}
+
+	public RequestQueue getRequestQueue()
+	{
+		if (null == requestQueue)
+		{
+			requestQueue = Volley.newRequestQueue(pay);
+		}
+		return requestQueue;
+	}
+
+	public RequestQueue getRequestQueueCookie()
+	{
+		if (null == requestQueue)
+		{
+			mHttpClient = new DefaultHttpClient();
+			requestQueue = Volley.newRequestQueue(pay, new HttpClientStack(
+					mHttpClient));
+		}
+		return requestQueue;
+	}
+
+	public void setCookie()
+	{
+		CookieStore cookieStore = mHttpClient.getCookieStore();
+		cookieStore.addCookie(new BasicClientCookie2("cookie", "pay"));
+	}
+
+	public void cancelPendingRequests(Object tag)
+	{
+		if (requestQueue != null)
+		{
+			requestQueue.cancelAll(tag);
+		}
 	}
 
 	/**
@@ -216,9 +337,11 @@ public class PayApp extends Application {
 	 * @author apple
 	 * 
 	 */
-	private static class IncomingCallServiceReceiver extends BroadcastReceiver {
+	private static class IncomingCallServiceReceiver extends BroadcastReceiver
+	{
 		@Override
-		public void onReceive(Context context, Intent intent) {
+		public void onReceive(Context context, Intent intent)
+		{
 			byte rawData[] = new byte[1024];
 			int trackCount[] = new int[1];
 			trackCount[0] = 0;
@@ -226,13 +349,16 @@ public class PayApp extends Application {
 			ReaderStatus state = ReaderStatus.values()[intent.getIntExtra(
 					"ReaderStatus", defaultValue)];
 			// 正在接受信息
-			if (ReaderStatus.BEGIN_RECEIVE == state) {
+			if (ReaderStatus.BEGIN_RECEIVE == state)
+			{
 
 				// outMsg.setTextColor(Color.WHITE);
 				// outMsg.setText("Receiving ...");
 				// 超时
 				// log("超时");
-			} else if (ReaderStatus.TIMER_OUT == state) {
+			}
+			else if (ReaderStatus.TIMER_OUT == state)
+			{
 				log("超时");
 				// mMobileReader.close();
 				// resetUIControls();
@@ -240,116 +366,144 @@ public class PayApp extends Application {
 				// outMsg.setText("Timer out ...");
 				return;
 				// 已经接受到信息，解析中
-			} else if (ReaderStatus.END_RECEIVE == state) {
+			}
+			else if (ReaderStatus.END_RECEIVE == state)
+			{
 				// if(!isSendCmd)
 				// if(mSwipListener !=null){
 				// mSwipListener.progress(SWIPING_START,DECODING);
 				// }
 				// outMsg.setTextColor(Color.WHITE);
 				// outMsg.setText("Decoding ...");
-			} else
+			}
+			else
 
-			if (ReaderStatus.DEVICE_PLUGIN == state) {
+			if (ReaderStatus.DEVICE_PLUGIN == state)
+			{
 				isSwipIn = true;
 				openReaderNow();
-				 startTimer();
-				if (mSwipListener != null) {
+				startTimer();
+				if (mSwipListener != null)
+				{
 
 					mSwipListener.checkedCard(true);
-					
+
 				}
 				// sendCmd(CMD_KNS);
-				if(mKeyCode==null){
+				if (mKeyCode == null)
+				{
 					sendCmdKSN(CMD_KNS);
 				}
-				 
+
 				// PromptUtil.showToast(getActivity(),
 				// getString(R.string.has_checked_swip));
 				boolean back = true;
-				if (back)
-					return;
+				if (back) return;
 				mMobileReader.close();
-				if (mMobileReader.open(playSounds)) {
+				if (mMobileReader.open(playSounds))
+				{
 					// outMsg.setTextColor(Color.WHITE);
 					// decodeButton.setText("STOP");
 					// outMsg.setText("Swipe card please ...");
 				}
 
 				return;
-			} else if (ReaderStatus.DEVICE_PLUGOUT == state) {
+			}
+			else if (ReaderStatus.DEVICE_PLUGOUT == state)
+			{
 				// boolean back = true;
 				// if (back) return;w
 				// mMobileReader.close();
 				isSwipIn = false; // 测试代码，需要去掉
-				isOpen=false;
-//				mKeyCode = null;
+				isOpen = false;
+				// mKeyCode = null;
 				cancelTimer();
 				cancelLittle();
-				if (mSwipListener != null) {
+				if (mSwipListener != null)
+				{
 
 					Logger.d("BaseFragment", "checkedCard" + false);
 					mSwipListener.checkedCard(false);
 
-					
 					// isSwipIn=true;
 					// PromptUtil.showToast(getActivity(),
 					// getString(R.string.swip_out));
 				}
 				// resetUIControls();
 				// 解析成功
-			} else if (ReaderStatus.DECODE_OK == state) {
+			}
+			else if (ReaderStatus.DECODE_OK == state)
+			{
 				int len = mMobileReader.read(rawData);
 				byte ok = (byte) 0x90;
 				byte error = (byte) 0x77;
 				log("error" + error);
 				log("ok" + ok);
 				log("rawData[0]" + rawData[0]);
-				if (ok == rawData[0] || error == rawData[0]) {
+				if (ok == rawData[0] || error == rawData[0])
+				{
 					isSendCmd = true;
 				}
-				if (error == rawData[0]) {
+				if (error == rawData[0])
+				{
 					sendCmd("0c");
 				}
-				if (len < 1) {
+				if (len < 1)
+				{
 					// if (!isSendCmd)
 					// if (mSwipListener != null) {
 					// mSwipListener.progress(SWIPING_FAIL, ReaderError);
 					// }
 					// outMsg.setTextColor(Color.RED);
 					// outMsg.setText("Reader Error.");
-					if (len < 1) {
+					if (len < 1)
+					{
 						mMobileReader.writeRecoderToFile(getCurrentFileName()
 								+ "_null.raw");
-					} else {
+					}
+					else
+					{
 						mMobileReader.writeRecoderToFile(getCurrentFileName()
 								+ "_crc.raw");
 					}
-				} else {
+				}
+				else
+				{
 					String display = new String();
 
 					if (0x07 == rawData[0] || 0x50 == rawData[0]
 							|| 0x48 == rawData[0] || 0x08 == rawData[0]
-							|| 0x49 == rawData[0]) {
+							|| 0x49 == rawData[0])
+					{
 						// outMsg.setTextColor(Color.RED);
 						display = "Please update the lastest hardware!";
-						if (!isSendCmd)
-							if (mSwipListener != null) {
-								mSwipListener.progress(SWIPING_FAIL, display);
-							}
-					} else if (0x60 == rawData[0]) {
-//						display = Lib12_ParseTrack(rawData, trackCount);
-						display = CommonFunction.passPackageToString(rawData, trackCount, curModel);
+						if (!isSendCmd) if (mSwipListener != null)
+						{
+							mSwipListener.progress(SWIPING_FAIL, display);
+						}
+					}
+					else if (0x60 == rawData[0])
+					{
+						// display = Lib12_ParseTrack(rawData, trackCount);
+						display = CommonFunction.passPackageToString(rawData,
+								trackCount, curModel);
 						// 轨道数小余2
-						if (trackCount[0] < 2) {
+						if (trackCount[0] < 2)
+						{
 							// outMsg.setTextColor(Color.RED);
-						} else {
+						}
+						else
+						{
 							// outMsg.setTextColor(Color.WHITE);
 						}
-					} else if (0x77 == rawData[0]) {
+					}
+					else if (0x77 == rawData[0])
+					{
 						display = "Error Code:"
 								+ String.format("%02x",
 										(int) (rawData[1] & 0xff));
-						switch (rawData[1]) {
+						switch (rawData[1])
+						{
 						case 0x01:
 							display = "EepromWriteError";
 							break;
@@ -416,49 +570,60 @@ public class PayApp extends Application {
 						default:
 							display = "unknown Error";
 						}
-						if (!isSendCmd)
-							if (mSwipListener != null) {
-								mSwipListener.progress(SWIPING_FAIL,
-										ReaderError);
-							}
-					} else if (0x90 == (rawData[0] & 0xff)) {
+						if (!isSendCmd) if (mSwipListener != null)
+						{
+							mSwipListener.progress(SWIPING_FAIL, ReaderError);
+						}
+					}
+					else if (0x90 == (rawData[0] & 0xff))
+					{
 						// if (mCmd.equals("0c")) {
 						// display = "Device is woke up";
 						// } else {
 						// display = "Device is slept";
 						// }
-					} else {
+					}
+					else
+					{
 						// outMsg.setTextColor(Color.RED);
 						display = "Unknown Format !!";
 						mMobileReader.writeRecoderToFile(getCurrentFileName()
 								+ "_unknown.raw");
 					}
-					if (0 == display.length() && rawData.length == 0) {
+					if (0 == display.length() && rawData.length == 0)
+					{
 						// 解析失败
 						// outMsg.setTextColor(Color.RED);
 						// outMsg.setText("Parse Data Error");
 						display = "Parse Data Error";
-						if (mSwipListener != null) {
+						if (mSwipListener != null)
+						{
 							mSwipListener.progress(SWIPING_FAIL, display);
 						}
-					} else {
-						if (rawData[0] != ok) {
-//							log("唤醒失败");
+					}
+					else
+					{
+						if (rawData[0] != ok)
+						{
+							// log("唤醒失败");
 						}
 						// outMsg.setText(display);
-						 if (rawData[0] == ok) {
-								 display = HexToString(rawData, len, 16);
-								 mMobileReader.writeRecoderToFile("ok.raw");
-								 if (display.length() > 22) {
-								 mKeyCode = display.substring(6, 20);// 设备信息
-								 isSwipIn = true;
-								 Logger.d(TAG, "命令设备信息：" + mKeyCode);
-								 if (mSwipListener != null) {
-								 mSwipListener.progress(CMD_KSN, mKeyCode);
-								 }
+						if (rawData[0] == ok)
+						{
+							display = HexToString(rawData, len, 16);
+							mMobileReader.writeRecoderToFile("ok.raw");
+							if (display.length() > 22)
+							{
+								mKeyCode = display.substring(6, 20);// 设备信息
+								isSwipIn = true;
+								Logger.d(TAG, "命令设备信息：" + mKeyCode);
+								if (mSwipListener != null)
+								{
+									mSwipListener.progress(CMD_KSN, mKeyCode);
+								}
 							}
-						 }
-//						 else {
+						}
+						// else {
 						// // PromptUtil.showToast(getActivity(),
 						// // "设备信息："+display);
 						// }
@@ -469,26 +634,36 @@ public class PayApp extends Application {
 				}
 
 				mMobileReader.close();
-				isOpen=false;
+				isOpen = false;
 				// decodeButton.setText("START");
-				if ( isOpen =mMobileReader.open(playSounds)) {
+				if (isOpen = mMobileReader.open(playSounds))
+				{
 					// decodeButton.setText("STOP");
 				}
-			} else {
+			}
+			else
+			{
 				String errorInfo = new String();
 				// outMsg.setTextColor(Color.RED);
-				isOpen=false;
-				if (ReaderStatus.DECODE_ERROR == state) {
+				isOpen = false;
+				if (ReaderStatus.DECODE_ERROR == state)
+				{
 					errorInfo = "Decode Error!";
-					if (mSwipListener != null) {
+					if (mSwipListener != null)
+					{
 						mSwipListener.progress(SWIPING_FAIL, ReaderError);
 					}
-				} else if (ReaderStatus.RECEIVE_ERROR == state) {
+				}
+				else if (ReaderStatus.RECEIVE_ERROR == state)
+				{
 					errorInfo = "Receive Error!";
-					if (mSwipListener != null) {
+					if (mSwipListener != null)
+					{
 						mSwipListener.progress(SWIPING_FAIL, ReaderError);
 					}
-				} else if (ReaderStatus.BUF_OVERFLOW == state) {
+				}
+				else if (ReaderStatus.BUF_OVERFLOW == state)
+				{
 					errorInfo = "Buf Overflow !";
 				}
 
@@ -501,13 +676,13 @@ public class PayApp extends Application {
 		} // end-of onReceive
 	}
 
-	public void closeReader() {
+	public void closeReader()
+	{
 		mMobileReader.close();
 		endCallStateService();
 		mMobileReader.setOnDataListener(null);
 		mMobileReader.releaseRecorderDevice();
 	}
-
 
 	/**
 	 * 解析刷卡器数据
@@ -516,7 +691,8 @@ public class PayApp extends Application {
 	 * @param track
 	 * @return
 	 */
-	private static String Lib12_ParseTrack(byte input[], int track[]) {
+	private static String Lib12_ParseTrack(byte input[], int track[])
+	{
 		int panLength = 0;
 		int index = 0;
 		String version = new String();
@@ -541,67 +717,91 @@ public class PayApp extends Application {
 		version += String.format("%02d", input[++index]);
 
 		tmp = input[++index];
-		if (curModel.equals(modelMS22x)) {
-			if (1 == tmp) {
+		if (curModel.equals(modelMS22x))
+		{
+			if (1 == tmp)
+			{
 				encryptMode = "fixed key";
-			} else if (2 == tmp) {
+			}
+			else if (2 == tmp)
+			{
 				encryptMode = "dukpt";
-			} else {
+			}
+			else
+			{
 				encryptMode = "unknown";
 			}
 
-		} else if (curModel.equals(modelMS62x)) {
-			if (0 == tmp) {
+		}
+		else if (curModel.equals(modelMS62x))
+		{
+			if (0 == tmp)
+			{
 				encryptMode = "fixed key";
-			} else if (1 == tmp) {
+			}
+			else if (1 == tmp)
+			{
 				encryptMode = "diperse I";
-			} else if (0xFE == (int) (tmp & 0xff)) {
+			}
+			else if (0xFE == (int) (tmp & 0xff))
+			{
 				encryptMode = "dukpt";
-			} else {
+			}
+			else
+			{
 				encryptMode = "unknown";
 			}
 		}
 
 		panLength = input[++index];
 		// xxx
-		for (int i = 0; i < panLength - 10; i++) {
+		for (int i = 0; i < panLength - 10; i++)
+		{
 			xxx += "x";
 		}
 
 		// fist 6 pan
 		index++;
-		for (int i = 0; i < 6; i++) {
+		for (int i = 0; i < 6; i++)
+		{
 			tmp = input[(i >> 1) + index] & 0xff;
 			tmp = i % 2 == 0 ? tmp >> 4 : tmp & 0x0f;
 			tmp = tmp > 9 ? tmp - 10 + 'A' : tmp + '0';
 			first6Pan += (char) tmp;
 		}
 
-		if (panLength < 6) {
+		if (panLength < 6)
+		{
 			first6Pan = first6Pan.substring(0, panLength);
 		}
 		index += 3;
 
 		// last 4 pan or under
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < 4; i++)
+		{
 			tmp = input[(i >> 1) + index] & 0xff;
 			tmp = i % 2 == 0 ? tmp >> 4 : tmp & 0x0f;
 			tmp = tmp > 9 ? tmp - 10 + 'A' : tmp + '0';
 			last4Pan += (char) tmp;
 		}
 
-		if (panLength < 11) {
+		if (panLength < 11)
+		{
 			xxx = "";
-			if (panLength < 7) {
+			if (panLength < 7)
+			{
 				last4Pan = "";
-			} else {
+			}
+			else
+			{
 				last4Pan = last4Pan.substring(10 - panLength, 4);
 			}
 		}
 		index += 2;
 
 		// expiry data
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < 4; i++)
+		{
 			tmp = input[(i >> 1) + index] & 0xff;
 			tmp = i % 2 == 0 ? tmp >> 4 : tmp & 0x0f;
 			tmp = tmp > 9 ? tmp - 10 + 'A' : tmp + '0';
@@ -610,7 +810,8 @@ public class PayApp extends Application {
 
 		// User name
 		index += 2;
-		for (int i = 0; i < 26; i++) {
+		for (int i = 0; i < 26; i++)
+		{
 			userName += (char) input[i + index];
 		}
 
@@ -622,7 +823,8 @@ public class PayApp extends Application {
 		// tmp = tmp > 9 ? tmp - 10 + 'A' : tmp + '0';
 		// ksn += (char) tmp;
 		// }
-		for (int i = 0; i < 20; i++) {
+		for (int i = 0; i < 20; i++)
+		{
 			tmp = input[(i >> 1) + index] & 0xff;
 			tmp = i % 2 == 0 ? tmp >>> 4 : tmp & 0x0f;
 			tmp = tmp > 9 ? tmp - 10 + 'a' : tmp + '0';
@@ -635,9 +837,9 @@ public class PayApp extends Application {
 		isSwipIn = true;
 		// encrypted data
 		index += 10;
-		for (int i = 0; i < 160; i++) {
-			if (0 != i && 0 == (i % 32))
-				encrypedData += '\n';
+		for (int i = 0; i < 160; i++)
+		{
+			if (0 != i && 0 == (i % 32)) encrypedData += '\n';
 			tmp = input[(i >> 1) + index] & 0xff;
 			tmp = i % 2 == 0 ? tmp >> 4 : tmp & 0x0f;
 			tmp = tmp > 9 ? tmp - 10 + 'a' : tmp + '0';
@@ -645,22 +847,26 @@ public class PayApp extends Application {
 		}
 
 		byEncrypedData = new byte[80];
-		for (int i = 0; i < 80; i++) {
+		for (int i = 0; i < 80; i++)
+		{
 			byEncrypedData[i] = input[index + i];
 		}
 
 		index += 80;
 		byte tmpTrackInfo = input[index];
 		int trackCount = 0;
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < 3; i++)
+		{
 			byte info = (byte) (tmpTrackInfo & (0x01 << i));
-			if (0 != info) {
+			if (0 != info)
+			{
 				trackInfo += (char) ('1' + i);
 				trackCount++;
 			}
 		}
 
-		if (null != track) {
+		if (null != track)
+		{
 			track[0] = trackCount;
 		}
 		CardData data = new CardData();
@@ -683,12 +889,15 @@ public class PayApp extends Application {
 		// return ret;
 		// }
 
-		byte[] tmp_key = { 0x01, 0x23, 0x45, 0x67, (byte) 0x89, (byte) 0xab,
-				(byte) 0xcd, (byte) 0xef, (byte) 0xfe, (byte) 0xdc,
-				(byte) 0xba, (byte) 0x98, 0x76, 0x54, 0x32, 0x10 };
+		byte[] tmp_key =
+		{ 0x01, 0x23, 0x45, 0x67, (byte) 0x89, (byte) 0xab, (byte) 0xcd,
+				(byte) 0xef, (byte) 0xfe, (byte) 0xdc, (byte) 0xba,
+				(byte) 0x98, 0x76, 0x54, 0x32, 0x10 };
 		String key = "1234567890abcdeffedcba9876543210";
-		for (int i = 0; i < byEncrypedData.length; i++) {
-			if (0 != i && 0 == (i % 16)) {
+		for (int i = 0; i < byEncrypedData.length; i++)
+		{
+			if (0 != i && 0 == (i % 16))
+			{
 				System.out.format("\n");
 			}
 
@@ -696,14 +905,19 @@ public class PayApp extends Application {
 		}
 		byte[] srcBytes = decryptMode(tmp_key, byEncrypedData);
 		// byte[] srcBytes = decryptMode(key.getBytes(), byEncrypedData);
-		try {
+		try
+		{
 			Log.d("decrypt", new String(srcBytes));
 			Log.d("decrypt", ret);
-		} catch (Exception e) {
+		}
+		catch (Exception e)
+		{
 			// TODO: handle exception
 		}
-		for (int i = 0; i < srcBytes.length; i++) {
-			if (0 != i && 0 == (i % 16)) {
+		for (int i = 0; i < srcBytes.length; i++)
+		{
+			if (0 != i && 0 == (i % 16))
+			{
 				System.out.format("\n");
 			}
 
@@ -711,10 +925,10 @@ public class PayApp extends Application {
 
 		}
 
-		for (int i = 0; i < 160; i++) {
+		for (int i = 0; i < 160; i++)
+		{
 
-			if (0 != i && 0 == (i % 32))
-				decrypedData += '\n';
+			if (0 != i && 0 == (i % 32)) decrypedData += '\n';
 			tmp = srcBytes[(i >> 1)] & 0xff;
 			tmp = i % 2 == 0 ? tmp >> 4 : tmp & 0x0f;
 			tmp = tmp > 9 ? tmp - 10 + 'a' : tmp + '0';
@@ -724,9 +938,11 @@ public class PayApp extends Application {
 		// ȡpan
 		int panIndex = 1;
 		String realPan = new String();
-		for (int i = 0; i < panLength; i++) {
+		for (int i = 0; i < panLength; i++)
+		{
 			tmp = srcBytes[(i + panIndex) >> 1];
-			if (0 != (i % 2)) {
+			if (0 != (i % 2))
+			{
 				tmp >>= 4;
 			}
 
@@ -741,7 +957,7 @@ public class PayApp extends Application {
 
 		data.pan = realPan;
 		data.decrypedData = decrypedData;
-		
+
 		merReserved.append("{");
 		merReserved.append("Firmware Version:" + data.firmwareVersion);
 		merReserved.append("|");
@@ -768,47 +984,63 @@ public class PayApp extends Application {
 		merReserved.append("decrypedData" + data.decrypedData);
 		merReserved.append("}");
 		// PromptUtil.showToast(getActivity(), realPan);
-		if (mSwipListener != null) {
+		if (mSwipListener != null)
+		{
 			mSwipListener.recieveCard(data);
 			mSwipListener.progress(SWIPING_SUCCESS, ReaderSUCCESS);
 		}
-		
+
 		return ret;
 	}
 
-	public static byte[] decryptMode(byte[] keybyte, byte[] src) {
-		try {
+	public static byte[] decryptMode(byte[] keybyte, byte[] src)
+	{
+		try
+		{
 			SecretKey deskey = new SecretKeySpec(keybyte, Algorithm);
 			Cipher c1 = Cipher.getInstance(Algorithm);
 			c1.init(Cipher.DECRYPT_MODE, deskey);
 			return c1.doFinal(src);
-		} catch (java.security.NoSuchAlgorithmException e1) {
+		}
+		catch (java.security.NoSuchAlgorithmException e1)
+		{
 			Log.e("aa", e1.getMessage());
-		} catch (javax.crypto.NoSuchPaddingException e2) {
+		}
+		catch (javax.crypto.NoSuchPaddingException e2)
+		{
 			Log.e("aa", e2.getMessage());
-		} catch (java.lang.Exception e3) {
+		}
+		catch (java.lang.Exception e3)
+		{
 			Log.e("aa", e3.getMessage());
 		}
 
 		return null;
 	}
 
-	private static int StringToHex(String str, byte[] dst) {
+	private static int StringToHex(String str, byte[] dst)
+	{
 		int count = 0;
 		int tmp = 0;
-		for (int i = 0; i < str.length(); i++) {
+		for (int i = 0; i < str.length(); i++)
+		{
 			tmp = GetHexChar(str.charAt(i));
-			if (tmp < 0)
-				continue;
-			if (count < dst.length * 2) {
-				if (0 == (count % 2)) {
+			if (tmp < 0) continue;
+			if (count < dst.length * 2)
+			{
+				if (0 == (count % 2))
+				{
 					dst[count >> 1] = (byte) (tmp * 16);
-				} else {
+				}
+				else
+				{
 					dst[count >> 1] += (byte) tmp;
 				}
 
 				count++;
-			} else {
+			}
+			else
+			{
 				return -1;
 			}
 		}
@@ -817,8 +1049,10 @@ public class PayApp extends Application {
 
 	}
 
-	private static int GetHexChar(char c) {
-		switch (c) {
+	private static int GetHexChar(char c)
+	{
+		switch (c)
+		{
 		case '0':
 		case '1':
 		case '2':
@@ -849,23 +1083,22 @@ public class PayApp extends Application {
 		}
 	}
 
-	public static void sendCmd(String mCmd) {
+	public static void sendCmd(String mCmd)
+	{
 		byte[] tmp = new byte[128];
 		Log.d("IO", "Send:" + mCmd);
-		if (null == mCmd || mCmd.length() < 1)
-			return;
+		if (null == mCmd || mCmd.length() < 1) return;
 		int len = StringToHex(mCmd, tmp);
 		sendCmd(tmp, len);
 	}
 
-	public static void sendCmd(byte[] cmd, int len) {
-		if (null == cmd)
-			return;
-		if (len < 1)
-			return;
-		if (!mMobileReader.deviceIsAvailable())
-			return;
-		if (!isOpen) {
+	public static void sendCmd(byte[] cmd, int len)
+	{
+		if (null == cmd) return;
+		if (len < 1) return;
+		if (!mMobileReader.deviceIsAvailable()) return;
+		if (!isOpen)
+		{
 			isOpen = mMobileReader.open(false);
 		}
 
@@ -877,70 +1110,79 @@ public class PayApp extends Application {
 	 * 
 	 * @param cmd
 	 */
-	public static void sendCmdKSN(String cmd) {
+	public static void sendCmdKSN(String cmd)
+	{
 		log("btnSend----------------setOnClickListener");
-		if (!mMobileReader.deviceIsAvailable())
-			return;
+		if (!mMobileReader.deviceIsAvailable()) return;
 
-		if (open()) {
+		if (open())
+		{
 			log("Open----------------");
 			// btnSend.setEnabled(false);
-		} else {
+		}
+		else
+		{
 			return;
 		}
 
-		if (!mMobileReader.deviceIsAvailable())
-			return;
+		if (!mMobileReader.deviceIsAvailable()) return;
 		byte[] tmp = new byte[128];
 		int len = StringToHex(cmd, tmp);
 		String tmpLog = new String();
-		for (int i = 0; i < len; i++) {
+		for (int i = 0; i < len; i++)
+		{
 			tmpLog += String.format("%02x ", tmp[i]);
 		}
 
 		log("Len --> " + len);
 		log("Send-- > " + tmpLog);
 
-		if (!mMobileReader.deviceIsAvailable())
-			return;
+		if (!mMobileReader.deviceIsAvailable()) return;
 
 		mMobileReader.write(tmp, len);
 
-		if (!mMobileReader.deviceIsAvailable())
-			return;
+		if (!mMobileReader.deviceIsAvailable()) return;
 
 		log("btnSend----------------setOnClickListener ====== end");
 	}
 
-	public static void log(String str) {
-		if(Constants.DEBUG)
-		Log.d("liguohui", str + '\n');
+	public static void log(String str)
+	{
+		if (Constants.DEBUG) Log.d("liguohui", str + '\n');
 	}
 
-	private static boolean open() {
-		try {
+	private static boolean open()
+	{
+		try
+		{
 			Thread.sleep(100);
-		} catch (Exception e) {
+		}
+		catch (Exception e)
+		{
 			e.printStackTrace();
 		}
 
-		if (!mMobileReader.open(false)) {
-			return false;
-		}
+		if (!mMobileReader.open(false)) { return false; }
 
-		try {
+		try
+		{
 			Thread.sleep(100);
-		} catch (Exception e) {
+		}
+		catch (Exception e)
+		{
 			e.printStackTrace();
 		}
 
 		return true;
 	}
 
-	public static  String HexToString(byte input[], int len, int lineByte) {
+	public static String HexToString(byte input[], int len, int lineByte)
+	{
 		String ret = new String();
-		for (int i = 0; i < len; i++) {
-			if ((i % lineByte == 0) && i != 0) {
+		for (int i = 0; i < len; i++)
+		{
+			if ((i % lineByte == 0) && i != 0)
+			{
 				ret += '\n';
 			}
 
@@ -950,29 +1192,31 @@ public class PayApp extends Application {
 		return ret;
 	}
 
-	 //	private String HexToString(byte input[], int len, int lineByte) {
-//	String ret = new String();
-//	for (int i = 0; i < len; i++) {
-//		if ((i % lineByte == 0) && i != 0) {
-//			ret += '\n';
-//		}
-//
-//		ret += ByteToString(input[i]);
-//	}
-//
-//	return ret;
-//}
-//
-//private String ByteToString(byte in) {
-//	String ret = String.format("%02x", in);
-//	return ret;
-//}
-	private static String ByteToString(byte in) {
+	// private String HexToString(byte input[], int len, int lineByte) {
+	// String ret = new String();
+	// for (int i = 0; i < len; i++) {
+	// if ((i % lineByte == 0) && i != 0) {
+	// ret += '\n';
+	// }
+	//
+	// ret += ByteToString(input[i]);
+	// }
+	//
+	// return ret;
+	// }
+	//
+	// private String ByteToString(byte in) {
+	// String ret = String.format("%02x", in);
+	// return ret;
+	// }
+	private static String ByteToString(byte in)
+	{
 		String ret = String.format("%02x", in);
 		return ret;
 	}
 
-	private static String getCurrentFileName() {
+	private static String getCurrentFileName()
+	{
 		Time t = new Time();
 		t.setToNow(); // ȡ��ϵͳʱ�䡣
 		int year = t.year % 100;
@@ -994,9 +1238,20 @@ public class PayApp extends Application {
 				+ strFileCount;
 	}
 
-	public static void startCallStateService() {
+	public static PayApp getInstance()
+	{
+		if (null == pay)
+		{
+			pay = new PayApp();
+		}
+		return pay;
+	}
+
+	public static void startCallStateService()
+	{
 		PayApp.pay.startService(new Intent(INTENT_ACTION_CALL_STATE));
-		if (incomingCallServiceReceiver == null) {
+		if (incomingCallServiceReceiver == null)
+		{
 			incomingCallServiceReceiver = new IncomingCallServiceReceiver();
 			IntentFilter intentFilter = new IntentFilter();
 			intentFilter.addAction(INTENT_ACTION_CALL_STATE);
@@ -1005,36 +1260,44 @@ public class PayApp extends Application {
 		}
 	}
 
-	public void endCallStateService() {
+	public void endCallStateService()
+	{
 		PayApp.pay.stopService(new Intent(INTENT_ACTION_CALL_STATE));
-		if (incomingCallServiceReceiver != null) {
+		if (incomingCallServiceReceiver != null)
+		{
 			log("unregisterReceiver");
 			PayApp.pay.unregisterReceiver(incomingCallServiceReceiver);
 			incomingCallServiceReceiver = null;
 		}
 	}
 
-	public interface SwipListener {
+	public interface SwipListener
+	{
 		public void recieveCard(CardData data);// 获取到卡号
 
 		public void checkedCard(boolean flag);// 检测到刷卡器
 
 		public void progress(int status, String message);// 检测到刷卡器
 	}
-	
+
 	/**
 	 * 银联支付成功/失败/取消后-反馈的接口监听(异步通知后台状态)
+	 * 
 	 * @author zhichao.huang
-	 *
+	 * 
 	 */
-	public interface BuySuccessListener{
-		
+	public interface BuySuccessListener
+	{
+
 		/**
 		 * 银联支付后的反馈通知(异步通知后台状态)
-		 * @param resultData  结果信息
-		 * @param msg 结果msg提示
+		 * 
+		 * @param resultData
+		 *            结果信息
+		 * @param msg
+		 *            结果msg提示
 		 */
-		public void requestBuySuccess (ResultData resultData, String msg);
-		
+		public void requestBuySuccess(ResultData resultData, String msg);
+
 	}
 }

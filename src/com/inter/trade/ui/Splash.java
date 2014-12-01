@@ -7,6 +7,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
@@ -45,8 +47,17 @@ public class Splash extends FragmentActivity implements Callback
 		String appName = resources.getString(R.string.app_name);
 		if (!ShortCutUtils.hasShortcut(this, appName))
 		{
-			ShortCutUtils
-					.creatShortCut(this, appName, R.drawable.easy_pay_logo);// 创建快捷方式
+			SharedPreferences preferences = getSharedPreferences("CUTSETTING",
+					MODE_PRIVATE);
+			boolean cutFirst = preferences.getBoolean("CUTFIRST", false);
+			if (!cutFirst)
+			{
+				ShortCutUtils.creatShortCut(this, appName,
+						R.drawable.easy_pay_logo);// 创建快捷方式
+				Editor editor = preferences.edit();
+				editor.putBoolean("CUTFIRST", true);
+				editor.commit();
+			}
 		}
 
 		mHandler = new Handler(this);
